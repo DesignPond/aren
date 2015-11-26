@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+
+<Style id='pin'>
+	<IconStyle>
+		<Icon>
+			<href>http://www.aren.ch/images/icons/pin.png</href>
+		</Icon>
+		<BalloonStyle>
+	   
+	      <bgColor>ffffffbb</bgColor>
+	      	    
+	      <text>
+		      <![CDATA[ 
+		       <font face="Courier">$[description]</font>
+		      ]]>
+	      </text>
+	      
+	    </BalloonStyle>
+	</IconStyle>
+</Style>
+
+<Folder>
+      <name>Prestataires</name>
+      
+        <Placemark>
+          <name></name>
+          <description>
+          
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td> Num&#233;ro 5 <br/>Monsieur Alain Jeannin</td>
+      			</tr>
+      		</table>
+          		          	
+          </description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>5</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>6.52877454882089,46.9175549835357,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+          <description>
+          
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td> Num&#233;ro 13 <br/>La Ferme du Grand Roumaillard</td>
+      			</tr>
+      		</table>
+          		          	
+          </description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>13</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>6.64562910321159,46.9560899973336,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+          <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 14 <br/>Madame Josette Monnet</td>
+      			</tr>
+      		</table>		          	
+          </description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>14</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>6.68074187597069,46.9564628635288,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+          <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 10 <br/>Manège du Vanel</td>
+      			</tr>
+      		</table>		          	
+          </description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>10</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>6.85370558553586,47.0225415200978,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+          <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 2 <br/>Club équestre des Marais-Rouges</td>
+      			</tr>
+      		</table>		          	
+          </description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>2</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>6.74050261622062,46.996171543824,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+          <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 16 <br/>Ecurie Corinne Matthey</td>
+      			</tr>
+      		</table>		          	
+          </description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>16</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>6.74265216758649,47.0341545052388,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+          <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 8 <br/>Madame Coralie Oppliger</td>
+      			</tr>
+      		</table>		          	
+          </description>          
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>8</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>6.75516567515584,47.0866548635059,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+          <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 19 <br/>Logis Les Pierres Bleues</td>
+      			</tr>
+      		</table>		          	
+          </description>            
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>19</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>6.89985598346956,47.1108761779979,0</coordinates>
+          </Point>
+        </Placemark>
+        
+		<Placemark>
+          <name></name>
+          <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 23 <br/>Les Entre-deux-Monts</td>
+      			</tr>
+      		</table>		          	
+          </description>           
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>23</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>6.78834473613704,47.0505606091219,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+          <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 3 <br/>Gîte du Château</td>
+      			</tr>
+      		</table>		          	
+          </description>          
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>3</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>6.71671927264551,47.0615111192206,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+          <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 15 <br/>La Crotèle</td>
+      			</tr>
+      		</table>		          	
+          </description>           
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>15</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>6.94402292353759,47.0921403190353,0</coordinates>
+          </Point>
+        </Placemark>
+        
+		 <Placemark>
+          <name></name>
+          <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 6 <br/>Monsieur Daniel Kuntzer</td>
+      			</tr>
+      		</table>		          	
+          </description>           
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>6</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>6.89349149900985,47.0553546830822,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+           <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 17 <br/>Topeka Ranch</td>
+      			</tr>
+      		</table>		          	
+          </description>          
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>17</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>6.95392070237206,47.0260318212844,0</coordinates>
+          </Point>
+        </Placemark>
+        
+       <Placemark>
+          <name></name>
+           <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 7 <br/>Auberge du Gros Crêt</td>
+      			</tr>
+      		</table>		          	
+          </description>           
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>7</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>6.79724072824858,47.1066694363418,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+           <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 1 <br/>Famille Oberli P.Alain</td>
+      			</tr>
+      		</table>		          	
+          </description>           
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>1</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+           <coordinates>6.87233917972739,47.128850914146,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+           <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 18 <br/>Manège Wüthrich</td>
+      			</tr>
+      		</table>		          	
+          </description>           
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>18</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+           <coordinates>6.84434834543126,47.0727681775497,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+           <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 4 <br/>Ferme Sterchi</td>
+      			</tr>
+      		</table>		          	
+          </description>           
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>4</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+          <coordinates>6.84777818131122,47.1007970738358,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+           <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 21 <br/>Relais équestre de la Vieille Fontaine</td>
+      			</tr>
+      		</table>		          	
+          </description>          
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>21</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+           <coordinates>6.97853676142597,47.0960709185608,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+           <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 12 <br/>Métairie de Dombresson/Frienisberg</td>
+      			</tr>
+      		</table>		          	
+          </description>             
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>12</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>7.02870096048963,47.1211505340164,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+           <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 9 <br/>Madame Marie-Laure Pétremand</td>
+      			</tr>
+      		</table>		          	
+          </description>           
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>9</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>6.47401655843767,46.8633191811717,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+           <description>
+      		<table cellpadding="1" cellspacing="1" border="0">
+      			<tr>
+      				<td>Num&#233;ro 22 <br/>Alpage/Buvette du Mont-Barres</td>
+      			</tr>
+      		</table>		          	
+          </description>             
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>22</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>6.5013144938747,46.8961747854151,0</coordinates>
+          </Point>
+        </Placemark>
+        
+        <Placemark>
+          <name></name>
+           <description>
+      		<table cellpadding="0" cellspacing="0" border="0">
+      			<tr>
+      				<td>Num&#233;ro 20<br/> Relais équestre Les Seignes</td>
+      			</tr>
+      		</table>	        	
+          </description>            
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>20</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#pin</styleUrl>
+          <Point>
+            <coordinates>6.53581835733334,46.975714840673,0</coordinates>
+          </Point>
+        </Placemark>
+        
+    </Folder>
+
+
+</Document>
+</kml>

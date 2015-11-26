@@ -1,0 +1,258 @@
+
+#bgheaderAdmin{
+width: 100%;
+z-index: 1;
+height: 80px;
+display: block;
+background:#849a41 url(../images/bgAdmin.png) repeat-x;
+position: absolute;
+border-bottom: 1px solid #fff;
+}
+
+
+#headerAdmin{
+margin-bottom: 66px;
+height: 80px;
+z-index: 20;
+position: relative;
+}
+
+
+.logoAdmin{
+width:100%;
+height:70px;
+display: block;
+margin-top:5px;
+}
+
+/*------nav -------*/
+nav#navAdmin{
+position: absolute;
+top: 25px;
+width: 50%;
+right: 0;
+height: 34px;
+line-height: : 34px;
+background: none;
+border: none;
+}
+
+
+ul#menuAdmin{
+padding: 0;
+width: 100%;
+display: block;
+}
+
+ul#menuAdmin li{
+float: rights;
+display: block;
+width: auto;
+line-height: 34px;
+margin: 0 4%;
+text-align: right;
+}
+
+		
+ul#menuAdmin li a{
+color: #fff;
+display: block;
+text-transform: uppercase;
+font-size: 14px;
+font-family:Arial,sans serif;
+text-decoration: none;
+height: 35px;
+}
+
+ul#menuAdmin li a.current, ul#menuAdmin li a:hover{
+	color: #484d65;
+	background: url(../images/icons/menuArrow.png) bottom center no-repeat;
+}
+
+
+/*------ utils classes  ------*/
+
+.centerAll{
+margin: 44px auto 22px auto;
+width: 70%;
+display: block;
+}
+
+
+/*----------- structure ---------*/
+
+
+
+ a.box{
+display: inline-table;
+margin: 4px 2px;
+height: 130px;
+color: #fff;
+width: 47%;
+line-height: 130px;
+text-align: center;
+font-size: 23px;
+letter-spacing: 1px;
+text-transform: uppercase;
+text-decoration: none;
+background: #849a41;
+}
+
+a.box:hover{
+background: #d26d01;
+}
+
+table.listeNews tr td {
+padding: 10px 0;
+}
+
+table.listeNews tr td p{
+position: relative;
+margin-bottom: 0;
+}
+
+table.listeNews tr td p a.outils{
+position: absolute;
+z-index: 10;
+left: 22px;
+top: 0;
+width: 24px;
+height: 24px;
+text-align: center;
+line-height: : 24px;
+border: 1px solid #ccc;
+background: #e4e5e7;
+}
+
+
+
+
+table.listeNews tr td p a.editer img{
+margin-top: 5px;
+}
+
+table.listeNews tr td p a.supprimer img{
+margin-top: 7px;
+}
+
+
+
+table.listeNews tr td p a.editer{
+top: 13px;
+}
+
+table.listeNews tr td p a.supprimer{
+top: 46px;
+}
+
+
+table.listeNews tr td div{
+position: relative;
+z-index: 1;
+background: #fbfbfb;
+padding: 15px 15px 15px 75px;
+border: 1px solid #dadadb;
+}
+
+
+
+table.listeNews tr td div.enAccueil{
+background: #f1f5e4;
+}
+
+
+
+table.listeNews tr td h2{
+font-size: 17px;
+margin-bottom: 5px;
+}
+
+table.listeNews tr td div p{
+font-size: 13px;
+margin-bottom: 5px;
+}
+
+table.listeNews tr td h3{
+font-size: 13px;
+position: absolute;
+padding: 5px;
+right: 20px;
+top: 26px;
+z-index: 10;
+width: 170px;
+text-align: center;
+background: #d26d01;
+color: #fff;
+height: 20px;
+line-height: 20px;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px; 
+}
+
+table.listeNews tr td h3.editInfos{
+font-size: 11px;
+top: 5px;
+width: 50%;
+height: 70px;
+background: none;
+}
+
+table.listeNews tr td h3.ajoutInfos{
+width: 90px;
+background:#484d65; 
+}
+
+
+
+table.listeNews tr td h3.editInfos a,table.listeNews tr td h3.ajoutInfos a{
+color: #fff;
+text-decoration: none;
+background:#849a41;
+padding:2px 7px;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px; 
+margin: 5px;
+display: block;
+float: right;
+}
+
+
+
+table.listeNews tr td p.logoLien{
+position: absolute;
+margin-bottom: 0;
+top: 11px;
+right: 10px;
+width:90px;
+height: 60px;
+display: block;
+overflow: hidden;
+text-align: right;
+}
+
+
+
+a.btnAjouter{
+	padding: 8px;
+	background: #d26d01;
+	color: #fff;
+	text-decoration: none;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px; 
+	margin-top: 22px;	
+}
+
+
+/*------ footer ------*/
+
+
+p.copyright{
+position: absolute;
+bottom: 5px;
+text-align: center;
+width: 100%;
+line-height: 22px;
+}

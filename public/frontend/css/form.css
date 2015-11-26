@@ -1,0 +1,244 @@
+.myForm label {	
+    font-size: 14px;
+    color: #849a41;
+    padding-right: 10px;
+    padding:10px 0 0 0;
+    text-transform: uppercase;
+    width: 250px;
+    display: inline-table;
+    float: left;
+    vertical-align: top;
+    background: none;
+    
+    }
+    
+    em{	
+    font-size: 13px;
+    color: #4f4f4f;
+    text-transform: none;
+    font-family: 'AllerItalic', Helvetica, Arial, sans-serif;
+    }
+ 
+form.myForm  fieldset { border: none;  }
+ 
+ 
+form.myForm  textarea {
+
+background: #fff; 	 		
+}
+
+
+form .myForm p, form.myForm  p a{
+text-align: left;
+font-family: 'AllerRegular', Helvetica, Arial, sans-serif;
+margin-bottom:5px;
+line-height: 30px;
+color: #576069;
+}
+
+form.myForm  p a{
+color: #b50045;
+}
+
+form.myForm  p {
+display: block;
+margin-bottom: 33px;
+position: relative;
+}
+
+
+
+form.myForm  p.radio span{
+padding-top: 7px;
+display: block;
+}
+
+
+.myForm input, .myForm textarea { 		
+    padding: 8px 7px 5px 7px; 
+    margin: 10px 0 5px 0; 
+    background: #fff;  
+    font-size: 14px; 
+    color: #555; 
+    height: 15px;
+    display: inline;
+    border: 1px solid #bdc6ce ;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px; 
+border-radius: 3px;
+}
+
+
+
+.myForm input[type=checkbox] { 		
+	width: 30px;
+	vertical-align:top;
+	line-height: 15px;
+	margin-top: 5px;
+    height: 15px;
+}
+
+
+.myForm  textarea {
+ height: 350px;
+ width: 50%;
+ -webkit-border-radius: 0;
+-moz-border-radius: 0; 
+border-radius: 0;
+}
+
+
+.myForm input.defaultText{
+color: #909090;
+margin-right: 5px;
+width: 200px;
+}
+
+
+input:hover, textarea:hover { 
+  
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=url]:focus, input[type=email]:focus,
+input.text:focus, input.title:focus,
+textarea:focus {
+  border-color:#849a41;
+}
+
+form.myForm  input{ 	 
+width: 300px;
+background: #fff;
+}
+
+
+form.myForm  input[type="radio"] {
+width: 40px;
+line-height: 15px;
+padding: 0;
+margin: 0;
+}
+
+form.myForm  input[type="select"] {
+padding: 5px 0;
+}
+
+form.myForm  input.btnSubmit{ 	 
+width: auto;
+margin-top: 44px;
+background:#d26d01;
+color: #fff;
+height: 30px;
+display: block;
+padding: 7px 20px  5px 20px;
+line-height: 13px;
+border: 1px solid #fff;
+}
+
+form input.btnNewsletter{ 	 
+width: auto;
+margin-top: 9px;
+background:#d26d01;
+color: #fff;
+height: 30px;
+display: block;
+padding: 7px 20px  5px 20px;
+line-height: 13px;
+border: 1px solid #fff;
+}
+
+
+.myForm input.submit:hover { 		
+
+   -webkit-box-shadow: 0px 0px 10px #7c7c7f;
+   -moz-box-shadow: 0px 0px 10px #7c7c7f;
+   box-shadow: 0px 0px 10px #7c7c7f;	
+ cursor:  pointer; 
+}
+
+.mapFrame {
+   width: 320px;
+   height: 215px;
+   margin-bottom: 30px;
+   display: block;
+   border: 1px solid #d8dfe6;
+   overflow: hidden;
+   position: relative;
+   text-align: center;
+   -webkit-box-shadow: 1px 1px 1px #e6e6e6;
+   -moz-box-shadow: 1px 1px 1px #e6e6e6;
+   box-shadow: 1px 1px 1px #e6e6e6;
+   cursor: default;
+   background: #fff url(../images/bgFrame.png) repeat;
+   padding: 10px;
+}
+
+.mapFrame #map {
+   width: 320px;
+   height:215px;
+   background: #fff;
+   display: block;
+   position: absolute;
+   overflow: hidden;
+   top: 10px;
+   left: 10px;
+   border: 1px solid #d8dfe6;
+}
+
+.areaCommande{
+width:400px; margin-top:20px; height:267px;
+}
+
+
+/*------- validation -------*/
+input.vanadium-invalid, select.vanadium-invalid, textarea.vanadium-invalid {
+  border-color: red !important;
+  border-style: solid !important;
+}
+
+input.vanadium-valid, select.vanadium-valid, textarea.vanadium-valid {
+  border-color: #0F0 !important;
+  border-style: solid !important;
+}
+
+.vanadium-message-value {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.vanadium-advice {
+  font-size: 12px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+}
+
+.vanadium-advice.vanadium-invalid, .vanadium-advice.vanadium-invalid * {
+  color: red;
+  display: block;
+  height: 14px;
+  position: relative;
+  margin: -10px 0 10px 0px;
+  padding:0 0 10px 0;
+  text-align: left;
+  width: 240px;
+  line-height: 15px;
+}
+
+input.vanadium-valid {
+  background: url(../images/vu.png) right no-repeat;
+}
+
+input.vanadium-valid ~ .vanadium-valid-advice {
+  display: inline !important;
+  color: green;
+}
+
+
+
+.container.vanadium-valid {
+  border-color: #0F0 !important;
+}
+
+.container.vanadium-invalid {
+  border-color: #F00 !important;
+}

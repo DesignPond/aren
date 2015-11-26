@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+
+<Style id='picnic'>
+	<IconStyle>
+		<Icon>
+			<href>http://www.aren.ch/_picnic.png</href>
+		</Icon>
+	</IconStyle>
+</Style>
+
+<Style id='visite'>
+	<IconStyle>
+		<Icon>
+			<href>http://www.aren.ch/_visite.png</href>
+		</Icon>
+	</IconStyle>
+</Style>
+
+<Style id='autre'>
+	<IconStyle>
+		<Icon>
+			<href>http://www.aren.ch/_autre.png</href>
+		</Icon>
+	</IconStyle>
+</Style>
+
+<Style id='buvette'>
+	<IconStyle>
+		<Icon>
+			<href>http://www.aren.ch/_buvette.png</href>
+		</Icon>
+	</IconStyle>
+</Style>
+
+<Folder><name>POI_T1</name>
+  <Placemark>
+  	<description>Visite</description>
+  	<styleUrl>#visite</styleUrl>
+	<ExtendedData><SchemaData schemaUrl="#POI_T1">
+		<SimpleData name="type">Visite</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>6.737109345548157,47.001208833691436</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  	<description>Buvette</description>
+  	<styleUrl>#buvette</styleUrl>
+	<ExtendedData><SchemaData schemaUrl="#POI_T1">
+		<SimpleData name="type">Buvette/restaurant</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>6.836374206421905,47.054329051016154</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  	<description>Autre</description>
+  	<styleUrl>#autre</styleUrl>
+	<ExtendedData><SchemaData schemaUrl="#POI_T1">
+		<SimpleData name="type">Autre</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>6.870128915412711,47.072114243558431</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  	<description>Place Pique-nique</description>
+  	<styleUrl>#picnic</styleUrl>
+	<ExtendedData><SchemaData schemaUrl="#POI_T1">
+		<SimpleData name="type">Place Pique-nique</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>6.874390840672527,47.037319811881204</coordinates></Point>
+  </Placemark>
+</Folder>
+<Schema name="POI_T1" id="POI_T1">
+	<SimpleField name="id" type="int"></SimpleField>
+	<SimpleField name="type" type="string"></SimpleField>
+</Schema>
+</Document></kml>

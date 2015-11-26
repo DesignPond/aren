@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="POI_troncon3" id="POI_troncon3">
+	<SimpleField name="id" type="int"></SimpleField>
+	<SimpleField name="type" type="string"></SimpleField>
+</Schema>
+
+<Style id='parking'>
+	<IconStyle>
+		<Icon>
+			<href>http://www.aren.ch/_parking.png</href>
+		</Icon>
+	</IconStyle>
+</Style>
+
+<Style id='buvette'>
+	<IconStyle>
+		<Icon>
+			<href>http://www.aren.ch/_buvette.png</href>
+		</Icon>
+	</IconStyle>
+</Style>
+
+<Folder><name>POI_troncon3</name>
+
+  <Placemark>
+	<description>Buvette</description>
+  	<styleUrl>#buvette</styleUrl>
+	<ExtendedData>
+		<SchemaData schemaUrl="#POI_troncon3">
+			<SimpleData name="type">Buvette/restaurant</SimpleData>
+		</SchemaData>
+	</ExtendedData>
+      <Point><coordinates>6.916173446404606,47.106025201503677</coordinates></Point>
+  </Placemark>
+
+  
+  <Placemark>
+	<description>Parking</description>
+  	<styleUrl>#parking</styleUrl>
+	<ExtendedData><SchemaData schemaUrl="#POI_troncon3">
+		<SimpleData name="type">Parking</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>6.981595505975871,47.093809282508673</coordinates></Point>
+  </Placemark>
+  
+</Folder>
+</Document></kml>

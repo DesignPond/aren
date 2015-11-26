@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document name = "Objets GeoConcept">
+  <Style id="GCLocationSquare">
+    <LineStyle>
+      <color>ffb7cbed</color>
+      <colorMode>normal</colorMode>
+      <width>4</width>
+    </LineStyle>
+    <PolyStyle>
+      <fill>0</fill>
+      <outline>1</outline>
+    </PolyStyle>
+  </Style>
+  <Style id="sn_2_Fond de carte_1_cartes">
+    <IconStyle>
+      <Icon>
+        <href>2_1.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="sn_2_Fond de carte_2_Zone Raster">
+    <LineStyle>
+      <color>ff000000</color>
+      <width>2</width>
+    </LineStyle>
+    <PolyStyle>
+      <color>7f000000</color>
+      <fill>1</fill>
+      <outline>1</outline>
+    </PolyStyle>
+  </Style>
+  <Style id="sn_1_import_1_ASRE_RRES">
+    <LineStyle>
+      <color>ff00aaff</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="sn_1_import_3_Nieder">
+    <LineStyle>
+      <color>ff0000ff</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="sn_1_import_4_Gites">
+    <IconStyle>
+      <Icon>
+        <href>1_4.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="sn_1_import_2_POI">
+    <IconStyle>
+      <Icon>
+        <href>1_2.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="sn_1_import_6_import_AREN">
+    <LineStyle>
+      <color>ffb05800</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="sn_5_AREN_3_R&#233;seau">
+    <LineStyle>
+      <color>ff8000ff</color>
+      <width>2</width>
+    </LineStyle>
+  </Style>
+  <Style id="sn_5_AREN_2_POI">
+    <IconStyle>
+      <Icon>
+        <href>5_2.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="sn_5_AREN_1_Prestataires">
+    <IconStyle>
+      <Icon>
+        <href>5_1.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="sn_5_AREN_4_Portails">
+    <IconStyle>
+      <Icon>
+        <href>5_4.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Folder>
+    <name>AREN</name>
+    <Folder>
+      <name>POI</name>
+        <Placemark>
+          <name></name>
+          <description>Place de Pique-nique</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Sorte">
+              <value>Pique-nique</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_2_POI</styleUrl>
+          <Point>
+            <coordinates>6.76483976561857,46.9072073854705,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Point de vue</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Sorte">
+              <value>Point de vue</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_2_POI</styleUrl>
+          <Point>
+            <coordinates>6.72478306021555,46.9286437914048,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Parking</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Sorte">
+              <value>Parking</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_2_POI</styleUrl>
+          <Point>
+            <coordinates>6.58835075376388,46.9715922033472,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Place de Pique-nique</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Sorte">
+              <value>Pique-nique</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_2_POI</styleUrl>
+          <Point>
+            <coordinates>6.78928522432951,46.9588934002679,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Point de vue</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Sorte">
+              <value>Point de vue</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_2_POI</styleUrl>
+          <Point>
+            <coordinates>6.55480874185455,46.9399068754198,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Place de Pique-nique</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Sorte">
+              <value>Pique-nique</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_2_POI</styleUrl>
+          <Point>
+            <coordinates>6.50851971364954,46.8582616691544,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+           <description>Point de vue</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Sorte">
+              <value>Point de vue</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_2_POI</styleUrl>
+          <Point>
+            <coordinates>6.51060785980841,46.859610057742,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Place de Pique-nique</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Sorte">
+              <value>Pique-nique</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_2_POI</styleUrl>
+          <Point>
+            <coordinates>6.87438589223051,47.0373256129734,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Point de vue</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Sorte">
+              <value>Point de vue</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_2_POI</styleUrl>
+          <Point>
+            <coordinates>6.9035944538064,46.9913736706951,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Place de Pique-nique</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Sorte">
+              <value>Pique-nique</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_2_POI</styleUrl>
+          <Point>
+            <coordinates>6.56811772339298,46.9631460501225,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Parking</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Sorte">
+              <value>Parking</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_2_POI</styleUrl>
+          <Point>
+            <coordinates>6.86625928792303,47.0750385019615,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Parking</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Sorte">
+              <value>Parking</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_2_POI</styleUrl>
+          <Point>
+            <coordinates>6.76313374618722,46.9061358341762,0</coordinates>
+          </Point>
+        </Placemark>
+    </Folder>
+    <Folder>
+      <name>Prestataires</name>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 5 <br/>Monsieur Alain Jeannin</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>5</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.52877454882089,46.9175549835357,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+           <description>Num&#233;ro 20 <br/>Relais équestre Les Seignes</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>20</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.53581835733334,46.975714840673,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 22 <br/>Alpage/Buvette du Mont-Barres</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>22</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.5013144938747,46.8961747854151,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 13 <br/>La Ferme du Grand Roumaillard</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>13</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.64562910321159,46.9560899973336,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 14 <br/>Madame Josette Monnet</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>14</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.68074187597069,46.9564628635288,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 10 <br/>Manège du Vanel</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>10</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.85370558553586,47.0225415200978,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+           <description>Num&#233;ro 2 <br/>Club équestre des Marais-Rouges</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>2</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.74050261622062,46.996171543824,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 11 <br/>Relais équestre de la Clé d'or</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>11</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.71559056007428,47.0183708086463,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+         <description>Num&#233;ro 16 <br/>Ecurie Corinne Matthey</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>16</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.74265216758649,47.0341545052388,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 7 <br/>Auberge du Gros Crêt</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>7</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.79724072824858,47.1066694363418,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 8 <br/>Madame Coralie Oppliger</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>8</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.75516567515584,47.0866548635059,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 23 <br/>Les Entre-deux-Monts</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>23</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.78834473613704,47.0505606091219,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+           <description>Num&#233;ro 1 <br/>Famille Oberli P.Alain</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>1</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.87233917972739,47.128850914146,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 19 <br/>Logis Les Pierres Bleues</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>19</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.89985598346956,47.1108761779979,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 3 <br/>Gîte du Château</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>3</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.71671927264551,47.0615111192206,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 18 <br/>Manège Wüthrich</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>18</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.84434834543126,47.0727681775497,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 4 <br/>Ferme Sterchi</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>4</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.84777818131122,47.1007970738358,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 21 <br/>Relais équestre de la Vieille Fontaine</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>21</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.97853676142597,47.0960709185608,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 15 <br/>La Crotèle</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>15</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.94402292353759,47.0921403190353,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+         <description>Num&#233;ro 12 <br/>Métairie de Dombresson/Frienisberg</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>12</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>7.02870096048963,47.1211505340164,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 6 <br/>Monsieur Daniel Kuntzer</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>6</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.89349149900985,47.0553546830822,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 17 <br/>Topeka Ranch</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>17</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.95392070237206,47.0260318212844,0</coordinates>
+          </Point>
+        </Placemark>
+        <Placemark>
+          <name></name>
+          <description>Num&#233;ro 9 <br/>Madame Marie-Laure Pétremand</description>
+          <ExtendedData>
+            <Data name = "Nom">
+              <value></value>
+            </Data>
+            <Data name = "Num&#233;ro">
+              <value>9</value>
+            </Data>
+          </ExtendedData>
+          <styleUrl>#sn_5_AREN_1_Prestataires</styleUrl>
+          <Point>
+            <coordinates>6.47401655843767,46.8633191811717,0</coordinates>
+          </Point>
+        </Placemark>
+    </Folder>
+  </Folder>
+</Document>
+</kml>
