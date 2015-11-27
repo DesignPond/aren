@@ -43,6 +43,13 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="message" class="col-sm-3 control-label">Type de page</label>
+                        <div class="col-sm-4">
+                            {!! Form::text('template', null , array('class' => 'form-control') ) !!}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label for="message" class="col-sm-3 control-label">Ordre</label>
                         <div class="col-sm-1">
                             {!! Form::text('rang', null , array('class' => 'form-control') ) !!}
@@ -52,8 +59,8 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Insérer un filligrane</label>
                         <div class="col-sm-5">
-                            <label class="radio-inline"><input type="radio" value="1" name="filligrane" checked=""> Oui</label>
-                            <label class="radio-inline"><input type="radio" value="0" name="filligrane"> Non</label>
+                            <label class="radio-inline"><input type="radio" value="1" name="filligrane"> Oui</label>
+                            <label class="radio-inline"><input type="radio" value="0" name="filligrane" checked> Non</label>
                         </div>
                     </div>
 

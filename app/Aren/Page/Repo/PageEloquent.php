@@ -14,7 +14,7 @@ class PageEloquent implements PageInterface{
 
     public function getAll(){
 
-        return $this->page->all();
+        return $this->page->orderBy('rang')->get();
     }
 
     public function getTree($key = null, $seperator = '  '){
@@ -29,7 +29,7 @@ class PageEloquent implements PageInterface{
 
     public function getRoot(){
 
-        return $this->page->where('parent_id','=',0)->get();
+        return $this->page->where('parent_id','=',0)->orderBy('rang')->get();
     }
 
     public function find($id){
@@ -50,14 +50,16 @@ class PageEloquent implements PageInterface{
     public function create(array $data){
 
         $page = $this->page->create(array(
-            'rang'             => (isset($data['rang']) ? $data['rang'] : ''),
-            'title'            => $data['title'],
-            'content'          => $data['content'],
-            'rang'             => (isset($data['rang']) ? $data['rang'] : 0),
-            'filligrane'       => (isset($data['filligrane']) && !empty($data['filligrane']) ? 1 : null),
-            'hidden'           => (isset($data['hidden']) && !empty($data['hidden']) ? 1 : null),
-            'created_at'       => date('Y-m-d G:i:s'),
-            'updated_at'       => date('Y-m-d G:i:s')
+            'rang'        => (isset($data['rang']) ? $data['rang'] : ''),
+            'title'       => $data['title'],
+            'content'     => $data['content'],
+            'template'    => $data['template'],
+            'slug'        => \Str::slug($data['title']),
+            'rang'        => (isset($data['rang']) ? $data['rang'] : 0),
+            'filligrane'  => (isset($data['filligrane']) && !empty($data['filligrane']) ? 1 : null),
+            'hidden'      => (isset($data['hidden']) && !empty($data['hidden']) ? 1 : null),
+            'created_at'  => date('Y-m-d G:i:s'),
+            'updated_at'  => date('Y-m-d G:i:s')
         ));
 
         if( !$page )
