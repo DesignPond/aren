@@ -8,6 +8,9 @@ use App\Http\Requests;
 use App\Http\Requests\SendMessage;
 use App\Aren\Page\Repo\PageInterface;
 use App\Aren\Bloc\Repo\BlocInterface;
+use App\Aren\Prestataire\Repo\PrestataireInterface;
+use App\Aren\Prestation\Repo\TitreInterface;
+use App\Aren\Prestation\Repo\TableInterface;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -15,12 +18,19 @@ class HomeController extends Controller
     protected $page;
     protected $helper;
     protected $bloc;
+    protected $prestataire;
+    protected $titre;
+    protected $table;
 
-    public function __construct(PageInterface $page, BlocInterface $bloc)
+    public function __construct(PageInterface $page, BlocInterface $bloc, PrestataireInterface $prestataire, TitreInterface $titre, TableInterface $table)
     {
-        $this->page      = $page;
-        $this->bloc      = $bloc;
-        $this->helper    = new \App\Helper\Helper;
+        $this->page        = $page;
+        $this->bloc        = $bloc;
+        $this->prestataire = $prestataire;
+        $this->titre       = $titre;
+        $this->table       = $table;
+
+        $this->helper      = new \App\Helper\Helper;
     }
 
     /**
@@ -34,7 +44,18 @@ class HomeController extends Controller
         $blocs  = $this->bloc->getAll();
         $parent = $page->getAncestorsAndSelf()->toHierarchy();
 
-        return view('frontend.accueil')->with([ 'page' => $page, 'parent' => $parent,'blocs' => $blocs]);
+        $participant = $this->prestataire->getAll(true,true)->random();
+
+        return view('frontend.accueil')->with([ 'page' => $page, 'parent' => $parent,'blocs' => $blocs, 'participant' => $participant]);
+    }
+
+    public function participant($id){
+
+        $participant = $this->prestataire->find($id);
+        $titres      = $this->titre->getAll()->lists('titre','id')->all();
+        $tables      = $this->table->getAll();
+
+        return view('frontend.participant')->with(['participant' => $participant, 'titres' => $titres, 'tables' => $tables]);
     }
 
     /**
@@ -45,19 +66,6 @@ class HomeController extends Controller
     public function contact()
     {
         return view('frontend.contact');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $slug
-     * @return Response
-     */
-    public function page($slug)
-    {
-        $page = $this->page->getBySlug($slug);
-
-        return view('frontend.page')->with(['page' => $page]);
     }
 
     /**

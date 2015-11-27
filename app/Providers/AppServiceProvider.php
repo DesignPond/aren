@@ -17,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
         $root = $page->where('parent_id',0)->orderBy('rang','asc')->get();
 
         view()->share('hierarchy', $root);
+
     }
 
     /**
@@ -32,6 +33,13 @@ class AppServiceProvider extends ServiceProvider
         $this->registerNewsService();
         $this->registerComiteService();
         $this->registerPrestataireService();
+
+        $this->registerPrestationService();
+        $this->registerTableService();
+        $this->registerOptionService();
+        $this->registerTitreService();
+        $this->registerRemarqueService();
+
     }
 
     /**
@@ -99,4 +107,60 @@ class AppServiceProvider extends ServiceProvider
             return new \App\Aren\Prestataire\Repo\PrestataireEloquent(new \App\Aren\Prestataire\Entities\Prestataire);
         });
     }
+
+    /**
+     * Prestation
+     */
+    protected function registerPrestationService(){
+
+        $this->app->singleton('App\Aren\Prestation\Repo\PrestationInterface', function()
+        {
+            return new \App\Aren\Prestation\Repo\PrestationEloquent(new \App\Aren\Prestation\Entities\Prestation);
+        });
+    }
+
+    /**
+     * Table
+     */
+    protected function registerTableService(){
+
+        $this->app->singleton('App\Aren\Prestation\Repo\TableInterface', function()
+        {
+            return new \App\Aren\Prestation\Repo\TableEloquent(new \App\Aren\Prestation\Entities\Table);
+        });
+    }
+
+    /**
+     * Option
+     */
+    protected function registerOptionService(){
+
+        $this->app->singleton('App\Aren\Prestation\Repo\OptionInterface', function()
+        {
+            return new \App\Aren\Prestation\Repo\OptionEloquent(new \App\Aren\Prestation\Entities\Option);
+        });
+    }
+
+    /**
+     * Titre
+     */
+    protected function registerTitreService(){
+
+        $this->app->singleton('App\Aren\Prestation\Repo\TitreInterface', function()
+        {
+            return new \App\Aren\Prestation\Repo\TitreEloquent(new \App\Aren\Prestation\Entities\Titre);
+        });
+    }
+
+    /**
+     * Remarque
+     */
+    protected function registerRemarqueService(){
+
+        $this->app->singleton('App\Aren\Prestation\Repo\RemarqueInterface', function()
+        {
+            return new \App\Aren\Prestation\Repo\RemarqueEloquent(new \App\Aren\Prestation\Entities\Remarque);
+        });
+    }
+
 }

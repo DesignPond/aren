@@ -40,9 +40,12 @@
             </h1>
             <nav class="last">
                 <ul id="menu">
-                    <li><a class="" href="{{ url('/') }}">Accueil</a></li>
-                    <li><a class="" href="{{ url('site/news') }}">News</a></li>
-                    <li class="drop"><a class="" href="{{ url('site/presentation') }}">Présentation</a></li>
+                    <?php $helper = new App\Helper\Helper(); ?>
+
+                    @foreach($hierarchy as $page)
+                        {!! $helper->renderMenu($page) !!}
+                    @endforeach
+
                     <li><a class="" href="{{ url('prestation') }}">prestataires</a></li>
                     <li><a class="" href="{{ url('site/cart') }}">Carte</a></li>
                     <li><a class="" href="{{ url('site/liens') }}">Infos utiles</a></li>
@@ -59,9 +62,10 @@
                 <!-- Contenu -->
                 @yield('content')
                 <!-- Fin contenu -->
-
+                <hr/>
             </div>
         </section>
+
         <p class="spacer"></p>
         <!-- Footer -->
         <footer>

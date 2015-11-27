@@ -3,7 +3,7 @@
 
 <section class="contenu">
 
-    <h2> {!! $page->title !!}</h2>
+    <h1> {!! $page->title !!}</h1>
     <div class="twelvecol last pages">
 
         {!! $page->content !!}

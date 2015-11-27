@@ -5,20 +5,20 @@ $( function() {
         maxHeight: 450,
         focus: true,
         lang: 'fr',
-        plugins: ['advanced','imagemanager','filemanager'],
+        plugins: ['imagemanager','filemanager','table','source'],
         fileUpload : 'uploadFileRedactor?_token=' + $('meta[name="_token"]').attr('content'),
         imageUpload: 'uploadRedactor?_token=' + $('meta[name="_token"]').attr('content'),
         imageManagerJson: 'imageJson',
         fileManagerJson: 'fileJson',
-        buttons    : ['html','|','formatting','bold','italic','|','unorderedlist','orderedlist','outdent','indent','|','image','file','link','alignment']
+        buttons    : ['format', 'bold', 'italic', 'lists', 'image', 'file', 'link','table','source' ]
     });
 
     $('.redactorSimple').redactor({
         minHeight: 140,
         maxHeight: 200,
         focus    : true,
-        lang: 'fr',
-        buttons  : ['formatting','bold','italic','link','|','unorderedlist']
+        lang     : 'fr',
+        buttons  : ['format', 'bold', 'italic', 'lists']
     });
 
     $.fn.datepicker.dates['fr'] = {
@@ -51,20 +51,5 @@ $( function() {
     // The url to the application
     var base_url = location.protocol + "//" + location.host+"/";
 
-    var params = {
-        // Callback fired on rotation start.
-        start: function(event, ui) {
-        },
-        // Callback fired during rotation.
-        rotate: function(event, ui) {
-        },
-        // Callback fired on rotation end.
-        stop: function(event, ui) {
-        },
-        // Set the rotation center at (25%, 75%).
-        rotationCenterX: 15.0,
-        rotationCenterY: 85.0
-    };
-    $('.target').rotatable(params);
 
 });

@@ -7,29 +7,27 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Aren\Page\Worker\PageWorker;
 use App\Aren\Page\Repo\PageInterface;
+use App\Aren\News\Repo\NewsInterface;
+use App\Aren\Prestataire\Repo\PrestataireInterface;
 
 class PageController extends Controller
 {
     protected $page;
     protected $worker;
     protected $helper;
+    protected $news;
+    protected $prestataire;
 
-    public function __construct(PageWorker $worker, PageInterface $page)
+    public function __construct(PageWorker $worker, PageInterface $page, NewsInterface $news, PrestataireInterface $prestataire)
     {
-        $this->page      = $page;
-        $this->worker    = $worker;
+        $this->page        = $page;
+        $this->worker      = $worker;
+        $this->news        = $news;
+        $this->prestataire = $prestataire;
 
-        $this->helper    = new \App\Helper\Helper();
-    }
+        $this->helper = new \App\Helper\Helper();
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function index()
-    {
-        return view('backend.schemas.index');
+        setlocale(LC_ALL, 'fr_FR.UTF-8');
     }
 
     /**
@@ -45,7 +43,21 @@ class PageController extends Controller
 
         $template   = $page->template;
 
-        return view('frontend.'.$template)->with([ 'page' => $page, 'id' => $id, 'parent' => $parent]);
+        $data['page']   = $page;
+        $data['id']     = $id;
+        $data['parent'] = $parent;
+
+        if($id == 'news')
+        {
+            $data['news'] = $this->news->getAll();
+        }
+
+        if($id == 'prestataires')
+        {
+            $data['prestataires'] = $this->prestataire->getAll(true,true);
+        }
+
+        return view('frontend.'.$template)->with($data);
     }
 
 }

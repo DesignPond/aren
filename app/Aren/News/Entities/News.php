@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
-    protected $table    = 'blocs';
-	protected $fillable = ['titre','texte','date'];
-    protected $dates    = ['date'];
+    protected $table    = 'news';
+	protected $fillable = ['titre','texte','dateNews'];
+    protected $dates    = ['dateNews'];
 
     public $timestamps  = false;
 

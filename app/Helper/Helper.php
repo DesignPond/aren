@@ -5,15 +5,15 @@ class Helper{
 
     public function renderMenu($node)
     {
-        $url = 'page/';
+        $url = ($node->main ? '' : 'page/');
 
         if( $node->isLeaf() )
         {
-            return '<li><a href="'.url($url.$node->slug).'" title="'.$node->title.'">' . $node->title . '</a></li>';
+            return '<li><a href="'.url($url.$node->slug).'" title="'.$node->title.'">' . $node->slug . '</a></li>';
         }
         else
         {
-            $html  = '<li><a href="'.url($url.$node->slug).'">' . $node->title .'</a>';
+            $html  = '<li><a href="'.url($url.$node->slug).'">' . $node->slug .'</a>';
             $html .= '<ul>';
 
             foreach($node->children as $child)
@@ -73,42 +73,6 @@ class Helper{
             }
 
             $html .= '</li>';
-        }
-
-        return $html;
-    }
-
-    function renderMenuItem($node,$level)
-    {
-        if( $node->isLeaf() )
-        {
-            return [
-                'text'      => ['name' => $node->title],
-                'innerHTML' => '<p><a href="'.url('schemas/'.$node->id).'" data-node="'.$node->id.'">'.$node->title.'</a></p>'
-                //'innerHTML' => '<div class="nodeWrapper"><p>'.$node->title.'</p><a href="#" data-node="'.$node->id.'" class="addBtnNode">+</a></div>'
-            ];
-        }
-        else
-        {
-            $html['text']['name'] = $node->title;
-            $html['innerHTML']    = '<p><a href="'.url('schemas/'.$node->id).'" data-node="'.$node->id.'">'.$node->title.'</a></p>';
-
-            //$html['innerHTML']    = '<div class="nodeWrapper"><p>'.$node->title.'</p><a href="#" data-node="'.$node->id.'" class="addBtnNode">+</a></div>';
-
-            foreach($node->children as $child)
-            {
-                if($level > 0)
-                {
-                    if($level >= $child->getLevel())
-                    {
-                        $html['children'][] = $this->renderMenuItem($child,$level);
-                    }
-                }
-                else
-                {
-                    $html['children'][] = $this->renderMenuItem($child, $level);
-                }
-            }
         }
 
         return $html;

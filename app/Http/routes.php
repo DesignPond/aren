@@ -12,7 +12,7 @@
 */
 Route::get('/', ['uses' => 'HomeController@accueil']);
 Route::get('accueil', ['uses' => 'HomeController@accueil']);
-Route::get('page/{slug}', ['uses' => 'HomeController@page']);
+Route::get('participant/{id}', ['uses' => 'HomeController@participant']);
 Route::get('contact', ['uses' => 'HomeController@contact']);
 
 Route::post('sendMessage', ['uses' => 'HomeController@sendMessage']);

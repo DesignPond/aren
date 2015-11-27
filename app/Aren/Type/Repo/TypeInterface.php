@@ -1,7 +1,7 @@
 <?php
-namespace App\Aren\Comite\Repo;
+namespace App\Aren\Type\Repo;
 
-interface ComiteInterface
+interface TypeInterface
 {
     public function getAll();
     public function find($id);

@@ -1,5 +1,5 @@
 <?php
-namespace App\Cours\News\Repo;
+namespace App\Aren\News\Repo;
 
 use App\Aren\News\Repo\NewsInterface;
 use App\Aren\News\Entities\News as M;
@@ -15,7 +15,7 @@ class NewsEloquent implements NewsInterface
 
     public function getAll(){
 
-        return $this->news->all();
+        return $this->news->orderBy('dateNews','DESC')->get();
     }
 
     public function find($id){

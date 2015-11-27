@@ -97,3 +97,25 @@ div.tableau div p{
 div.tableauAdmin div p{
 	font-size:12px;
 }
+
+
+.comite_table td{
+    color: #373737;
+    font-family: Arial,sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 22px;
+    padding:8px 0;
+}
+
+.comite_table td strong{
+    color: #484d65;
+    font-family: "LeagueGothicRegular",Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    line-height: 22px;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+    padding-right: 50px;
+}

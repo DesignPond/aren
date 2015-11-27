@@ -52,9 +52,10 @@
     <div class="fivecol last">
 
         <h3>Découvrez un nouveau prestataire</h3>
-
+        <p class="location"><strong>{{ $participant->barn_title }}</strong></p>
         <div class="map-wrapper">
-            <div id="map-canvas" data-latitude="47.012724" data-longitude="6.731005" data-zoom="10" style="height: 230px;;"></div>
+            {{--<div id="map-canvas" data-latitude="47.012724" data-longitude="6.731005" data-zoom="10" style="height: 230px;"></div>--}}
+            <div id="map-canvas" data-latitude="{{ $participant->map->latitude  }}" data-longitude="{{ $participant->map->longitude  }}" data-zoom="14" style="height: 230px;"></div>
         </div>
 
     </div>
