@@ -15,7 +15,7 @@ class PrestationEloquent implements PrestationInterface
 
     public function getAll(){
 
-        return $this->prestation->orderBy('datePrestation','DESC')->get();
+        return $this->prestation->all();
     }
 
     public function find($id){
@@ -26,9 +26,13 @@ class PrestationEloquent implements PrestationInterface
     public function create(array $data){
 
         $prestation = $this->prestation->create(array(
-            'titre' => $data['titre'],
-            'text'  => $data['text'],
-            'date'  => $data['date']
+            'titre_id'       => $data['titre_id'],
+            'prestataire_id' => $data['prestataire_id'],
+            'table_id'       => $data['table_id'],
+            'places'         => (isset($data['places']) ? $data['places'] : null),
+            'option_id'      => (isset($data['option_id']) && !empty($data['option_id']) ? $data['option_id'] : null),
+            'prix'           => (isset($data['prix']) ? $data['prix'] : null),
+            'remarque'       => (isset($data['remarque']) ? $data['remarque'] : null),
         ));
 
         if( ! $prestation )

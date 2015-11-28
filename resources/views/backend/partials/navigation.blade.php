@@ -22,6 +22,9 @@
         <li class="<?php echo (Request::is('prestataire') || Request::is('prestataire/*') ? 'active' : '' ); ?>"><a href="{{ url('admin/prestataire') }}">
                 <i class="fa fa-users"></i> <span>Prestataires</span></a>
         </li>
+        <li class="<?php echo (Request::is('carte') || Request::is('carte/*') ? 'active' : '' ); ?>"><a href="{{ url('admin/carte') }}">
+                <i class="fa fa-map-marker"></i> <span>Carte</span></a>
+        </li>
         <li class="divider"></li>
         <li class="<?php echo (Request::is('admin/config') ? 'active' : ''); ?>">
             <a href="{{ url('admin/config') }}"><i class="fa fa-cog"></i><span>Configurations</span></a>

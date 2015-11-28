@@ -47,3 +47,12 @@ select.form-control + .chosen-container .chosen-results li, select.form-control 
 tr.nonactif td{
     background:#f5f5f5;
 }
+
+.margeUp{
+    margin-top: 20px;
+}
+
+.addPrestation{
+    padding: 10px;
+    background: #f7f7f7;
+}

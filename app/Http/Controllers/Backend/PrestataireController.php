@@ -10,18 +10,24 @@ use App\Http\Controllers\Controller;
 use App\Aren\Prestataire\Repo\PrestataireInterface;
 use App\Aren\Prestation\Repo\TitreInterface;
 use App\Aren\Prestation\Repo\TableInterface;
+use App\Aren\Prestation\Repo\OptionInterface;
+use App\Aren\Prestation\Repo\RemarqueInterface;
 
 class PrestataireController extends Controller
 {
     protected $prestataire;
     protected $titre;
     protected $table;
+    protected $option;
+    protected $remarque;
 
-    public function __construct(PrestataireInterface $prestataire, TitreInterface $titre, TableInterface $table)
+    public function __construct(PrestataireInterface $prestataire, TitreInterface $titre, TableInterface $table, OptionInterface $option, RemarqueInterface $remarque)
     {
         $this->prestataire = $prestataire;
         $this->titre       = $titre;
         $this->table       = $table;
+        $this->option      = $option;
+        $this->remarque    = $remarque;
     }
 
     /**
@@ -67,10 +73,19 @@ class PrestataireController extends Controller
     public function show($id)
     {
         $prestataire  = $this->prestataire->find($id);
-        $titres       = $this->titre->getAll()->lists('titre','id')->all();
+        $titres       = $this->titre->getAll()->groupBy('table_id');
+        $options      = $this->option->getAll()->lists('titre','id')->all();
         $tables       = $this->table->getAll();
 
-        return view('backend.prestataires.show')->with(['prestataire' => $prestataire, 'titres' => $titres, 'tables' => $tables]);
+        $tables_options = [
+            1 => ['places','prix'],
+            2 => ['places','prix'],
+            3 => ['option_id'],
+            4 => ['option_id','prix'],
+            5 => ['option_id','remarque']
+        ];
+
+        return view('backend.prestataires.show')->with(['prestataire' => $prestataire, 'titres' => $titres, 'tables' => $tables, 'options' => $options, 'tables_options' => $tables_options]);
     }
 
     /**

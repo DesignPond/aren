@@ -90,9 +90,6 @@
                         </div>
                         <div class="col-md-6">
 
-                            <div class="form-group"><label for="message" class="col-sm-12 control-label">&nbsp;</label></div>
-                            <div class="form-group"><label for="message" class="col-sm-12 control-label">&nbsp;</label></div>
-
                             <div class="form-group">
                                 <label for="message" class="col-sm-3 control-label">District</label>
                                 <div class="col-sm-9">
@@ -134,6 +131,23 @@
                                     {!! Form::text('web', $prestataire->web , array('class' => 'form-control') ) !!}
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label for="message" class="col-sm-3 control-label">Coordonnées</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Lat.</span>
+                                        <input type="text" class="form-control" value="{{ $prestataire->map->latitude }}" name="map[latitude]">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Lon.</span>
+                                        <input type="text" class="form-control" value="{{ $prestataire->map->longitude }}" name="map[longitude]">
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <div class="panel-footer">
@@ -148,7 +162,6 @@
 
     <?php $tables_participant = $prestataire->prestations->groupBy('table_id'); ?>
 
-
     <!-- Tables -->
     @if(!empty($tables))
         <?php $cols = $tables->chunk(2); ?>
@@ -159,33 +172,96 @@
                     <div class="col-md-6"><!-- col -->
                     <div class="panel panel-info">
                         <div class="panel-body">
-                            <h3>{{ $table->titre }} <a class="btn btn-info btn-sm pull-right" data-toggle="collapse" href="#addPrestation_{{ $table->id }}">Ajouter</a></h3>
+                            <h3>{{ $table->titre }} <a class="btn btn-primary btn-sm pull-right" data-toggle="collapse" href="#addPrestation_{{ $table->id }}">Ajouter</a></h3>
                             <table class="table">
                                 <thead>
-                                    <th>Titre</th><th>Disponible</th><th>Remarque</th>
+                                    <th>Titre</th><th>Disponible</th><th>Prix</th><th>Places</th><th>Remarque</th><th></th>
                                 </thead>
                                 <tbody>
                                     @if(isset($tables_participant[$table->id]))
                                         @foreach($tables_participant[$table->id] as $row)
                                             <tr>
                                                 <?php $row->load('option','titre'); ?>
-                                                <td><p><strong>{{ $row->titre->titre }}</strong></p></td>
-                                                <td><p>{{ $row->option->titre }}</p> </td>
-                                                <td><p>{!! ($row->remarque != '' ? $row->remarque : '-') !!}</p></td>
+                                                <td><strong class="text-info">{{ $row->titre->titre }}</strong></td>
+                                                <td>{{ isset($row->option) ? $row->option->titre : '' }}</td>
+                                                <td>{{ $row->prix   ? $row->prix.' CHF' : '' }}</td>
+                                                <td>{{ $row->places ? $row->places : '' }}</td>
+                                                <td>{!! ($row->remarque != '' ? $row->remarque : '-') !!}</td>
+                                                <td class="text-right">
+                                                    {!! Form::open(array('route' => array('admin.prestation.destroy', $row->id), 'method' => 'delete')) !!}
+                                                    <button data-what="supprimer" data-action="Section: {{ $row->titre->titre }}" class="btn btn-danger btn-xs deleteAction">x</button>
+                                                    {!! Form::close() !!}
+                                                </td>
                                             </tr>
                                         @endforeach
                                     @endif
                                 </tbody>
                             </table>
 
-                            <div id="addPrestation_{{ $table->id }}" class="collapse">
-                                <form action="{{ url('admin/prestation') }}" method="post">
-                                    <div class="form-group">
-                                        <label for="message" class="col-sm-3 control-label">Site web</label>
-                                        <div class="col-sm-9">
-                                            {!! Form::text('option', 'sdvs' , array('class' => 'form-control') ) !!}
+                            <div id="addPrestation_{{ $table->id }}" class="collapse addPrestation">
+                                <h4>Nouvelle section</h4>
+                                <form action="{{ url('admin/prestation') }}" method="post"> {!! csrf_field() !!}
+                                    <div class="row">
+
+                                        <div class="col-sm-4">
+                                            <label class="control-label"><strong>Titre</strong></label>
+                                            <select name="titre_id" class="form-control">
+                                                @if(isset($titres[$table->id]))
+                                                    @foreach($titres[$table->id] as  $titre)
+                                                        <option value="{{ $titre->id}}">{{ $titre->titre }}</option>
+                                                    @endforeach
+                                                @endif
+                                            </select>
+                                        </div>
+
+                                        @if(in_array('option_id',$tables_options[$table->id]))
+                                            <div class="col-sm-3">
+                                                <label class="control-label"><strong>Disponible</strong></label>
+                                                <select name="option_id" class="form-control">
+                                                    <option value="">Choix</option>
+                                                    @if(!empty($options))
+                                                        @foreach($options as $option_id => $option)
+                                                            <option value="{{ $option_id }}">{{ $option }}</option>
+                                                        @endforeach
+                                                    @endif
+                                                </select>
+                                            </div>
+                                        @endif
+                                        @if(in_array('places',$tables_options[$table->id]))
+                                            <div class="col-sm-2">
+                                                <label class="control-label"><strong>Places</strong></label>
+                                                <input type="text" name="places" value="" class="form-control">
+                                            </div>
+                                        @endif
+
+                                        @if(in_array('prix',$tables_options[$table->id]))
+                                            <div class="col-sm-3">
+                                                <label class="control-label"><strong>Prix</strong></label>
+                                                <div class="input-group">
+                                                    <input type="text" name="prix" value="" class="form-control">
+                                                    <span class="input-group-addon">CHF</span>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                    @if(in_array('remarque',$tables_options[$table->id]))
+                                        <div class="row margeUp">
+                                            <div class="col-sm-12">
+                                                <label class="control-label"><strong>Remarque</strong></label>
+                                                <textarea name="remarque" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    @endif
+
+                                    <div class="row margeUp">
+                                        <div class="col-sm-12 text-right">
+                                            <button class="btn btn-info btn-sm" type="submit">OK</button>
                                         </div>
                                     </div>
+
+                                    <input type="hidden" name="table_id" value="{{ $table->id }}">
+                                    <input type="hidden" name="prestataire_id" value="{{ $prestataire->id }}">
                                 </form>
                             </div>
 
