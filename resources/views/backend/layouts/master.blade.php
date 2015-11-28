@@ -26,8 +26,9 @@
     <link rel="stylesheet" href="<?php echo asset('backend/css/styles.ie8.css');?>">
     <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
-
     <![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 
     <base href="/">
 
@@ -94,13 +95,12 @@
 
 </div> <!-- page-container -->
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 <script src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
 <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
 <script src="<?php echo asset('backend/js/validation/messages_fr.js');?>"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
 <script type="text/javascript" src="<?php echo asset('backend/js/vendor/redactor/redactor.js');?>"></script>
 <script type="text/javascript" src="<?php echo asset('backend/js/vendor/chosen/chosen.jquery.js');?>"></script>
 <script type="text/javascript" src="<?php echo asset('backend/js/enquire.js');?>"></script>

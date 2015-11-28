@@ -13,9 +13,9 @@ class TronconEloquent implements TronconInterface
         $this->troncon = $troncon;
     }
 
-    public function getAll(){
+    public function getAll($type){
 
-        return $this->troncon->all();
+        return $this->troncon->type($type)->get();
     }
 
     public function find($id){
@@ -26,8 +26,10 @@ class TronconEloquent implements TronconInterface
     public function create(array $data){
 
         $troncon = $this->troncon->create(array(
-            'kml' => $data['kml'],
-            'name'=> $data['name']
+            'kml'   => $data['kml'],
+            'name'  => $data['name'],
+            'color' => (isset($data['color']) ? $data['color'] : null),
+            'type'  => $data['type'],
         ));
 
         if( ! $troncon )

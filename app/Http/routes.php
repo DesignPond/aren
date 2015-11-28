@@ -43,6 +43,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function()
     Route::resource('carte', 'Backend\CarteController');
     Route::resource('prestataire', 'Backend\PrestataireController');
     Route::resource('prestation', 'Backend\PrestationController');
+
     //Route::post('hierarchy', ['uses' => 'Backend\PageController@hierarchy']);
    // Route::get('build', ['uses' => 'Backend\PageController@build']);
     Route::resource('config', 'Backend\ConfigController');
