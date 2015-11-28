@@ -41,15 +41,12 @@
             <nav class="last">
                 <ul id="menu">
                     <?php $helper = new App\Helper\Helper(); ?>
+                    <?php $pages  = $hierarchy->reject(function ($item) { return $item->hidden; }); ?>
 
-                    @foreach($hierarchy as $page)
+                    @foreach($pages as $page)
                         {!! $helper->renderMenu($page) !!}
                     @endforeach
 
-                    <li><a class="" href="{{ url('prestation') }}">prestataires</a></li>
-                    <li><a class="" href="{{ url('site/cart') }}">Carte</a></li>
-                    <li><a class="" href="{{ url('site/liens') }}">Infos utiles</a></li>
-                    <li class="noMarge"><a class="" href="{{ url('site/contact') }}">Contact</a></li>
                 </ul>
             </nav>
         </header>

@@ -127,6 +127,7 @@
 <script type='text/javascript' src="<?php echo asset('backend/js/nestable.js');?>"></script>
 <script type='text/javascript' src="<?php echo asset('backend/js/Sortable.min.js');?>"></script>
 <script type="text/javascript" src="<?php echo asset('backend/js/admin.js');?>"></script>
+<script type="text/javascript" src="<?php echo asset('backend/js/sorting.js');?>"></script>
 
 </body>
 </html>

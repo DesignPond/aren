@@ -18,6 +18,8 @@ class PageController extends Controller
     {
         $this->page   = $page;
         $this->worker = $worker;
+
+        view()->share('templates',config('template'));
     }
 
     /**
@@ -96,6 +98,16 @@ class PageController extends Controller
         $this->page->delete($id);
 
         return redirect('admin/page')->with(array('status' => 'success' , 'message' => 'La page a été supprimé' ));
+    }
+
+
+    public function sorting(Request $request)
+    {
+        $data = $request->all();
+
+        $pages = $this->page->updateSorting($data['page_rang']);
+
+        print_r($data);
     }
 
     public function hierarchy(Request $request)

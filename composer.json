@@ -12,7 +12,8 @@
         "laravelcollective/html": "~5.0",
         "guzzlehttp/guzzle": "~5.3|~6.0",
         "baum/baum": "~1.1",
-        "torann/registry": "0.2.*@dev"
+        "torann/registry": "0.2.*@dev",
+        "orchestra/parser": "~3.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

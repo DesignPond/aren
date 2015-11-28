@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2c6091a4fceb73de5847ef1077267ab4",
-    "content-hash": "a5591ae894fccbee3896cbe13aa599a1",
+    "hash": "bee78cfc4223f27cc75af3e7994a75e0",
+    "content-hash": "ae5c039653706786826397ff4e06c059",
     "packages": [
         {
             "name": "baum/baum",
@@ -491,16 +491,16 @@
         },
         {
             "name": "intervention/image",
-            "version": "2.3.2",
+            "version": "2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "1124ff3c6298f0dcf9edf9156623904d7a5c3428"
+                "reference": "40cb418c49f32c5140ef798ab8c273ae9aae9e07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/1124ff3c6298f0dcf9edf9156623904d7a5c3428",
-                "reference": "1124ff3c6298f0dcf9edf9156623904d7a5c3428",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/40cb418c49f32c5140ef798ab8c273ae9aae9e07",
+                "reference": "40cb418c49f32c5140ef798ab8c273ae9aae9e07",
                 "shasum": ""
             },
             "require": {
@@ -549,7 +549,7 @@
                 "thumbnail",
                 "watermark"
             ],
-            "time": "2015-08-16 15:31:59"
+            "time": "2015-11-27 18:22:21"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -1171,6 +1171,61 @@
                 "php"
             ],
             "time": "2015-09-19 14:15:08"
+        },
+        {
+            "name": "orchestra/parser",
+            "version": "v3.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/orchestral/parser.git",
+                "reference": "267b1494f08f620caf0814feaffa0cf2850808bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/orchestral/parser/zipball/267b1494f08f620caf0814feaffa0cf2850808bc",
+                "reference": "267b1494f08f620caf0814feaffa0cf2850808bc",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "~5.1.0",
+                "illuminate/support": "~5.1.0",
+                "paragonie/random_compat": "~1.1",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Orchestra\\Parser\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mior Muhammad Zaki",
+                    "email": "crynobone@gmail.com",
+                    "homepage": "https://github.com/crynobone"
+                }
+            ],
+            "description": "XML Document Parser for Laravel and PHP",
+            "keywords": [
+                "laravel",
+                "orchestra-platform",
+                "orchestral",
+                "parser",
+                "xml"
+            ],
+            "time": "2015-11-14 11:16:32"
         },
         {
             "name": "paragonie/random_compat",

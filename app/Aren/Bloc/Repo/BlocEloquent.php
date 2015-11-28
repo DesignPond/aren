@@ -27,7 +27,7 @@ class BlocEloquent implements BlocInterface
 
         $bloc = $this->bloc->create(array(
             'titre'   => $data['titre'],
-            'content' => $data['content'],
+            'contenu' => $data['contenu'],
             'type'    => $data['type']
         ));
 

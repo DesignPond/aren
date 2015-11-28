@@ -15,6 +15,14 @@
         <li class="<?php echo (Request::is('bloc') || Request::is('bloc/*') ? 'active' : '' ); ?>"><a href="{{ url('admin/bloc') }}">
                 <i class="fa fa-star"></i> <span>Blocs accueil</span></a>
         </li>
+        <li class="<?php echo (Request::is('news') || Request::is('news/*') ? 'active' : '' ); ?>"><a href="{{ url('admin/news') }}">
+                <i class="fa fa-paperclip"></i> <span>News</span></a>
+        </li>
+        <li class="divider"></li>
+        <li class="<?php echo (Request::is('prestataire') || Request::is('prestataire/*') ? 'active' : '' ); ?>"><a href="{{ url('admin/prestataire') }}">
+                <i class="fa fa-users"></i> <span>Prestataires</span></a>
+        </li>
+        <li class="divider"></li>
         <li class="<?php echo (Request::is('admin/config') ? 'active' : ''); ?>">
             <a href="{{ url('admin/config') }}"><i class="fa fa-cog"></i><span>Configurations</span></a>
         </li>

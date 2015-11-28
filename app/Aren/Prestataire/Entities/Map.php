@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Map extends Model
 {
-    protected $table    = 'maps';
+    protected $table    = 'prestataire_maps';
 	protected $fillable = ['prestataire_id','latitude','longitude','lien'];
 
     public $timestamps  = false;

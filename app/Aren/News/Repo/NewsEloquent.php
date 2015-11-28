@@ -26,9 +26,9 @@ class NewsEloquent implements NewsInterface
     public function create(array $data){
 
         $news = $this->news->create(array(
-            'titre' => $data['titre'],
-            'text'  => $data['text'],
-            'date'  => $data['date']
+            'titre'     => $data['titre'],
+            'texte'     => $data['texte'],
+            'dateNews'  => $data['dateNews']
         ));
 
         if( ! $news )

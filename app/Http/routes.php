@@ -36,10 +36,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function()
 {
     Route::get('/', [ 'middleware' => 'auth', 'uses' => 'Backend\AdminController@index']);
 
+    Route::post('page/sorting', ['uses' => 'Backend\PageController@sorting']);
     Route::resource('page', 'Backend\PageController');
     Route::resource('bloc', 'Backend\BlocController');
-    Route::post('hierarchy', ['uses' => 'Backend\PageController@hierarchy']);
-    Route::get('build', ['uses' => 'Backend\PageController@build']);
+    Route::resource('news', 'Backend\NewsController');
+    Route::resource('prestataire', 'Backend\PrestataireController');
+    //Route::post('hierarchy', ['uses' => 'Backend\PageController@hierarchy']);
+   // Route::get('build', ['uses' => 'Backend\PageController@build']);
     Route::resource('config', 'Backend\ConfigController');
 
 });

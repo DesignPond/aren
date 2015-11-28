@@ -75,16 +75,16 @@ class HomeController extends Controller
      */
     public function sendMessage(SendMessage $request){
 
-        $data = array('email' => $request->email, 'name' => $request->name, 'remarque' => $request->remarque );
+        $data = array('email' => $request->email, 'nom' => $request->nom, 'remarque' => $request->remarque , 'telephone' => $request->telephone, 'societe' => $request->societe);
 
         Mail::send('emails.contact', $data, function ($message) use ($data) {
 
-            $message->from($data['email'], $data['name']);
+            $message->from($data['email'], $data['nom']);
 
             $message->to('info@aren.ch')->subject('Message depuis le site www.aren.ch');
         });
 
-        return redirect('/')->with(array('status' => 'success', 'message' => '<strong>Merci pour votre message</strong><br/>Nous vous contacterons dès que possible.'));
+        return redirect()->back()->with(array('status' => 'success', 'message' => '<strong>Merci pour votre message</strong><br/>Nous vous contacterons dès que possible.'));
 
     }
 }

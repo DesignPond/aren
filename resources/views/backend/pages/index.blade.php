@@ -18,7 +18,7 @@
                 <div class="panel-body">
                     <div id="nestable" class="dd nestable_list" style="height: auto;">
 
-                        <ol class="dd-list">
+                        <ol class="dd-list" id="sortable">
                             @foreach($root as $page)
                                 <?php echo $helper->renderNode($page); ?>
                             @endforeach

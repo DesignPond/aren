@@ -41,22 +41,26 @@
 
                             <div class="radio">
                                 <label>
-                                    <input class="required" type="radio" name="type" value="pin.png" checked><img src="{{ asset('frontend/images/icons/home.png') }}" alt="icon" />
+                                    <input required type="radio" name="type" value="pin.png" checked>
+                                    <img src="{{ asset('frontend/images/icons/home.png') }}" alt="icon" />
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input class="required" type="radio" name="type" value="home.png"><img src="{{ asset('frontend/images/icons/home.png') }}" alt="icon" />
+                                    <input required type="radio" name="type" value="home.png">
+                                    <img src="{{ asset('frontend/images/icons/home.png') }}" alt="icon" />
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input class="required" type="radio" name="type" value="star.png" disabled><img src="{{ asset('frontend/images/icons/star.png') }}" alt="icon" />
+                                    <input required type="radio" name="type" value="star.png">
+                                    <img src="{{ asset('frontend/images/icons/star.png') }}" alt="icon" />
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input class="required" type="radio" name="type" value="talk.png" disabled><img src="{{ asset('frontend/images/icons/talk.png') }}" alt="icon" />
+                                    <input required type="radio" name="type" value="talk.png">
+                                    <img src="{{ asset('frontend/images/icons/talk.png') }}" alt="icon" />
                                 </label>
                             </div>
                         </div>

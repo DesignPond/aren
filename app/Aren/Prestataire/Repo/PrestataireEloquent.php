@@ -41,7 +41,7 @@ class PrestataireEloquent implements PrestataireInterface
             'email'          => (isset($data['email']) ? $data['email'] : ''),
             'web'            => (isset($data['web']) ? $data['web'] : ''),
             'noParticipant'  => $data['noParticipant'],
-            'actif'          => (isset($data['actif']) ? $data['actif'] : 0),
+            'actif'          => 0,
             'rang'           => (isset($data['rang']) ? $data['rang'] : 0),
         ));
 

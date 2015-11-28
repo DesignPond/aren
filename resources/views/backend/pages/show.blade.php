@@ -27,22 +27,6 @@
                 <div class="panel-body event-info">
 
                     <div class="form-group">
-                        <label for="type" class="col-sm-3 control-label">Hiérarchie</label>
-                        <div class="col-sm-4">
-
-                            <select class="form-control" name="parent_id">
-                                <option {{ $page->parent_id == 0 ? 'checked' : '' }} value="0">Base</option>
-                                @if(!empty($pages))
-                                    @foreach($pages as $parent_id => $title)
-                                        <option {{ $page->parent_id  == $parent_id ? 'selected' : '' }}  value="{{ $parent_id }}">{{ $title }}</option>
-                                    @endforeach
-                                @endif
-                            </select>
-
-                        </div>
-                    </div>
-
-                    <div class="form-group">
                         <label for="message" class="col-sm-3 control-label">Titre</label>
                         <div class="col-sm-4">
                             {!! Form::text('title', $page->title , array('class' => 'form-control') ) !!}
@@ -50,17 +34,25 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="message" class="col-sm-3 control-label">Ordre</label>
-                        <div class="col-sm-1">
-                            {!! Form::text('rang', $page->rang , array('class' => 'form-control') ) !!}
+                        <label for="type" class="col-sm-3 control-label">Type de page</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="template">
+                                @if(!empty($templates))
+                                    @foreach($templates as $template => $nom)
+                                        <option {{ $page->template  == $template ? 'selected' : '' }}  value="{{ $template }}">{{ $nom }}</option>
+                                    @endforeach
+                                @endif
+                            </select>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Insérer un filligrane</label>
-                        <div class="col-sm-5">
-                            <label class="radio-inline"><input type="radio" value="1" {{ $page->filligrane ? 'checked' : '' }} name="filligrane" checked=""> Oui</label>
-                            <label class="radio-inline"><input type="radio" value="0" {{ !$page->filligrane ? 'checked' : '' }} name="filligrane"> Non</label>
+                        <label for="message" class="col-sm-3 control-label">Ordre dans le menu</label>
+                        <div class="col-sm-2">
+                            {!! Form::text('rang', $page->rang , array('class' => 'form-control') ) !!}
+                        </div>
+                        <div class="col-sm-2">
+                            <p class="help-block">Ordre croissant</p>
                         </div>
                     </div>
 
@@ -72,14 +64,28 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="content" class="col-sm-3 control-label">Contenu</label>
-                        <div class="col-sm-7">
-                            {!! Form::textarea('content', $page->content , array('class' => 'form-control  redactor', 'cols' => '50' , 'rows' => '4' )) !!}
+                    @if($page->template == 'page')
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Insérer un filligrane</label>
+                            <div class="col-sm-5">
+                                <label class="radio-inline"><input type="radio" value="1" {{ $page->filligrane ? 'checked' : '' }} name="filligrane" checked=""> Oui</label>
+                                <label class="radio-inline"><input type="radio" value="0" {{ !$page->filligrane ? 'checked' : '' }} name="filligrane"> Non</label>
+                            </div>
                         </div>
-                    </div>
+
+                        <div class="form-group">
+                            <label for="content" class="col-sm-3 control-label">Contenu</label>
+                            <div class="col-sm-7">
+                                {!! Form::textarea('content', $page->content , array('class' => 'form-control  redactor', 'cols' => '50' , 'rows' => '4' )) !!}
+                            </div>
+                        </div>
+
+                    @endif
+
                 </div>
                 <div class="panel-footer mini-footer ">
+                    {!! Form::hidden('parent_id', 0) !!}
                     {!! Form::hidden('id', $page->id ) !!}
                     <div class="col-sm-3"></div>
                     <div class="col-sm-6">

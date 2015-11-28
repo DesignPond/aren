@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class SendMessage extends Request
+class CreateNews extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,12 @@ class SendMessage extends Request
      */
     public function authorize()
     {
-        return true;
+        if (\Auth::check())
+        {
+            return true;
+        }
+
+        return false;
     }
 
     /**
@@ -24,10 +29,10 @@ class SendMessage extends Request
     public function rules()
     {
         return [
-            'nom'        => 'required',
-            'email'      => 'required|email',
-            'remarque'   => 'required',
-            'telephone'  => 'required'
+            'titre'      => 'required',
+            'texte'      => 'required',
+            'dateNews'   => 'required|date'
         ];
     }
 }
+

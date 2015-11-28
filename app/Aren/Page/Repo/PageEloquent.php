@@ -58,7 +58,7 @@ class PageEloquent implements PageInterface{
             'rang'        => (isset($data['rang']) ? $data['rang'] : 0),
             'main'        => (isset($data['main']) ? $data['main'] : null),
             'filligrane'  => (isset($data['filligrane']) && !empty($data['filligrane']) ? 1 : null),
-            'hidden'      => (isset($data['hidden']) && !empty($data['hidden']) ? 1 : null),
+            'hidden'      => $data['hidden'] ? 1 : null,
             'created_at'  => date('Y-m-d G:i:s'),
             'updated_at'  => date('Y-m-d G:i:s')
         ));
@@ -89,7 +89,9 @@ class PageEloquent implements PageInterface{
 
         $page->fill($data);
 
+        $page->hidden     = $data['hidden'] ? 1 : null;
         $page->updated_at = date('Y-m-d G:i:s');
+
         $page->save();
 
         if($data['parent_id'] > 0)
@@ -99,6 +101,27 @@ class PageEloquent implements PageInterface{
         }
 
         return $page;
+    }
+
+    public function updateSorting(array $data)
+    {
+        if(!empty($data))
+        {
+            foreach($data as $rang => $id)
+            {
+                $page = $this->find($id);
+
+                if( ! $page )
+                {
+                    return false;
+                }
+
+                $page->rang = $rang;
+                $page->save();
+            }
+
+            return true;
+        }
     }
 
     public function delete($id){
