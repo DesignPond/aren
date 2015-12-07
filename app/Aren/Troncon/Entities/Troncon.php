@@ -11,13 +11,18 @@ class Troncon extends Model
 
     public $timestamps  = false;
 
+    public function getColorHexAttribute()
+    {
+        $worker = \App::make('App\Aren\Troncon\Worker\TronconWorkerInterface');
+
+        return $worker->colorToRgb($this->color);
+    }
+
     /*
      *  scopes
      * */
-
     public function scopeType($query, $type)
     {
         if ($type) $query->where('type', '=' ,$type);
     }
-
 }

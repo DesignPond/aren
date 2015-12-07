@@ -3,7 +3,7 @@
 
 <div class="row"><!-- row -->
     <div class="col-md-12"><!-- col -->
-        <p><a class="btn btn-default" href="{{ url('admin/bloc') }}"><i class="fa fa-reply"></i> &nbsp;Retour à la liste</a></p>
+        <p><a class="btn btn-default" href="{{ url('admin/troncon') }}"><i class="fa fa-reply"></i> &nbsp;Retour à la liste</a></p>
     </div>
 </div>
 <!-- start row -->
@@ -13,11 +13,11 @@
         <div class="panel panel-midnightblue">
 
             <!-- form start -->
-            <form action="{{ url('admin/bloc') }}" enctype="multipart/form-data" method="POST" class="validate-form form-horizontal" data-validate="parsley">
+            <form action="{{ url('admin/troncon') }}" enctype="multipart/form-data" method="POST" class="validate-form form-horizontal" data-validate="parsley">
                 {!! csrf_field() !!}
 
                 <div class="panel-heading">
-                    <h4>Ajouter un bloc</h4>
+                    <h4>Ajouter un troncon</h4>
                 </div>
                 <div class="panel-body event-info">
 
@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="bloc" class="col-sm-3 control-label">Bloc</label>
+                        <label for="troncon" class="col-sm-3 control-label">Bloc</label>
                         <div class="col-sm-7">
                             {!! Form::textarea('contenu', null, array('class' => 'form-control  redactor required', 'cols' => '50' , 'rows' => '4' )) !!}
                         </div>

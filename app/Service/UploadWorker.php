@@ -17,8 +17,8 @@ class UploadWorker implements UploadInterface {
 
             $image_name =  basename($name,'.'.$ext);
 
-            $string  = str_random(40);
-            $newname = $string.'.'.$ext;
+            $string  = str_random(25);
+            $newname = $string.'_trace.'.$ext;
 
             // Get the name first because after moving, the file doesn't exist anymore
             $new  = $file->move($destination,$newname);
@@ -28,7 +28,7 @@ class UploadWorker implements UploadInterface {
             $path = $new->getRealPath();
 
             //resize
-            $this->resize( $destination.'/'.$newname, $path , 1100, null , true );
+            //$this->resize( $destination.'/'.$newname, $path , 1100, null , true );
 
             $newfile = array( 'name' => $newname ,'ext' => $ext ,'size' => $size ,'mime' => $mime ,'path' => $path );
 

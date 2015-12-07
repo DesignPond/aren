@@ -22,8 +22,8 @@
         <li class="<?php echo (Request::is('prestataire') || Request::is('prestataire/*') ? 'active' : '' ); ?>"><a href="{{ url('admin/prestataire') }}">
                 <i class="fa fa-users"></i> <span>Prestataires</span></a>
         </li>
-        <li class="<?php echo (Request::is('carte') || Request::is('carte/*') ? 'active' : '' ); ?>"><a href="{{ url('admin/carte') }}">
-                <i class="fa fa-map-marker"></i> <span>Carte</span></a>
+        <li class="<?php echo (Request::is('troncon') || Request::is('troncon/*') ? 'active' : '' ); ?>"><a href="{{ url('admin/troncon') }}">
+                <i class="fa fa-map-marker"></i> <span>Tronçons</span></a>
         </li>
         <li class="divider"></li>
         <li class="<?php echo (Request::is('admin/config') ? 'active' : ''); ?>">

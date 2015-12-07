@@ -148,7 +148,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Baum\Providers\BaumServiceProvider::class,
         Torann\Registry\RegistryServiceProvider::class,
-        Orchestra\Parser\XmlServiceProvider::class,
+        Nathanmac\Utilities\Parser\ParserServiceProvider::class,
     ],
 
     /*
@@ -203,7 +203,8 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Image'     => Intervention\Image\Facades\Image::class,
         'Registry'  => Torann\Registry\Facades\Registry::class,
-        'XmlParser' => Orchestra\Parser\Xml\Facade::class,
+        'Parser'    => Nathanmac\Utilities\Parser\Facades\Parser::class,
+
     ],
 
 ];

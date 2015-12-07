@@ -41,6 +41,7 @@ class AppServiceProvider extends ServiceProvider
         $this->registerRemarqueService();
 
         $this->registerTronconService();
+        $this->registerTronconWorkerService();
 
     }
 
@@ -173,6 +174,19 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('App\Aren\Troncon\Repo\TronconInterface', function()
         {
             return new \App\Aren\Troncon\Repo\TronconEloquent(new \App\Aren\Troncon\Entities\Troncon);
+        });
+    }
+
+    /**
+     * Troncon worker
+     */
+    protected function registerTronconWorkerService(){
+
+        $this->app->singleton('App\Aren\Troncon\Worker\TronconWorkerInterface', function()
+        {
+            return new \App\Aren\Troncon\Worker\TronconWorker(
+                \App::make('App\Aren\Troncon\Repo\TronconInterface')
+            );
         });
     }
 
