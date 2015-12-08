@@ -41,7 +41,7 @@
                                     var map = new google.maps.Map(canvas, mapOptions);
 
                                     var ctaLayer = new google.maps.KmlLayer({
-                                        url: 'http://aren.ch/kml/<?php echo $troncon->kml; ?>'
+                                        url: 'http://aren.ch/kml/<?php echo $troncon->kml; ?>?rand='+(new Date()).valueOf()
                                     });
 
                                     ctaLayer.setMap(map);

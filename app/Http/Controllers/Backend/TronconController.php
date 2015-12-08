@@ -96,10 +96,16 @@ class TronconController extends Controller
         {
             $kml = $this->upload->upload($kml, 'kml');
             $data['kml'] = $kml['name'];
-            $this->worker->convert('kml/'.$data['kml'], $data['color']);
+        }
+        else
+        {
+            $troncon     = $this->troncon->find($id);
+            $data['kml'] = $troncon->kml;
         }
 
-        $troncon = $this->troncon->update($data);
+        $this->worker->convert('kml/'.$data['kml'], $data['color']);
+
+        $this->troncon->update($data);
 
         return redirect()->back()->with(array('status' => 'success' , 'message' => 'Le tronçon a été mis à jour' ));
     }

@@ -6,10 +6,12 @@ use App\Aren\Troncon\Repo\TronconInterface;
 class TronconWorker implements TronconWorkerInterface{
 
     protected $troncon;
+    protected $arraytoxml;
 
     public function __construct(TronconInterface $troncon)
     {
-        $this->troncon = $troncon;
+        $this->troncon    = $troncon;
+        $this->arraytoxml = new \App\Helper\Simplexml();
     }
 
     /**
@@ -74,20 +76,18 @@ class TronconWorker implements TronconWorkerInterface{
 
     public function convert($kml,$color)
     {
-        $contents = \File::get($kml);
-        $parsed   = \Parser::xml($contents);
+        $xmlData    = simplexml_load_file($kml);
+        $placemarks = $xmlData->Document->Folder;
 
-        $placemarks = $parsed['Document']['Folder']['Placemark'];
-
-        foreach($placemarks as &$placemark)
+        foreach($placemarks->Placemark as $placemark)
         {
-            $placemark['Style']['LineStyle']['color'] = $color;
-            $placemark['Style']['LineStyle']['width'] = '1.41732';
+            $placemark->Style->LineStyle->color = $this->colorToKml($color);
+            $placemark->Style->LineStyle->width = '1.41732';
         }
 
-        $parsed['Document']['Folder']['Placemark'] = $placemarks;
+        $xmlData->Document->Folder->Placemark;
 
-        \File::put($kml, $parsed);
+        \File::put($kml, $xmlData->asXML());
     }
 
     public function write($kml,$config)
