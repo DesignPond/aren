@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="message" class="col-sm-3 control-label">Couleur du tronçon</label>
+                        <label for="message" class="col-sm-3 control-label">Couleur si tronçon</label>
                         <div class="col-sm-3">
                             {!! Form::text('color',  $troncon->color_hex , array('required' => 'required','class' => 'form-control colorpicker') ) !!}
                         </div>

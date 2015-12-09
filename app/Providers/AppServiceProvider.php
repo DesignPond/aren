@@ -185,7 +185,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('App\Aren\Troncon\Worker\TronconWorkerInterface', function()
         {
             return new \App\Aren\Troncon\Worker\TronconWorker(
-                \App::make('App\Aren\Troncon\Repo\TronconInterface')
+                \App::make('App\Aren\Troncon\Repo\TronconInterface'),
+                \App::make('App\Service\UploadWorker')
             );
         });
     }

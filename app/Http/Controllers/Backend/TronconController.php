@@ -42,7 +42,7 @@ class TronconController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.troncons.create');
     }
 
     /**
@@ -53,7 +53,20 @@ class TronconController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->except('kml');
+        $kml  = $request->file('kml',null);
+
+        if($kml)
+        {
+            $kml = $this->upload->upload($kml, 'kml');
+            $data['kml'] = $kml['name'];
+        }
+
+        $this->worker->prepare('kml/'.$data['kml'], $data['type'] ,$data['color']);
+
+        $this->troncon->create($data);
+
+        return redirect()->back()->with(['status' => 'success' , 'message' => 'Le tronçon a été crée']);
     }
 
     /**
@@ -103,7 +116,8 @@ class TronconController extends Controller
             $data['kml'] = $troncon->kml;
         }
 
-        $this->worker->convert('kml/'.$data['kml'], $data['color']);
+        //$this->worker->convert('kml/'.$data['kml'], $data['color']);
+        $this->worker->prepare('kml/'.$data['kml'], $data['type'] ,$data['color']);
 
         $this->troncon->update($data);
 

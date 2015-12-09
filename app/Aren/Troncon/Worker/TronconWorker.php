@@ -2,15 +2,18 @@
 namespace App\Aren\Troncon\Worker;
 
 use App\Aren\Troncon\Repo\TronconInterface;
+use App\Service\UploadWorker;
 
 class TronconWorker implements TronconWorkerInterface{
 
     protected $troncon;
+    protected $upload;
     protected $arraytoxml;
 
-    public function __construct(TronconInterface $troncon)
+    public function __construct(TronconInterface $troncon, UploadWorker $upload)
     {
         $this->troncon    = $troncon;
+        $this->upload     = $upload;
         $this->arraytoxml = new \App\Helper\Simplexml();
     }
 
@@ -49,29 +52,48 @@ class TronconWorker implements TronconWorkerInterface{
         return $new;
     }
 
+    public function upload($kml,$color)
+    {
+
+    }
+
     public function read($kml)
     {
 
-        $contents = \File::get($kml);
-        $parsed   = \Parser::xml($contents);
+    }
 
-        $document   = $parsed['Document'];
+    public function prepare($kml, $type, $color = null)
+    {
+
+        if($type == 'troncon')
+        {
+            $this->convert('kml/'.$kml, $color);
+        }
+
+        if($type == 'poi')
+        {
+            $xmlData    = simplexml_load_file($kml);
+            $placemarks = $xmlData->Document->Folder;
+
+            foreach($placemarks->Placemark as $placemark)
+            {
+                $icons[] = (array) $placemark->ExtendedData->SchemaData[0]->SimpleData;
+                //$placemark->Style->LineStyle->color = $this->colorToKml($color);
+                //$placemark->Style->LineStyle->width = '1.41732';
+            }
+
+            $icons = json_decode( json_encode($icons) , 1);
+
+            echo '<pre>';
+            print_r($icons);
+            echo '</pre>';exit;
+        }
 
 
 
-/*        $style      = $document['Style'];
-        $folder     = $document['Folder'];
-        $placemarks = $folder['Placemark'];
+        $xmlData->Document->Folder->Placemark;
 
-        $placemarks = collect($placemarks);
-        $styles     = collect($style);
-
-        $icons = $styles->lists('IconStyle.Icon','@attributes.id');*/
-
-        echo '<pre>';
-        print_r($parsed);
-        echo '</pre>';exit;
-        
+       //  \File::put($kml, $xmlData->asXML());
     }
 
     public function convert($kml,$color)

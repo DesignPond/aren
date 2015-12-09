@@ -24,45 +24,32 @@
                     <div class="form-group">
                         <label for="message" class="col-sm-3 control-label">Titre</label>
                         <div class="col-sm-4">
-                            {!! Form::text('titre', null , array('class' => 'form-control required') ) !!}
+                            {!! Form::text('name', null , array('class' => 'form-control required') ) !!}
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="troncon" class="col-sm-3 control-label">Bloc</label>
-                        <div class="col-sm-7">
-                            {!! Form::textarea('contenu', null, array('class' => 'form-control  redactor required', 'cols' => '50' , 'rows' => '4' )) !!}
+                        <label for="message" class="col-sm-3 control-label">Couleur si tronçon</label>
+                        <div class="col-sm-3">
+                            {!! Form::text('color', null , array('required' => 'required','class' => 'form-control colorpicker') ) !!}
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-3 control-label">Type</label>
-                        <div class="col-sm-3 col-xs-6">
+                        <label for="message" class="col-sm-3 control-label">Fichier KML</label>
+                        <div class="col-sm-6">
+                            <input type="file" name="kml">
+                        </div>
+                    </div>
 
-                            <div class="radio">
-                                <label>
-                                    <input required type="radio" name="type" value="pin.png" checked>
-                                    <img src="{{ asset('frontend/images/icons/home.png') }}" alt="icon" />
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input required type="radio" name="type" value="home.png">
-                                    <img src="{{ asset('frontend/images/icons/home.png') }}" alt="icon" />
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input required type="radio" name="type" value="star.png">
-                                    <img src="{{ asset('frontend/images/icons/star.png') }}" alt="icon" />
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input required type="radio" name="type" value="talk.png">
-                                    <img src="{{ asset('frontend/images/icons/talk.png') }}" alt="icon" />
-                                </label>
-                            </div>
+                    <div class="form-group">
+                        <label for="message" class="col-sm-3 control-label">Type de tracé</label>
+                        <div class="col-sm-3">
+                            <select class="form-control" required name="type">
+                                <option value="">Choix</option>
+                                <option value="poi">Points de vue</option>
+                                <option value="troncon">Tronçon</option>
+                            </select>
                         </div>
                     </div>
 
