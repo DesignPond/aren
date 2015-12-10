@@ -25,8 +25,13 @@ class TronconEloquent implements TronconInterface
 
     public function create(array $data)
     {
-        $worker = \App::make('App\Aren\Troncon\Worker\TronconWorkerInterface');
-        $color  = $worker->colorToKml($data['color']);
+        $color = null;
+
+        if(isset($data['color']) && !empty($data['color']))
+        {
+            $worker = \App::make('App\Aren\Troncon\Worker\TronconWorkerInterface');
+            $color = $worker->colorToKml($data['color']);
+        }
 
         $troncon = $this->troncon->create(array(
             'kml'   => $data['kml'],
@@ -55,7 +60,7 @@ class TronconEloquent implements TronconInterface
 
         $troncon->fill($data);
 
-        if(isset($data['color']))
+        if(isset($data['color']) && !empty($data['color']))
         {
             $worker = \App::make('App\Aren\Troncon\Worker\TronconWorkerInterface');
             $troncon->color = $worker->colorToKml($data['color']);

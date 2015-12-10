@@ -2,17 +2,20 @@
 namespace App\Aren\Troncon\Worker;
 
 use App\Aren\Troncon\Repo\TronconInterface;
+use App\Aren\Icon\Repo\IconInterface;
 use App\Service\UploadWorker;
 
 class TronconWorker implements TronconWorkerInterface{
 
     protected $troncon;
+    protected $icon;
     protected $upload;
     protected $arraytoxml;
 
-    public function __construct(TronconInterface $troncon, UploadWorker $upload)
+    public function __construct(TronconInterface $troncon, UploadWorker $upload, IconInterface $icon)
     {
         $this->troncon    = $troncon;
+        $this->icon       = $icon;
         $this->upload     = $upload;
         $this->arraytoxml = new \App\Helper\Simplexml();
     }
@@ -64,7 +67,6 @@ class TronconWorker implements TronconWorkerInterface{
 
     public function prepare($kml, $type, $color = null)
     {
-
         if($type == 'troncon')
         {
             $this->convert('kml/'.$kml, $color);
@@ -72,28 +74,51 @@ class TronconWorker implements TronconWorkerInterface{
 
         if($type == 'poi')
         {
+
             $xmlData    = simplexml_load_file($kml);
             $placemarks = $xmlData->Document->Folder;
 
-            foreach($placemarks->Placemark as $placemark)
+            $icons = $this->icon->getAll();
+            $icons_title = $icons->lists('style','titre')->all();
+
+            foreach($icons as $index => $icon)
             {
-                $icons[] = (array) $placemark->ExtendedData->SchemaData[0]->SimpleData;
-                //$placemark->Style->LineStyle->color = $this->colorToKml($color);
-                //$placemark->Style->LineStyle->width = '1.41732';
+                $style = $xmlData->Document->addChild('Style');
+                $style->addAttribute("id", $icon->style);
+                $IconStyle = $style->addChild('IconStyle');
+                $Icon = $IconStyle->addChild('Icon');
+                $Icon->addChild('href',asset('frontend/icons/'.$icon->image));
             }
 
-            $icons = json_decode( json_encode($icons) , 1);
+            foreach($placemarks->Placemark as $placemark)
+            {
+                $description = (string) $placemark->ExtendedData->SchemaData->SimpleData;
+                $description = (isset($icons_title[$description]) ? $icons_title[$description] : '');
+                $placemark->addChild('styleUrl','#'.$description);
+            }
 
-            echo '<pre>';
-            print_r($icons);
-            echo '</pre>';exit;
+            \File::put($kml, $xmlData->asXML());
+        }
+    }
+
+    public function prepareIcons()
+    {
+        $icons = $this->icon->getAll();
+
+        $xmlStyle = '';
+
+        foreach($icons as $icon)
+        {
+            $xmlStyle .= '<Style id="'.$icon->style.'">
+                <IconStyle>
+                    <Icon>
+                        <href>'.asset('frontend/icons/'.$icon->image).'</href>
+                    </Icon>
+                </IconStyle>
+            </Style>';
         }
 
-
-
-        $xmlData->Document->Folder->Placemark;
-
-       //  \File::put($kml, $xmlData->asXML());
+        return $xmlStyle;
     }
 
     public function convert($kml,$color)
@@ -119,7 +144,7 @@ class TronconWorker implements TronconWorkerInterface{
                      <kml xmlns=\"http://www.opengis.net/kml/2.2\">
                      <Document>
                      <Folder>
-                     <name>Troncon</name>";
+                     <name>Carte</name>";
 
         $output .= "</Folder>
                     </Document>

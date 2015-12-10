@@ -39,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
         $this->registerOptionService();
         $this->registerTitreService();
         $this->registerRemarqueService();
+        $this->registerIconService();
 
         $this->registerTronconService();
         $this->registerTronconWorkerService();
@@ -167,6 +168,17 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
+     * Icon
+     */
+    protected function registerIconService(){
+
+        $this->app->singleton('App\Aren\Icon\Repo\IconInterface', function()
+        {
+            return new \App\Aren\Icon\Repo\IconEloquent(new \App\Aren\Icon\Entities\Icon);
+        });
+    }
+
+    /**
      * Troncon
      */
     protected function registerTronconService(){
@@ -186,7 +198,8 @@ class AppServiceProvider extends ServiceProvider
         {
             return new \App\Aren\Troncon\Worker\TronconWorker(
                 \App::make('App\Aren\Troncon\Repo\TronconInterface'),
-                \App::make('App\Service\UploadWorker')
+                \App::make('App\Service\UploadWorker'),
+                \App::make('App\Aren\Icon\Repo\IconInterface')
             );
         });
     }

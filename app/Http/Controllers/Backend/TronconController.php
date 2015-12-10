@@ -62,11 +62,11 @@ class TronconController extends Controller
             $data['kml'] = $kml['name'];
         }
 
-        $this->worker->prepare('kml/'.$data['kml'], $data['type'] ,$data['color']);
+        $this->worker->prepare('kml/'.$data['kml'], $data['type'], $data['color']);
 
         $this->troncon->create($data);
 
-        return redirect()->back()->with(['status' => 'success' , 'message' => 'Le tronçon a été crée']);
+        return redirect('admin/troncon')->with(['status' => 'success' , 'message' => 'Le tronçon a été crée']);
     }
 
     /**
