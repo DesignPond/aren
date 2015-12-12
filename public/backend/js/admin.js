@@ -5,7 +5,7 @@ $( function() {
         maxHeight: 450,
         focus: true,
         lang: 'fr',
-        plugins: ['imagemanager','filemanager','table','source'],
+        plugins: ['imagemanager','filemanager','table','source','video'],
         fileUpload : 'uploadFileRedactor?_token=' + $('meta[name="_token"]').attr('content'),
         imageUpload: 'uploadRedactor?_token=' + $('meta[name="_token"]').attr('content'),
         imageManagerJson: 'imageJson',
