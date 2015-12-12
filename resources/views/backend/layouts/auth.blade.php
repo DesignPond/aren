@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="@Designpond | Cindy Leschaud">
-    <meta name="description" content="Tribunaux civils | Faculté de droit, Universite de Neuchâtel">
-    <title>Tribunaux civils</title>
+    <title>AREN | Association Réseau Equestre Nechâtelois</title>
+    <meta name="description" content="L'AREN, Association Réseau Equestre Nechâtelois est une association à but non lucratif visant à développer un réseau de randonnées équestres et d'hébergements sur le territoire neuchâtelois.">
     <link rel="stylesheet" type="text/css" href="<?php echo asset('backend/css/styles.css');?>">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
 </head>

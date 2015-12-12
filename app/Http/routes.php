@@ -40,6 +40,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function()
     Route::resource('page', 'Backend\PageController');
     Route::resource('bloc', 'Backend\BlocController');
     Route::resource('news', 'Backend\NewsController');
+    Route::resource('icon', 'Backend\IconController');
     Route::resource('troncon', 'Backend\TronconController');
     Route::resource('prestataire', 'Backend\PrestataireController');
     Route::resource('prestation', 'Backend\PrestationController');

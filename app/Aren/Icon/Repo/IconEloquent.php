@@ -15,7 +15,7 @@ class IconEloquent implements IconInterface
 
     public function getAll(){
 
-        return $this->icon->all();
+        return $this->icon->orderBy('titre')->get();
     }
 
     public function find($id){
@@ -31,7 +31,8 @@ class IconEloquent implements IconInterface
     public function create(array $data){
 
         $icon = $this->icon->create(array(
-            'titre'   => $data['titre'],
+            'titre' => $data['titre'],
+            'style' => $data['style'],
             'image' => $data['image']
         ));
 

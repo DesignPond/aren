@@ -15,7 +15,13 @@ class Troncon extends Model
     {
         $worker = \App::make('App\Aren\Troncon\Worker\TronconWorkerInterface');
 
-        return $worker->colorToRgb($this->color);
+        if($this->color != '')
+        {
+            return $worker->colorToRgb($this->color);
+        }
+
+        return '';
+
     }
 
     /*

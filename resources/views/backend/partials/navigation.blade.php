@@ -23,7 +23,10 @@
                 <i class="fa fa-users"></i> <span>Prestataires</span></a>
         </li>
         <li class="<?php echo (Request::is('troncon') || Request::is('troncon/*') ? 'active' : '' ); ?>"><a href="{{ url('admin/troncon') }}">
-                <i class="fa fa-map-marker"></i> <span>Tronçons</span></a>
+                <i class="fa fa-map"></i> <span>Tronçons</span></a>
+        </li>
+        <li class="<?php echo (Request::is('icon') || Request::is('icon/*') ? 'active' : '' ); ?>"><a href="{{ url('admin/icon') }}">
+                <i class="fa fa-map-marker"></i> <span>Icones sur cartes</span></a>
         </li>
         <li class="divider"></li>
         <li class="<?php echo (Request::is('admin/config') ? 'active' : ''); ?>">
