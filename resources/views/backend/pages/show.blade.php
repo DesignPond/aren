@@ -64,7 +64,7 @@
                         </div>
                     </div>
 
-                    @if($page->template == 'page')
+                    @if($page->template == 'page' || $page->template == 'accueil')
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label">Insérer un filligrane</label>

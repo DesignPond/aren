@@ -9,6 +9,8 @@ use App\Aren\Page\Worker\PageWorker;
 use App\Aren\Page\Repo\PageInterface;
 use App\Aren\News\Repo\NewsInterface;
 use App\Aren\Prestataire\Repo\PrestataireInterface;
+use App\Aren\Troncon\Repo\TronconInterface;
+use App\Aren\Icon\Repo\IconInterface;
 
 class PageController extends Controller
 {
@@ -17,13 +19,17 @@ class PageController extends Controller
     protected $helper;
     protected $news;
     protected $prestataire;
+    protected $troncon;
+    protected $icon;
 
-    public function __construct(PageWorker $worker, PageInterface $page, NewsInterface $news, PrestataireInterface $prestataire)
+    public function __construct(PageWorker $worker, PageInterface $page, NewsInterface $news, PrestataireInterface $prestataire, TronconInterface $troncon, IconInterface $icon)
     {
         $this->page        = $page;
         $this->worker      = $worker;
         $this->news        = $news;
         $this->prestataire = $prestataire;
+        $this->troncon     = $troncon;
+        $this->icon        = $icon;
 
         $this->helper = new \App\Helper\Helper();
 
@@ -55,6 +61,12 @@ class PageController extends Controller
         if($id == 'prestataires')
         {
             $data['prestataires'] = $this->prestataire->getAll(true,true);
+        }
+
+        if($id == 'carte')
+        {
+            $data['icons']  = $this->icon->getAll();
+            $data['cartes'] = $this->troncon->getAll(null);
         }
 
         return view('frontend.'.$template)->with($data);

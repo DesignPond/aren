@@ -4,8 +4,8 @@
 <?php $status = ( $class == 'danger' || $class == 'success' ? $class : 'warning' ); ?>
 
 <div class="row">
-    <div class="col-md-12">
-        <div class="alert alert-dismissable alert-{{ $status }}">
+    <div class="twelvecol">
+        <div class="alert alert-{{ $status }}">
 
             @foreach($errors->all() as $message)
             <p>{!! $message !!}</p>

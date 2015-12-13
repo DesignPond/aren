@@ -3,14 +3,17 @@ namespace App\Aren\Prestataire\Repo;
 
 use App\Aren\Prestataire\Repo\PrestataireInterface;
 use App\Aren\Prestataire\Entities\Prestataire as M;
+use App\Aren\Prestataire\Entities\Map;
 
 class PrestataireEloquent implements PrestataireInterface
 {
     protected $prestataire;
+    protected $map;
 
-    public function __construct(M $prestataire)
+    public function __construct(M $prestataire, Map $map)
     {
         $this->prestataire = $prestataire;
+        $this->map = $map;
     }
 
     public function getAll($actifs = false, $participant = false)
@@ -50,6 +53,11 @@ class PrestataireEloquent implements PrestataireInterface
             return false;
         }
 
+        if(isset($data['map']) && !empty($data['map']))
+        {
+            $this->map->create(['prestataire_id' => $prestataire->id, 'latitude' => $data['map']['latitude'], 'longitude' => $data['map']['longitude'] ]);
+        }
+
         return $prestataire;
 
     }
@@ -65,6 +73,26 @@ class PrestataireEloquent implements PrestataireInterface
 
         $prestataire->fill($data);
         $prestataire->save();
+
+        if(isset($data['map']) && !empty($data['map']))
+        {
+
+            $map = $this->map->where('prestataire_id','=',$prestataire->id)->get();
+
+            if(!$map->isEmpty())
+            {
+                $themap = $map->first();
+
+                $themap->latitude  = $data['map']['latitude'];
+                $themap->longitude = $data['map']['longitude'];
+
+                $themap->save();
+            }
+            else
+            {
+                $this->map->create(['prestataire_id' => $prestataire->id, 'latitude' => $data['map']['latitude'], 'longitude' => $data['map']['longitude'] ]);
+            }
+        }
 
         return $prestataire;
     }

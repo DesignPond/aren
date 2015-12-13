@@ -68,3 +68,13 @@ Route::post('password/email', 'Auth\PasswordController@postEmail');
 // Password reset routes...
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
+
+
+Route::get('test', function()
+{
+    $worker       = App::make('App\Aren\Troncon\Worker\TronconWorkerInterface');
+    $prestataire  = App::make('App\Aren\Prestataire\Repo\PrestataireInterface');
+    $prestataires = $prestataire->getAll(true,true);
+    $kml = $worker->write($prestataires, 'test_prestataires');
+
+});

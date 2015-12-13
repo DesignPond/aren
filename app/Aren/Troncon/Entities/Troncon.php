@@ -21,7 +21,6 @@ class Troncon extends Model
         }
 
         return '';
-
     }
 
     /*

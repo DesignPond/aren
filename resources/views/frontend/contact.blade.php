@@ -31,7 +31,7 @@
             </p>
 
             <p><label for="message">Votre Message</label>
-                <textarea rows="17" required cols="70" name="remarque"><?php echo old('message'); ?></textarea>
+                <textarea rows="17" required cols="70" name="remarque"><?php echo old('remarque'); ?></textarea>
             </p>
 
             <input type="submit" value="Envoyer le message" name="submit" class="btnSubmit" />

@@ -7,7 +7,7 @@
     <h2> {!! $page->title !!}</h2>
     {!! $page->content !!}
 
-    <p class="infoLien"><a href="{{ url('site/presentation') }}"><span></span>En savoir plus</a></p>
+    <p class="infoLien"><a href="{{ url('page/presentation') }}"><span></span>En savoir plus</a></p>
 </div>
 <div class="fivecol last polaroids">
     <p class="etiquette">

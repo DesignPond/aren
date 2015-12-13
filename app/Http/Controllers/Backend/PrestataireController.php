@@ -12,6 +12,7 @@ use App\Aren\Prestation\Repo\TitreInterface;
 use App\Aren\Prestation\Repo\TableInterface;
 use App\Aren\Prestation\Repo\OptionInterface;
 use App\Aren\Prestation\Repo\RemarqueInterface;
+use App\Aren\Troncon\Worker\TronconWorkerInterface;
 
 class PrestataireController extends Controller
 {
@@ -20,14 +21,16 @@ class PrestataireController extends Controller
     protected $table;
     protected $option;
     protected $remarque;
+    protected $worker;
 
-    public function __construct(PrestataireInterface $prestataire, TitreInterface $titre, TableInterface $table, OptionInterface $option, RemarqueInterface $remarque)
+    public function __construct(PrestataireInterface $prestataire, TitreInterface $titre, TableInterface $table, OptionInterface $option, RemarqueInterface $remarque, TronconWorkerInterface $worker)
     {
         $this->prestataire = $prestataire;
         $this->titre       = $titre;
         $this->table       = $table;
         $this->option      = $option;
         $this->remarque    = $remarque;
+        $this->worker      = $worker;
     }
 
     /**
@@ -60,6 +63,9 @@ class PrestataireController extends Controller
     public function store(CreatePrestataire $request)
     {
         $prestataire = $this->prestataire->create($request->all());
+
+        $prestataires = $this->prestataire->getAll(true,true);
+        $this->worker->write($prestataires, 'prestataires');
 
         return redirect('admin/prestataire/'.$prestataire->id)->with(array('status' => 'success' , 'message' => 'Le prestataire a été crée' ));
     }
@@ -97,6 +103,9 @@ class PrestataireController extends Controller
     public function update($id, CreatePrestataire $request)
     {
         $prestataire = $this->prestataire->update($request->all());
+
+        $prestataires = $this->prestataire->getAll(true,true);
+        $this->worker->write($prestataires, 'prestataires');
 
         return redirect('admin/prestataire/'.$prestataire->id)->with( array('status' => 'success' , 'message' => 'Le prestataire a été mise à jour' ));
     }

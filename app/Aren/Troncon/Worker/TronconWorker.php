@@ -67,9 +67,10 @@ class TronconWorker implements TronconWorkerInterface{
 
     public function prepare($kml, $type, $color = null)
     {
+
         if($type == 'troncon')
         {
-            $this->convert('kml/'.$kml, $color);
+            $this->convert($kml, $color);
         }
 
         if($type == 'poi')
@@ -137,79 +138,47 @@ class TronconWorker implements TronconWorkerInterface{
         \File::put($kml, $xmlData->asXML());
     }
 
-    public function write($kml,$config)
+    public function write($prestataires,$kml)
     {
+        $output = $this->prestataires($prestataires, false);
 
-        $output = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-                     <kml xmlns=\"http://www.opengis.net/kml/2.2\">
-                     <Document>
-                     <Folder>
-                     <name>Carte</name>";
-
-        $output .= "</Folder>
-                    </Document>
-                    </kml>";
+        \File::put(public_path('kml/'.$kml.'.kml'), $output);
     }
 
-    public function placemark($data)
+    public function prestataires($data, $file = true, $filename = null)
     {
-        $placemark = '<Placemark>
-            <Style><LineStyle><color>FF0055ff</color><width>1.41732</width></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
-            <ExtendedData><SchemaData schemaUrl="#troncon1_270815">
-                <SimpleData name="SOUS-TYPE">Réseau</SimpleData>
-                <SimpleData name="LONGUEUR">190.631310</SimpleData>
-                <SimpleData name="SURFACE">0.000000</SimpleData>
-                <SimpleData name="ANGLE">0.000000</SimpleData>
-                <SimpleData name="NOM">premier tronéon</SimpleData>
-                <SimpleData name="ETAT_VALID">En consultation</SimpleData>
-            </SchemaData></ExtendedData>
-              <LineString>
-                <altitudeMode>relativeToGround</altitudeMode>
-                <coordinates>6.891922878606126,47.054747676644908 6.892492576149263,47.054381591257474 6.89302887923308,47.054707975271043 6.893357634237832,47.054736526731283 6.893672037035667,47.05488194668785 6.893657134549398,47.055052784766396 6.893696435139358,47.055070962204546</coordinates>
-              </LineString>
-          </Placemark>';
-
-    }
-
-    public function prestataires($data, $file = true, $filename)
-    {
-        $output = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><kml xmlns=\"http://www.opengis.net/kml/2.2\">
-				 <Document>
-				 <Style id=\"pin\">
-					<IconStyle>
-						<Icon> <href>http://www.aren.ch/images/icons/pin.png</href> </Icon>
-						<BalloonStyle>
-					      <bgColor>ffffffbb</bgColor>
-					      <text> $[description]</text>
-					    </BalloonStyle>
-					</IconStyle>
-				</Style>
-				<Folder>
-				<name>Troncon</name>";
+        $output = '<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"><Document>
+                    <name>Data+BalloonStyle</name>
+                    <Style id="pin">
+                       <IconStyle>
+                          <Icon><href>http://www.aren.ch/images/icons/pin.png</href></Icon>
+                       </IconStyle>
+				    </Style>
+				    <Style id="baloon">
+                       <BalloonStyle>
+                          <bgColor>ffffffbb</bgColor>
+                          <text>$[description]</text>
+                       </BalloonStyle>
+				    </Style>
+				    <name>Prestataires</name>';
 
         foreach($data as $point)
         {
-            $name        = $point['name'];
-            $description = $point['description'];
-            $coordinates = $point['coordinates'];
-            $numero      = $point['numero'];
-            $link        = $point['link'];
-
             $output .= '<Placemark>
-			          <name></name>
-			           <description><p>Num&#233;ro '.$numero.' <br/>'.$description.' <br/> '.$link.'</p></description>
-			          <ExtendedData>
-			            <Data name="Nom"><value>'.$name.'</value></Data>
-			            <Data name="Num&#233;ro"><value>'.$numero.'</value></Data>
-			          </ExtendedData>
-			          <styleUrl>#pin</styleUrl>
-			          <Point><coordinates>'.$coordinates.',0</coordinates></Point>
-			        </Placemark>';
+                            <name></name>
+                            <styleUrl>#pin</styleUrl>
+                            <description>Num&#233;ro '.$point->noParticipant.' <br/>'.$point->barn_title.' <br/> '.$point->link.'</description>
+                            <ExtendedData>
+                                <Data name="Nom"><value>'.$point->barn_title.'</value></Data>
+                                <Data name="Num&#233;ro"><value>'.$point->noParticipant.'</value></Data>
+                            </ExtendedData>
+                            <Point>
+                                <coordinates>'.$point->map->longitude.','.$point->map->latitude.',0</coordinates>
+                            </Point>
+                        </Placemark>';
         }
 
-        $output .= "</Folder>
-					 </Document>
-					   </kml>";
+        $output .= '</Document></kml>';
 
         if($file)
         {

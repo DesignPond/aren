@@ -659,6 +659,35 @@ section.contenu{
     display: block;
 }
 
+.legendeIcon img{
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.alert{
+    padding: 5px 10px;
+    margin-bottom: 20px;
+}
+
+.alert p{
+    margin-bottom: 0;
+}
+
+.alert-success{
+    border: 1px solid #41b100;
+    color: #41b100;
+    background: #dff0d8;
+}
+
+.alert-warning{
+    border: 1px solid #d43f3a;
+    color: #d43f3a;
+    background: #f2dede;
+}
+
 .squarePink i{  background: #fe0a81; }
 .squareRed i{  background: #f09d0b; }
 .squareBlue i{  background: #004ede; }

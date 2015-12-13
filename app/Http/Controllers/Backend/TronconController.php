@@ -30,9 +30,9 @@ class TronconController extends Controller
      */
     public function index()
     {
-        $troncons = $this->troncon->getAll(false);
+        $maps = $this->troncon->getAll(false);
 
-        return view('backend.troncons.index')->with(['troncons' => $troncons]);
+        return view('backend.troncons.index')->with(['maps' => $maps]);
     }
 
     /**
@@ -53,6 +53,7 @@ class TronconController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $request->except('kml');
         $kml  = $request->file('kml',null);
 
@@ -132,6 +133,8 @@ class TronconController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->troncon->delete($id);
+
+        return redirect()->back()->with(array('status' => 'success' , 'message' => 'La carte a été supprimée' ));
     }
 }

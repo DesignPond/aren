@@ -59,6 +59,11 @@ tr.nonactif td{
 
 .map-small{
     width: 600px;
-    height: 350px;
+    height: 360px;
     margin-bottom:30px;
+}
+
+.map-backend{
+    padding: 4px;
+    border: 1px solid #ddd;
 }

@@ -36,6 +36,11 @@ class Prestataire extends Model
         return $this->civilite.' '.$this->prenom.' '.$this->nom;
     }
 
+    public function getLinkAttribute()
+    {
+        return (isset($this->web) && !empty($this->web) ? '<a href="'.$this->web.'">'.$this->web.'</a>' : '');
+    }
+
     /*
      *  scopes
      * */

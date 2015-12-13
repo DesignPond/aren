@@ -30,4 +30,19 @@ class SendMessage extends Request
             'telephone'  => 'required'
         ];
     }
+
+    /**
+     * Set custom messages for validator errors.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'nom.required'       => 'Votre nom est requis',
+            'email.required'     => 'Votre e-mail est requis',
+            'email.email'        => 'Votre e-mail n\'est pas valide',
+            'remarque.required'  => 'Un message est requis'
+        ];
+    }
 }

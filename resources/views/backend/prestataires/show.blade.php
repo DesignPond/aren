@@ -137,13 +137,13 @@
                                 <div class="col-sm-4">
                                     <div class="input-group">
                                         <span class="input-group-addon">Lat.</span>
-                                        <input type="text" class="form-control" value="{{ $prestataire->map->latitude }}" name="map[latitude]">
+                                        <input type="text" class="form-control" value="{{ ($prestataire->map ? $prestataire->map->latitude : '') }}" name="map[latitude]">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="input-group">
                                         <span class="input-group-addon">Lon.</span>
-                                        <input type="text" class="form-control" value="{{ $prestataire->map->longitude }}" name="map[longitude]">
+                                        <input type="text" class="form-control" value="{{ ($prestataire->map ? $prestataire->map->longitude : '') }}" name="map[longitude]">
                                     </div>
                                 </div>
                             </div>

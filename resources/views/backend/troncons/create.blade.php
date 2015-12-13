@@ -31,7 +31,7 @@
                     <div class="form-group">
                         <label for="message" class="col-sm-3 control-label">Couleur si tronçon</label>
                         <div class="col-sm-3">
-                            {!! Form::text('color', null , array('class' => 'form-control colorpicker') ) !!}
+                            {!! Form::text('color', '#4d6bee' , array('class' => 'form-control colorpicker') ) !!}
                         </div>
                     </div>
 

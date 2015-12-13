@@ -108,7 +108,7 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->singleton('App\Aren\Prestataire\Repo\PrestataireInterface', function()
         {
-            return new \App\Aren\Prestataire\Repo\PrestataireEloquent(new \App\Aren\Prestataire\Entities\Prestataire);
+            return new \App\Aren\Prestataire\Repo\PrestataireEloquent(new \App\Aren\Prestataire\Entities\Prestataire, new \App\Aren\Prestataire\Entities\Map);
         });
     }
 
