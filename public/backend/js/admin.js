@@ -10,7 +10,7 @@ $( function() {
         imageUpload: 'uploadRedactor?_token=' + $('meta[name="_token"]').attr('content'),
         imageManagerJson: 'imageJson',
         fileManagerJson: 'fileJson',
-        buttons    : ['format', 'bold', 'italic', 'lists', 'image', 'file', 'link','table','source' ]
+        buttons    : ['format', 'alignment' ,'bold', 'italic', 'lists', 'image', 'file', 'link','table','source' ]
     });
 
     $('.redactorSimple').redactor({
