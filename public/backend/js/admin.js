@@ -10,7 +10,13 @@ $( function() {
         imageUpload: 'uploadRedactor?_token=' + $('meta[name="_token"]').attr('content'),
         imageManagerJson: 'imageJson',
         fileManagerJson: 'fileJson',
-        buttons    : ['format', 'alignment' ,'bold', 'italic', 'lists', 'image', 'file', 'link','table','source' ]
+        buttons    : ['format', 'alignment' ,'bold', 'italic', 'lists', 'image', 'file', 'link','table','source'],
+        formattingAdd: {
+            "center-p-add": {
+                title: 'Texte centre',
+                args: ['p', 'class', 'center-styled']
+            }
+        }
     });
 
     $('.redactorSimple').redactor({

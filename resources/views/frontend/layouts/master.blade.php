@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo asset('frontend/css/form.css');?>">
     <link rel="stylesheet" type="text/css" href="<?php echo asset('frontend/css/table.css');?>">
     <link rel="stylesheet" type="text/css" href="<?php echo asset('frontend/css/smallscreen.css');?>">
+    <link rel="stylesheet" href="<?php echo asset('css/general.css');?>">
     <link rel="stylesheet" type="text/css" media="only screen and (min-device-width: 768px) and (max-device-width: 1024px)" href="<?php echo asset('frontend/css/ipad.css');?>">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 </head>

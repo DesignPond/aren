@@ -85,7 +85,7 @@ class PrestataireController extends Controller
 
         $tables_options = [
             1 => ['places','prix'],
-            2 => ['places','prix'],
+            2 => ['places','prix','option_id'],
             3 => ['option_id'],
             4 => ['option_id','prix'],
             5 => ['option_id','remarque']

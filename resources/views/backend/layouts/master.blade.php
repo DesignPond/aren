@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="<?php echo asset('backend/css/admin.css');?>">
     <link rel="stylesheet" href="<?php echo asset('backend/css/types.css');?>">
     <link rel="stylesheet" href="<?php echo asset('backend/css/dnd.css');?>">
+    <link rel="stylesheet" href="<?php echo asset('css/general.css');?>">
 
     <link rel='stylesheet' type='text/css' href="<?php echo asset('backend/plugins/form-nestable/jquery.nestable.css');?>" />
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries. Placeholdr.js enables the placeholder attribute -->

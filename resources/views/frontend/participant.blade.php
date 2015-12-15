@@ -40,18 +40,24 @@
                     <div>
                         <h3 class="icon"></h3>
                         <p><strong>Disponible</strong></p>
+                        <p><strong>Nombre places</strong></p>
+                        <p><strong>Prix</strong></p>
                         <p><strong>Remarque</strong></p>
                     </div>
+
                     @if(isset($tables_participant[$table->id]))
                         @foreach($tables_participant[$table->id] as $row)
                             <?php $row->load('option','titre'); ?>
                             <div>
                                 <h3>{{ $row->titre->titre }}</h3>
-                                <p>{{ $row->option->titre }}</p>
+                                <p>{{  $row->option ? $row->option->titre  : '' }}</p>
+                                <p>{{  $row->places > 0 ? $row->places  : '-' }}</p>
+                                <p>{{  $row->prix > 0 ? $row->prix.' CHF'  : '-' }}</p>
                                 <p>{!! ($row->remarque != '' ? $row->remarque : '-') !!}</p>
                             </div>
                         @endforeach
                     @endif
+
                 </div>
             @endforeach
         @endif

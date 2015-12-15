@@ -9,7 +9,7 @@
         {!! $page->content !!}
 
         @if($page->filligrane)
-            <div id="filligrane"><img src="{{ asset('images/filligrane.png') }}" alt="logo"></div>
+            <div id="filligrane"><img src="{{ asset('frontend/images/filligrane.png') }}" alt="logo"></div>
         @endif
 
     </div>
