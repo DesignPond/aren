@@ -16,6 +16,9 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Pages</div>
                 <div class="panel-body">
+
+                    <p class="help-block"><i class="fa fa-crosshairs"></i> &nbsp;Cliquez-glissez les pages pour changer l'ordre dans le menu</p>
+
                     <div id="nestable" class="dd nestable_list" style="height: auto;">
 
                         <ol class="dd-list" id="sortable">

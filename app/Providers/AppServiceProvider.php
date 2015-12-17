@@ -40,6 +40,7 @@ class AppServiceProvider extends ServiceProvider
         $this->registerTitreService();
         $this->registerRemarqueService();
         $this->registerIconService();
+        $this->registerImageService();
 
         $this->registerTronconService();
         $this->registerTronconWorkerService();
@@ -175,6 +176,17 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('App\Aren\Icon\Repo\IconInterface', function()
         {
             return new \App\Aren\Icon\Repo\IconEloquent(new \App\Aren\Icon\Entities\Icon);
+        });
+    }
+
+    /**
+     * Image
+     */
+    protected function registerImageService(){
+
+        $this->app->singleton('App\Aren\Image\Repo\ImageInterface', function()
+        {
+            return new \App\Aren\Image\Repo\ImageEloquent(new \App\Aren\Image\Entities\Image);
         });
     }
 

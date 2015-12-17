@@ -69,7 +69,9 @@
                     {!! Registry::get('adresse')!!}
                 </div>
             </div>
-            <div class="fivecol last"><p class="star">Avec le soutien de l’association Centre-Jura</p></div>
+            <div class="fivecol last">
+                <p class="star">{!! Registry::get('soutien')!!}</p>
+            </div>
             <hr/>
         </footer>
         <!-- End of Footer -->

@@ -26,9 +26,20 @@
             </article>
         </div>
         <div class="sevencol last">
+
             <div class="map-wrapper">
-                <div id="map-canvas" data-latitude="{{ $participant->map->latitude  }}" data-longitude="{{ $participant->map->longitude  }}" data-zoom="14" style="height: 400px;"></div>
+                <div id="map_canvas_main" style="height: 400px;"></div>
             </div>
+
+            <script>
+                var canvas     = document.getElementById('map_canvas_main');
+                var latlng     = new google.maps.LatLng(<?php echo $participant->map->latitude; ?> ,<?php echo $participant->map->longitude; ?>);
+                var mapOptions = {zoom : 14, center: latlng};
+                var map        = new google.maps.Map(canvas, mapOptions);
+            </script>
+
+            @include('frontend.partials.carte')
+
         </div>
         <hr/><p><a href="{{ url('prestataires') }}"> &lt;&lt; Retour à la liste</a></p><hr/>
 
@@ -39,10 +50,23 @@
                 <div class="tableau">
                     <div>
                         <h3 class="icon"></h3>
-                        <p><strong>Disponible</strong></p>
-                        <p><strong>Nombre places</strong></p>
-                        <p><strong>Prix</strong></p>
-                        <p><strong>Remarque</strong></p>
+
+                        @if(in_array('option_id', $tables_options[$table->id]))
+                            <p><strong>Disponible</strong></p>
+                        @endif
+
+                        @if(in_array('places', $tables_options[$table->id]))
+                            <p><strong>Nombre places</strong></p>
+                        @endif
+
+                        @if(in_array('prix', $tables_options[$table->id]))
+                            <p><strong>Prix</strong></p>
+                        @endif
+
+                        @if(in_array('remarque', $tables_options[$table->id]))
+                            <p><strong>Remarque</strong></p>
+                        @endif
+
                     </div>
 
                     @if(isset($tables_participant[$table->id]))
@@ -50,10 +74,23 @@
                             <?php $row->load('option','titre'); ?>
                             <div>
                                 <h3>{{ $row->titre->titre }}</h3>
-                                <p>{{  $row->option ? $row->option->titre  : '' }}</p>
-                                <p>{{  $row->places > 0 ? $row->places  : '-' }}</p>
-                                <p>{{  $row->prix > 0 ? $row->prix.' CHF'  : '-' }}</p>
-                                <p>{!! ($row->remarque != '' ? $row->remarque : '-') !!}</p>
+
+                                @if(in_array('option_id', $tables_options[$table->id]))
+                                    <p>{{  $row->option ? $row->option->titre  : '' }}</p>
+                                @endif
+
+                                @if(in_array('places', $tables_options[$table->id]))
+                                    <p>{{  $row->places > 0 ? $row->places  : '-' }}</p>
+                                @endif
+
+                                @if(in_array('prix', $tables_options[$table->id]))
+                                    <p>{{  $row->prix > 0 ? $row->prix.' CHF'  : '-' }}</p>
+                                @endif
+
+                                @if(in_array('remarque', $tables_options[$table->id]))
+                                    <p>{!! ($row->remarque != '' ? $row->remarque : '-') !!}</p>
+                                @endif
+
                             </div>
                         @endforeach
                     @endif

@@ -53,10 +53,19 @@
 
         <h3>Découvrez un nouveau prestataire</h3>
         <p class="location"><strong>{{ $participant->barn_title }}</strong></p>
+
         <div class="map-wrapper">
-            {{--<div id="map-canvas" data-latitude="47.012724" data-longitude="6.731005" data-zoom="10" style="height: 230px;"></div>--}}
-            <div id="map-canvas" data-latitude="{{ $participant->map->latitude  }}" data-longitude="{{ $participant->map->longitude  }}" data-zoom="14" style="height: 230px;"></div>
+            <div id="map_canvas_main" style="height: 230px;"></div>
         </div>
+
+        <script>
+            var canvas     = document.getElementById('map_canvas_main');
+            var latlng     = new google.maps.LatLng(<?php echo $participant->map->latitude; ?> ,<?php echo $participant->map->longitude; ?>);
+            var mapOptions = {zoom : 14, center: latlng};
+            var map        = new google.maps.Map(canvas, mapOptions);
+        </script>
+
+        @include('frontend.partials.carte')
 
     </div>
     <hr/>

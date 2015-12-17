@@ -16,6 +16,10 @@
                             <label><strong>Adresse</strong></label>
                             <textarea name="adresse" class="form-control redactorSimple">{!! Registry::get('adresse')!!}</textarea>
                         </div>
+                        <div class="form-group">
+                            <label><strong>Soutien dans le pied de page</strong></label>
+                            <input type="text" name="soutien" class="form-control" value="{!! Registry::get('soutien')!!}">
+                        </div>
                     </div>
                     <div class="panel-footer">
                         <button type="submit" class="btn btn-info pull-right">Mettre à jour</button>

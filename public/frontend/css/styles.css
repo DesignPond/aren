@@ -1080,6 +1080,11 @@ h4.marge , h3.marge
     z-index: 1;
 }
 
+.content-page{
+    position: relative;
+    z-index: 5;
+}
+
 
 /**
  *

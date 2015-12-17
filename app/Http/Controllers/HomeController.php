@@ -11,6 +11,7 @@ use App\Aren\Bloc\Repo\BlocInterface;
 use App\Aren\Prestataire\Repo\PrestataireInterface;
 use App\Aren\Prestation\Repo\TitreInterface;
 use App\Aren\Prestation\Repo\TableInterface;
+use App\Aren\Troncon\Repo\TronconInterface;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -21,14 +22,16 @@ class HomeController extends Controller
     protected $prestataire;
     protected $titre;
     protected $table;
+    protected $troncon;
 
-    public function __construct(PageInterface $page, BlocInterface $bloc, PrestataireInterface $prestataire, TitreInterface $titre, TableInterface $table)
+    public function __construct(PageInterface $page, BlocInterface $bloc, PrestataireInterface $prestataire, TitreInterface $titre, TableInterface $table,TronconInterface $troncon)
     {
         $this->page        = $page;
         $this->bloc        = $bloc;
         $this->prestataire = $prestataire;
         $this->titre       = $titre;
         $this->table       = $table;
+        $this->troncon     = $troncon;
 
         $this->helper      = new \App\Helper\Helper;
     }
@@ -43,10 +46,11 @@ class HomeController extends Controller
         $page   = $this->page->getBySlug('accueil');
         $blocs  = $this->bloc->getAll();
         $parent = $page->getAncestorsAndSelf()->toHierarchy();
+        $cartes = $this->troncon->getAll(null);
 
         $participant = $this->prestataire->getAll(true,true)->random();
 
-        return view('frontend.accueil')->with([ 'page' => $page, 'parent' => $parent,'blocs' => $blocs, 'participant' => $participant]);
+        return view('frontend.accueil')->with([ 'page' => $page, 'parent' => $parent,'blocs' => $blocs, 'participant' => $participant, 'cartes' => $cartes]);
     }
 
     public function participant($id){
@@ -54,8 +58,17 @@ class HomeController extends Controller
         $participant = $this->prestataire->find($id);
         $titres      = $this->titre->getAll()->lists('titre','id')->all();
         $tables      = $this->table->getAll();
+        $cartes      = $this->troncon->getAll(null);
 
-        return view('frontend.participant')->with(['participant' => $participant, 'titres' => $titres, 'tables' => $tables]);
+        $tables_options = [
+            1 => ['places','prix'],
+            2 => ['places','prix'],
+            3 => ['option_id'],
+            4 => ['option_id','prix'],
+            5 => ['option_id','remarque']
+        ];
+
+        return view('frontend.participant')->with(['participant' => $participant, 'titres' => $titres, 'tables' => $tables, 'tables_options' => $tables_options, 'cartes' => $cartes]);
     }
 
     /**

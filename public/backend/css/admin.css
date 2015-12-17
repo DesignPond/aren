@@ -28,6 +28,10 @@ select.form-control + .chosen-container .chosen-results li, select.form-control 
     white-space: pre-wrap;
 }
 
+#nestable{
+    margin-top: 20px;
+}
+
 #nestable .dd-handle {
     position: relative;
     height: 40px;
@@ -35,6 +39,10 @@ select.form-control + .chosen-container .chosen-results li, select.form-control 
     margin: 5px 0;
     padding: 0 10px;
     cursor: move;
+}
+
+#nestable .dd-handle a:not(.btn){
+    font-size: 15px;
 }
 
 #nestable .dd-handle form{
@@ -66,4 +74,14 @@ tr.nonactif td{
 .map-backend{
     padding: 4px;
     border: 1px solid #ddd;
+}
+
+.tiles-footer h3{
+    color: #fff;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.shortcut-tiles .tiles-footer {
+    text-align: center;
 }

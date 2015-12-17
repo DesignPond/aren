@@ -20,7 +20,7 @@
                                 <Data name="Num&#233;ro"><value>123</value></Data>
                             </ExtendedData>
                             <Point>
-                                <coordinates>7.09131,47.062,0</coordinates>
+                                <coordinates>7.091315,47.063372,0</coordinates>
                             </Point>
                         </Placemark><Placemark>
                             <name></name>
@@ -186,5 +186,16 @@
                             </ExtendedData>
                             <Point>
                                 <coordinates>6.54623,46.9285,0</coordinates>
+                            </Point>
+                        </Placemark><Placemark>
+                            <name></name>
+                            <styleUrl>#pin</styleUrl>
+                            <description>Num&#233;ro 1182 <br/>Manége du code <br/> <a href="www.designpond.ch">www.designpond.ch</a></description>
+                            <ExtendedData>
+                                <Data name="Nom"><value>Manége du code</value></Data>
+                                <Data name="Num&#233;ro"><value>1182</value></Data>
+                            </ExtendedData>
+                            <Point>
+                                <coordinates>7.049002,47.027595,0</coordinates>
                             </Point>
                         </Placemark></Document></kml>

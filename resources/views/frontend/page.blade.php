@@ -6,7 +6,9 @@
     <h1> {!! $page->title !!}</h1>
     <div class="twelvecol last pages">
 
-        {!! $page->content !!}
+        <div class="content-page">
+            {!! $page->content !!}
+        </div>
 
         @if($page->filligrane)
             <div id="filligrane"><img src="{{ asset('frontend/images/filligrane.png') }}" alt="logo"></div>

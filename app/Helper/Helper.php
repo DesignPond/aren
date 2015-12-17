@@ -89,14 +89,14 @@ class Helper{
     {
         $form = '<form action="'.url('admin/page/'.$node->id).'" method="POST">
                               <input type="hidden" name="_method" value="DELETE">'.csrf_field().'
-                              <a href="admin/page/'.$node->id.'" class="btn btn-info btn-xs">&eacute;diter</a>
-                              <button data-action="page: '.$node->title.'" class="btn btn-danger btn-xs deleteAction">X</button>
+                              <a href="admin/page/'.$node->id.'" class="btn btn-info btn-sm">&eacute;diter</a>
+                              <button data-action="page: '.$node->title.'" class="btn btn-danger btn-sm deleteAction">X</button>
                           </form>';
 
         if( $node->isLeaf() )
         {
             return '<li class="dd-item" data-id="'.$node->id.'" id="page_rang_'.$node->id.'"><div class="dd-handle">
-                    <a href="admin/page/'.$node->id.'"><i class="fa fa-sort"></i> &nbsp;' . $node->title . '</a>'.$form.'</div></li>';
+                    <i class="fa fa-crosshairs"></i> &nbsp; <a href="admin/page/'.$node->id.'">' . $node->title . '</a>'.$form.'</div></li>';
         }
         else
         {
