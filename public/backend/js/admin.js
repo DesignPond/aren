@@ -1,10 +1,12 @@
 $( function() {
 
-    $('.redactor').redactor({
+/*    $('.redactor').redactor({
         minHeight  : 250,
         maxHeight: 450,
         focus: true,
         lang: 'fr',
+        imageEditable: false, // disable image edit mode on click
+        imageResizable: true, // disable image resize mode on click
         plugins: ['imagemanager','filemanager','table','source','video'],
         fileUpload : 'uploadFileRedactor?_token=' + $('meta[name="_token"]').attr('content'),
         imageUpload: 'uploadRedactor?_token=' + $('meta[name="_token"]').attr('content'),
@@ -17,6 +19,20 @@ $( function() {
                 args: ['p', 'class', 'center-styled']
             }
         }
+    });*/
+
+
+    $('.redactor').redactor({
+        minHeight  : 250,
+        maxHeight: 450,
+        focus: true,
+        lang: 'fr',
+        plugins: ['imagemanager','filemanager','table','video'],
+        fileUpload : 'uploadFileRedactor?_token=' + $('meta[name="_token"]').attr('content'),
+        imageUpload: 'uploadRedactor?_token=' + $('meta[name="_token"]').attr('content'),
+        imageManagerJson: 'imageJson',
+        fileManagerJson: 'fileJson',
+        buttons    : ['html','|','formatting','bold','italic','|','unorderedlist','orderedlist','outdent','indent','|','image','file','link','alignment']
     });
 
     $('.redactorSimple').redactor({

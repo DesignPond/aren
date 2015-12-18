@@ -10,7 +10,7 @@
         @foreach($districts as $nom => $district)
 
             <hr/><h2 class="district">{{ $nom }}</h2>
-
+            <?php $i = 1; ?>
             @foreach($district as $item)
                 <article class="prestataire">
                     <span><img src="{{ asset('frontend/images/icons/bigPin.png') }}" alt="Manège" /></span>
@@ -21,7 +21,10 @@
                     </div>
                     <p class="numero">n° {{ $item->noParticipant }}</p>
                 </article>
+                <?php echo ($i%3 == 0 ? '<div class="clearfix"></div>' : ''); ?>
+                <?php $i++; ?>
             @endforeach
+
         @endforeach
     @endif
 

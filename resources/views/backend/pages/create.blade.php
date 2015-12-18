@@ -32,7 +32,7 @@
                             <select class="form-control" name="template">
                                 @if(!empty($templates))
                                     @foreach($templates as $template => $nom)
-                                        <option value="{{ $template }}">{{ $nom }}</option>
+                                        <option {{ $template == 'page' ? 'selected' : '' }} value="{{ $template }}">{{ $nom }}</option>
                                     @endforeach
                                 @endif
                             </select>
@@ -52,8 +52,8 @@
                     <div class="form-group">
                         <label class="col-sm-3 control-label">Visible sur le site</label>
                         <div class="col-sm-5">
-                            <label class="radio-inline"><input type="radio" value="0" name="hidden" checked=""> Oui</label>
-                            <label class="radio-inline"><input type="radio" value="1" name="hidden"> Non</label>
+                            <label class="radio-inline"><input type="radio" value="0" name="hidden"> Oui</label>
+                            <label class="radio-inline"><input type="radio" value="1" name="hidden" checked> Non</label>
                         </div>
                     </div>
 

@@ -17,7 +17,7 @@ class UploadController extends Controller
 
     public function uploadJS(Request $request)
     {
-        $files = $this->upload->upload( $request->input('file') , public_path('uploads'));
+        $files = $this->upload->upload( $request->input('file') , public_path('files'));
 
         if($files)
         {
@@ -36,7 +36,7 @@ class UploadController extends Controller
 
     public function uploadRedactor(Request $request)
     {
-        $files = $this->upload->upload( $request->file('file') , 'uploads');
+        $files = $this->upload->upload( $request->file('file') , 'files');
 
         if($files)
         {
@@ -71,7 +71,7 @@ class UploadController extends Controller
     public function imageJson()
     {
         $data  = [];
-        $files = Storage::files();
+        $files = Storage::disk('files')->files();
 
         if(!empty($files))
         {
@@ -79,7 +79,7 @@ class UploadController extends Controller
             {
                 if($file != '.DS_Store')
                 {
-                    $data[] = ['image' => url('/').'/uploads/'.$file, 'thumb' => url('/').'/uploads/'.$file, 'title' => $file];
+                    $data[] = ['image' => url('/').'/files/'.$file, 'thumb' => url('/').'/files/'.$file, 'title' => $file];
                 }
             }
         }
@@ -89,7 +89,7 @@ class UploadController extends Controller
 
     public function fileJson()
     {
-        $files = Storage::disk('local')->files();
+        $files = Storage::disk('files')->files();
         $data  = [];
         if(!empty($files))
         {

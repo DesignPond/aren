@@ -820,6 +820,24 @@ article.prestataire{
     border: 1px solid #dcdbdb;
 }
 
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clearfix {
+    *zoom: 1;
+}
+
 article.prestataire:hover{
     background: #fff3e7;
 }
@@ -832,6 +850,7 @@ article.lastBloc{
 article.prestataire span{
     float: left;
     margin-left: 8px;
+    width: 30px;
 }
 
 article.prestataire div{
@@ -867,10 +886,12 @@ article.prestataire h1{
 
 article.prestataire h2 ,article.prestataire p{
     margin-bottom: 0;
+    line-height: 16px;
 }
 
 article.prestataire h2 a{
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 18px;
     color: #849a41;
     text-decoration: none;
 }

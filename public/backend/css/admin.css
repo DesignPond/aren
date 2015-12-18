@@ -85,3 +85,11 @@ tr.nonactif td{
 .shortcut-tiles .tiles-footer {
     text-align: center;
 }
+
+#redactor-modal section#redactor-modal-video-insert{
+    padding-top: 0px;
+}
+
+#redactor-modal section#redactor-modal-video-insert label{
+    margin-bottom: 10px !important;
+}

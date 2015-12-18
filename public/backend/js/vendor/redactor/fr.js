@@ -43,7 +43,8 @@
 		"indent": "Augmenter le retrait",
 		"horizontalrule": "Ligne",
 		"upload-label": "Déposez un fichier ici ou ",
-
+        "video":"Vidéo",
+        "video_html_code": "Insérer une vidéo depuis youtube ou vimeo",
 		"accessibility-help-label": "Editeur de texte enrichi"
 	};
 

@@ -1,8 +1,6 @@
-if (!RedactorPlugins) var RedactorPlugins = {};
-
 (function($)
 {
-	RedactorPlugins.imagemanager = function()
+	$.Redactor.prototype.imagemanager = function()
 	{
 		return {
 			init: function()
@@ -36,7 +34,7 @@ if (!RedactorPlugins) var RedactorPlugins = {};
 							var thumbtitle = '';
 							if (typeof val.title !== 'undefined') thumbtitle = val.title;
 
-							var img = $('<img src="' + val.thumb + '" rel="' + val.image + '" data-thumb="' + val.thumb + '" title="' + thumbtitle + '" style="width: 100px; height: 75px; cursor: pointer;" />');
+							var img = $('<img src="' + val.thumb + '" rel="' + val.image + '" title="' + thumbtitle + '" style="width: 100px; height: 75px; cursor: pointer;" />');
 							$('#redactor-image-manager-box').append(img);
 							$(img).click($.proxy(this.imagemanager.insert, this));
 
@@ -50,7 +48,7 @@ if (!RedactorPlugins) var RedactorPlugins = {};
 			},
 			insert: function(e)
 			{
-				this.image.insert('<img data-thumb="' + $(e.target).data('thumb') + '" src="' + $(e.target).attr('rel') + '" alt="' + $(e.target).attr('title') + '">');
+				this.image.insert('<img src="' + $(e.target).attr('rel') + '" alt="' + $(e.target).attr('title') + '">');
 			}
 		};
 	};
