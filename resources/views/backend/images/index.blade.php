@@ -12,7 +12,7 @@
 
         <div class="panel panel-midnightblue">
             <div class="panel-heading">
-                <h4><i class="fa fa-tasks"></i> &nbsp;Imagees pour les points de vue</h4>
+                <h4><i class="fa fa-tasks"></i> &nbsp;Postits/Polaroids</h4>
             </div>
             <div class="panel-body">
                 <div class="table-responsive">
@@ -20,9 +20,10 @@
                         <thead>
                         <tr>
                             <th class="col-sm-1">Action</th>
-                            <th class="col-sm-2">Titre</th>
+                            <th class="col-sm-4">Titre</th>
                             <th class="col-sm-1">Image</th>
-                            <th class="col-sm-6">Style</th>
+                            <th class="col-sm-1">Style</th>
+                            <th class="col-sm-4">Page</th>
                             <th class="col-sm-1"></th>
                         </tr>
                         </thead>
@@ -33,8 +34,13 @@
                                     <tr>
                                         <td><a class="btn btn-sky btn-sm" href="{{ url('admin/image/'.$image->id) }}">&Eacute;diter</a></td>
                                         <td><strong>{{ $image->titre }}</strong></td>
-                                        <td><img height="30" src="{{ asset('frontend/images/'.$image->image) }}" alt="image" /></td>
+                                        <td>
+                                            @if($image->image)
+                                                <img height="30" src="{{ asset('frontend/images/'.$image->image) }}" alt="image" />
+                                            @endif
+                                        </td>
                                         <td>{!! $image->style !!}</td>
+                                        <td>{!! $image->page->title !!}</td>
                                         <td class="text-right">
                                             {!! Form::open(array('route' => array('admin.image.destroy', $image->id), 'method' => 'delete')) !!}
                                                 <button data-what="supprimer" data-action="image: {{ $image->titre }}" class="btn btn-danger btn-sm deleteAction">Supprimer</button>

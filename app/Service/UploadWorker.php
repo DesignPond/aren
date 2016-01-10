@@ -63,14 +63,20 @@ class UploadWorker implements UploadInterface {
 
         $img = \Image::make($path);
 
-        // prevent possible upsizing
-        $img->resize($width, $height, function ($constraint)
-        {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-        });
+        $current = $img->width();
 
-        $img->save($path, 75);
+        if($current > $width)
+        {
+            // prevent possible upsizing
+            $img->resize($width, $height, function ($constraint)
+            {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+
+            $img->save($path, 75);
+        }
+
 	}
 
     /*

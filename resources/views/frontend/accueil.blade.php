@@ -10,20 +10,9 @@
     <p class="infoLien"><a href="{{ url('page/presentation') }}"><span></span>En savoir plus</a></p>
 </div>
 <div class="fivecol last polaroids">
-    <p class="etiquette">
-        Venez nous soutenir en devenant membre de l’AREN !
-        <span class="tape"></span>
-        <span class="shadow"></span></p>
-    <p class="pola01">
-        <img src="{{ asset('frontend/images/pola01.jpg') }}" alt="itinéraires équestres" />
-        <span class="tape"></span>
-        <span class="shadow"></span>
-    </p>
-    <p class="pola02">
-        <img src="{{ asset('frontend/images/pola02.jpg') }}" alt="Discussion" />
-        <span class="tape"></span>
-        <span class="shadow"></span>
-    </p>
+
+    @include('frontend.partials.illustration')
+
 </div>
 
 <hr/>
@@ -38,7 +27,7 @@
             <?php $i = 1; ?>
             @foreach($blocs as $bloc)
                 <article class="activites {{ $i%2 == 0 ? 'last' : '' }}">
-                    <div class="icon"><img src="{{ asset('frontend/images/icons/'.$bloc->type) }}" alt="{{ $bloc->titre }}" /></div>
+                    <div class="icon"><img src="{{ asset('frontend/images/icons/'.$bloc->type) }}.png" alt="{{ $bloc->titre }}" /></div>
                     <h4>{{ $bloc->titre }}</h4>
                     {!! $bloc->contenu !!}
                 </article>

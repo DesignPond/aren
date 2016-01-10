@@ -44,6 +44,7 @@ class AppServiceProvider extends ServiceProvider
 
         $this->registerTronconService();
         $this->registerTronconWorkerService();
+        $this->registerUploadService();
 
     }
 
@@ -213,6 +214,17 @@ class AppServiceProvider extends ServiceProvider
                 \App::make('App\Service\UploadWorker'),
                 \App::make('App\Aren\Icon\Repo\IconInterface')
             );
+        });
+    }
+
+    /*
+* Upload
+*/
+    protected function registerUploadService(){
+
+        $this->app->bind('App\Service\UploadInterface', function()
+        {
+            return new \App\Service\UploadWorker();
         });
     }
 

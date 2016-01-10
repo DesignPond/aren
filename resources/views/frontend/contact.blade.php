@@ -5,7 +5,7 @@
 
     @include('frontend.partials.message')
 
-    <div class="ninecol">
+    <div class="eightcol">
 
         <!-- form start -->
         <form data-validate-parsley action="{{ url('sendMessage') }}" method="POST" class="myForm" id="formContact">
@@ -41,13 +41,8 @@
 
         </form>
     </div>
-    <div class="threecol last polaroids">
-        <p class="pola03">
-            <img src="{{ asset('frontend/images/cdv01.jpg') }}" alt="Creux du Van" />
-            <span class="tape tapeBig"></span>
-            <span class="shadow shadowBig"></span>
-            <span class="title">Le Creux du Van</span>
-        </p>
+    <div class="fourcol last polaroids">
+        @include('frontend.partials.illustration')
     </div>
     <hr/>
 

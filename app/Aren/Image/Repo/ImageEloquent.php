@@ -15,12 +15,12 @@ class ImageEloquent implements ImageInterface
 
     public function getAll(){
 
-        return $this->image->orderBy('titre')->get();
+        return $this->image->orderBy('rang')->get();
     }
 
     public function find($id){
 
-        return $this->image->findOrFail($id);
+        return $this->image->with(['page'])->find($id);
     }
 
     public function findByPage($page_id)
@@ -32,7 +32,12 @@ class ImageEloquent implements ImageInterface
 
         $image = $this->image->create(array(
             'page_id' => $data['page_id'],
-            'image'   => $data['image']
+            'image'   => (isset($data['image']) ? $data['image'] : null),
+            'titre'   => (isset($data['titre']) ? $data['titre'] : null),
+            'text'    => (isset($data['text']) ? $data['text'] : null),
+            'rang'    => (isset($data['rang']) ? $data['rang'] : null),
+            'style'   => $data['style'],
+            'url'     => (isset($data['url']) ? $data['url'] : null)
         ));
 
         if( ! $image )

@@ -44,6 +44,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function()
     Route::resource('troncon', 'Backend\TronconController');
     Route::resource('prestataire', 'Backend\PrestataireController');
     Route::resource('prestation', 'Backend\PrestationController');
+    Route::resource('image', 'Backend\ImageController');
 
     //Route::post('hierarchy', ['uses' => 'Backend\PageController@hierarchy']);
    // Route::get('build', ['uses' => 'Backend\PageController@build']);

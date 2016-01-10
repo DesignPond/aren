@@ -39,7 +39,7 @@ class PageEloquent implements PageInterface{
 
     public function getBySlug($slug)
     {
-        return $this->page->where('slug','=',$slug)->first();
+        return $this->page->with(['images'])->where('slug','=',$slug)->first();
     }
 
     public function buildTree($data)

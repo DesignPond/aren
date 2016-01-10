@@ -19,19 +19,55 @@
                 <div class="panel-heading">
                     <h4>Ajouter une image</h4>
                 </div>
-                <div class="panel-body event-info">
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <label for="message" class="col-sm-3 control-label">Rang</label>
+                        <div class="col-sm-2">
+                            {!! Form::text('rang', null , array('class' => 'form-control') ) !!}
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <label for="message" class="col-sm-3 control-label">Titre</label>
                         <div class="col-sm-4">
-                            {!! Form::text('titre', null , array('class' => 'form-control required') ) !!}
+                            {!! Form::text('titre', null , array('class' => 'form-control') ) !!}
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="message" class="col-sm-3 control-label">Style</label>
                         <div class="col-sm-4">
-                            {!! Form::text('style', null , array('class' => 'form-control required') ) !!}
+                            <select class="form-control required" name="style">
+                                <option value="">Choix</option>
+                                <option value="polaroid">Polaroid</option>
+                                <option value="postit">Postit</option>
+                                <option value="text">Texte</option>
+                                <option value="popup">Popup</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type" class="col-sm-3 control-label">Afficher sur page</label>
+                        <div class="col-sm-4">
+
+                            <select class="form-control required" name="page_id">
+                                <option value="">Choix</option>
+                                @if(!empty($pages))
+                                    @foreach($pages as $page)
+                                        <option value="{{ $page->id }}">{{ $page->title }}</option>
+                                    @endforeach
+                                @endif
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="col-sm-3 control-label">Lien</label>
+                        <div class="col-sm-4">
+                            {!! Form::text('url', null , array('class' => 'form-control') ) !!}
                         </div>
                     </div>
 
@@ -43,6 +79,13 @@
                                     {!!  Form::file('file')!!}
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="news" class="col-sm-3 control-label">Texte</label>
+                        <div class="col-sm-7">
+                            {!! Form::textarea('text', null, array('class' => 'form-control redactorSimple', 'cols' => '50' , 'rows' => '4' )) !!}
                         </div>
                     </div>
 

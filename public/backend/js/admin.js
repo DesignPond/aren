@@ -40,7 +40,7 @@ $( function() {
         maxHeight: 200,
         focus    : true,
         lang     : 'fr',
-        buttons  : ['format', 'bold', 'italic', 'lists']
+        buttons  : ['formatting', 'bold', 'italic', 'unorderedlist','alignment']
     });
 
     $.fn.datepicker.dates['fr'] = {

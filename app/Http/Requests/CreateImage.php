@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class CreateIcon extends Request
+class CreateImage extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,9 +29,8 @@ class CreateIcon extends Request
     public function rules()
     {
         return [
-            'titre' => 'required',
-            'style' => 'required',
-           // 'file ' => 'required|mimes:jpeg,jpg,gif,png'
+            'page_id'  => 'required',
+            'style'    => 'required'
         ];
     }
 
@@ -43,9 +42,8 @@ class CreateIcon extends Request
     public function messages()
     {
         return [
-            'titre.required'  => 'Le titre est requis',
-            'style.required'  => 'Le style est requis',
+            'page_id.required' => 'La page est requise',
+            'style.required'   => 'Le style est requis',
         ];
     }
 }
-

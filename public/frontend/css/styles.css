@@ -479,27 +479,51 @@ p.retourListe{
 }
 
 /*---- polaroids ----------*/
-
-.polaroids{
+#illustrations{
     position: relative;
+    width: 100%;
 }
 
-.polaroids p{
-    width: 145px;
+.item-image:nth-child(1){
+    margin: 25px 5px 10px 20px;
+}
+
+.item-image:nth-child(2){
+    margin-left: 20px;
+}
+
+.item-image:nth-child(3){
+    margin: 20px 5px 10px 20px;
+}
+
+.item-image:nth-child(4){
+    margin-top: 20px;
+}
+
+.item-image {
+    max-width: 320px;
+    -webkit-box-shadow: 0 6px 6px -6px black;
+    -moz-box-shadow: 0 6px 6px -6px black;
+    box-shadow: 0 6px 6px -6px black;
+}
+
+.item-image p{
+    margin-bottom: 0;
+}
+
+.polaroid{
     padding: 5px 5px 20px 5px;
     background: #fff;
     border: 1px solid #d7d8d8;
-    position: absolute;
-    z-index: 20;
 }
 
+.polaroid img{
+   max-width: 100%;
+}
 
-
-.polaroids p.etiquette{
-    left:50%;
-    top:-10px;
+.postit{
     width:150px;
-    height: 72px;
+    min-height: 30px;
     text-align: center;
     padding: 15px 10px 10px 10px;
     border: none;
@@ -507,52 +531,43 @@ p.retourListe{
     line-height: 22px;
     font-family: "eurofurenceitalic",arial,sans serif;
     color: #d26d01;
-    background: url(../images/icons/note.png) no-repeat;
+    background: url(../images/note.png) repeat-y;
 }
 
-.polaroids p.pola01{
-    left: 5%;
-    top:50px
+.postit p{
+    font-size: 16px;
+    line-height: 22px;
+    font-family: "eurofurenceitalic",arial,sans serif;
+    color: #d26d01;
 }
 
-.polaroids p.pola02{
-    left: 50%;
-    top:120px
-}
-
-.polaroids p.pola03{
-    width: 300px;
-    right: 10%;
-    top:40px;
-}
-
-.polaroids p span.tape{
-    width: 74px;
-    height: 20px;
-    z-index: 50;
+.polaroid span.tape{
+    background: rgba(0, 0, 0, 0) url("../images/icons/tape.png") no-repeat scroll center center;
     display: block;
+    height: 20px;
+    left: 0;
     position: absolute;
-    left: 43px;
     top: -10px;
-    background: url(../images/icons/tape.png) no-repeat;
+    width: 100%;
+    z-index: 50;
 }
 
 .polaroids p span.tapeBig{
     left: 110px;
 }
 
-.polaroids p span.shadow{
-    width: 150px;
+.polaroid span.shadow, .postit span.shadow{
+    width: 100%;
     height: 5px;
     z-index: 50;
     display: block;
     position: absolute;
     left: 0;
     bottom: -5px;
-    background: url(../images/icons/shadow.png) no-repeat;
+    background: url(../images/icons/shadow.png) 0 center no-repeat;
 }
 
-.polaroids p span.title{
+.polaroid span.title{
     width: 290px;
     height: 20px;
     z-index: 50;
@@ -565,8 +580,6 @@ p.retourListe{
     font-style: italic;
     color: #717892;
 }
-
-
 
 .polaroids p span.shadowBig{
     width: 300px;
@@ -739,7 +752,6 @@ article.prestation{
     position: relative;
 }
 
-
 article.activites p, article.activites div.remarques{
     margin-left: 35px;
     padding-left: 12px;
@@ -862,6 +874,10 @@ article.prestataire div{
     margin-left: 8px;
 }
 
+article.prestataire p{
+    width: 90%;
+}
+
 article.prestataire p.numero{
     position:absolute;
     bottom:5px;
@@ -871,8 +887,8 @@ article.prestataire p.numero{
     font-size:11px;
     padding:0 3px;
     display:block;
+    width: 40px;
     border:1px solid #CCC;
-
 }
 
 article.prestataire h1{
@@ -917,7 +933,7 @@ article.prestataire p a{
     margin: 0;
 }
 
-.pagination strong{
+.pagination li a strong{
     width: 24px;
     color: #525252;
     height: 24px;
@@ -926,18 +942,28 @@ article.prestataire p a{
     font-size: 13px;
 }
 
-.pagination a.btn{
-    background: url(../images/icons/pagination.png) -1px 3px no-repeat;
+.pagination li{
+    float: left;
+    list-style: none;
+    margin-right: 3px;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.pagination li a{
+    font-size: 13px;
+    height: 24px;
     width: 24px;
     height: 24px;
     line-height: 23px;
     padding: 8px;
-    font-size: 13px;
+    background: url(../images/icons/pagination.png) -1px 3px no-repeat;
     text-decoration: none;
-    margin-right: 3px;
 }
 
-.pagination a:hover{
+.pagination li a:hover{
     color: #525252;
 }
 

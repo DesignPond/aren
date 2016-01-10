@@ -17,7 +17,10 @@
                     <div>
                         <h1>{{ $item->ville }}</h1>
                         <h2><a href="{{ url('participant/'.$item->id) }}">{{ $item->barn_title }}</a></h2>
-                        {!! $item->name_title !!}
+
+                        @if(!empty($item->etablissement))
+                           <p><a href="{{ url('participant/'.$item->id) }}">{!! $item->name_simple !!}</a></p>
+                        @endif
                     </div>
                     <p class="numero">n° {{ $item->noParticipant }}</p>
                 </article>

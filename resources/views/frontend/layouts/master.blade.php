@@ -84,7 +84,10 @@
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
 
 <!-- Scripts -->
+<script type="text/javascript" src="<?php echo asset('frontend/js/isotope.pkgd.min.js');?>"></script>
+<script type="text/javascript" src="<?php echo asset('frontend/js/packery-mode.pkgd.min.js');?>"></script>
 <script type="text/javascript" src="<?php echo asset('frontend/js/map.js');?>"></script>
+<script type="text/javascript" src="<?php echo asset('frontend/js/main.js');?>"></script>
 <script type="text/javascript" src="<?php echo asset('frontend/js/jquery.mediaTable.js');?>"></script>
 
 <script type="text/javascript">

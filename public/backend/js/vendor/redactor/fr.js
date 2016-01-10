@@ -45,7 +45,16 @@
 		"upload-label": "Déposez un fichier ici ou ",
         "video":"Vidéo",
         "video_html_code": "Insérer une vidéo depuis youtube ou vimeo",
-		"accessibility-help-label": "Editeur de texte enrichi"
+		"accessibility-help-label": "Editeur de texte enrichi",
+		align_left:	'Aligner à gauche',
+		align_center: 'Aligner au centre',
+		align_right: 'Aligner à droite',
+		align_justify: 'Justifier',
+		underline: 'Souligner',
+		alignment: 'Alignement',
+		filename: 'Nom de fichier (optionnel)',
+		edit: 'Edit',
+		center: 'Center'
 	};
 
 })(jQuery);

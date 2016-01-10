@@ -15,7 +15,7 @@ class NewsEloquent implements NewsInterface
 
     public function getAll(){
 
-        return $this->news->orderBy('dateNews','DESC')->get();
+        return $this->news->orderBy('dateNews','DESC')->paginate(4);
     }
 
     public function find($id){

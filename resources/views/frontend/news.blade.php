@@ -16,6 +16,9 @@
                 <div>{!! $item->texte !!}</div>
             </div><hr/>
         @endforeach
+
+        {!! $news->links() !!}
+
     @endif
 
 </section>

@@ -5,19 +5,24 @@ namespace App\Http\Controllers\Backend;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\CreateImage;
+
 use App\Http\Controllers\Controller;
 use App\Aren\Image\Repo\ImageInterface;
 use App\Aren\Page\Repo\PageInterface;
+use App\Service\UploadInterface;
 
 class ImageController extends Controller
 {
     protected $image;
     protected $page;
+    protected $upload;
 
-    public function __construct(ImageInterface $image, PageInterface $page)
+    public function __construct(ImageInterface $image, PageInterface $page, UploadInterface $upload)
     {
-        $this->image = $image;
-        $this->page  = $page;
+        $this->image  = $image;
+        $this->page   = $page;
+        $this->upload = $upload;
     }
 
     /**
@@ -39,7 +44,7 @@ class ImageController extends Controller
      */
     public function create()
     {
-        $pages = $this->page->getAll()->where('illustration', 1);
+        $pages = $this->page->getAll()->whereLoose('illustration', 1);
 
         return view('backend.images.create')->with(['pages' => $pages]);
     }
@@ -49,11 +54,21 @@ class ImageController extends Controller
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(CreateImage $request)
     {
-        $image = $this->image->create($request->all());
+        $data = $request->except('file');
+        $_file = $request->file('file', null);
 
-        return redirect('admin/image/'.$image->id)->with(array('status' => 'success' , 'message' => 'L\'image a été crée' ));
+        if($_file)
+        {
+            $file = $this->upload->upload( $_file , 'files' , 'image');
+
+            $data['image'] = $file['name'];
+        }
+
+        $image = $this->image->create($data);
+
+        return redirect('admin/image/'.$image->id)->with(array('status' => 'success' , 'message' => 'Le bloc postit/polaroid a été crée' ));
     }
 
     /**
@@ -64,8 +79,8 @@ class ImageController extends Controller
      */
     public function show($id)
     {
-        $image  = $this->image->find($id);
-        $pages  = $this->page->getAll()->where('illustration', 1);
+        $image = $this->image->find($id);
+        $pages = $this->page->getAll()->whereLoose('illustration', 1);
 
         return view('backend.images.show')->with(['image' => $image, 'pages' => $pages]);
     }
@@ -78,9 +93,19 @@ class ImageController extends Controller
      */
     public function update($id, CreateImage $request)
     {
-        $image = $this->image->update($request->all());
+        $data  = $request->except('file');
+        $_file = $request->file('file', null);
 
-        return redirect('admin/image/'.$image->id)->with( array('status' => 'success' , 'message' => 'L\'image a été mise à jour' ));
+        if($_file)
+        {
+            $file = $this->upload->upload( $_file , 'files' , 'image');
+
+            $data['image'] = $file['name'];
+        }
+
+        $image = $this->image->update($data);
+
+        return redirect('admin/image/'.$image->id)->with(['status' => 'success' , 'message' => 'Le bloc postit/polaroid a été mise à jour' ]);
     }
 
     /**
@@ -93,7 +118,7 @@ class ImageController extends Controller
     {
         $this->image->delete($id);
 
-        return redirect('admin/image')->with(array('status' => 'success' , 'message' => 'L\'image a été supprimé' ));
+        return redirect('admin/image')->with(array('status' => 'success' , 'message' => 'Le bloc postit/polaroid a été supprimé' ));
     }
 
 }

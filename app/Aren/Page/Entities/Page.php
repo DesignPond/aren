@@ -52,4 +52,9 @@ class Page extends Node {
 
         return substr($s, 0, $l = min(strlen($s),  $l + $i)) . (count($tags = array_reverse($tags)) ? '' : '') . (strlen($s) > $l ? $e : '');
     }
+
+    public function images()
+    {
+        return $this->hasMany('App\Aren\Image\Entities\Image')->orderBy('rang');
+    }
 }
