@@ -76,15 +76,60 @@
                                 <h3>{{ $row->titre->titre }}</h3>
 
                                 @if(in_array('option_id', $tables_options[$table->id]))
-                                    <p>{{  $row->option ? $row->option->titre  : '' }}</p>
+                                    <p>{{ $row->option ? $row->option->titre  : '' }}</p>
                                 @endif
 
                                 @if(in_array('places', $tables_options[$table->id]))
-                                    <p>{{  $row->places > 0 ? $row->places  : '-' }}</p>
+
+                                    @if( is_numeric($row->places) && $row->places > 0 )
+                                        <p>{{ $row->places }}</p>
+                                    @elseif($row->places == 0  && $row->option_id == 1)
+                                        <p>Oui / sur demande</p>
+                                    @elseif($row->places == 0  && $row->option_id == 2)
+                                        <p>Non</p>
+                                    @elseif($row->places == 0  && $row->option_id == 3)
+                                        <p>&Agrave; discuter / Sur demande</p>
+                                    @elseif($row->places == 0  && $row->option_id == 4)
+                                        <p>Oui compris dans le prix</p>
+                                    @elseif(!empty($row->places))
+                                        <p>{{ $row->places }}
+                                            {!! ($row->remarque != '' ? '<small>('.$row->remarque.')</small>' : '') !!}
+                                        </p>
+                                    @else
+                                        <p>{{ $row->option ? $row->option->titre  : '-' }}</p>
+                                    @endif
+
                                 @endif
 
                                 @if(in_array('prix', $tables_options[$table->id]))
-                                    <p>{{  $row->prix > 0 ? $row->prix.' CHF'  : '-' }}</p>
+
+                                    @if( is_numeric($row->prix) && $row->prix > 0 )
+                                        <p>
+                                            {{ $row->prix.' CHF' }}
+                                            {!! ($row->remarque != '' ? '<small>('.$row->remarque.')</small>' : '') !!}
+                                        </p>
+                                    @elseif( !is_numeric($row->places) && !empty($row->places))
+                                        <p> {{ $row->prix.' CHF' }} </p>
+                                    @elseif($row->places > 0)
+                                        <p>
+                                            {{ $row->prix > 0 ? $row->prix.' CHF' : 'Prix sur demande'}}
+                                            {!! ($row->remarque != '' ? '<br/><small>('.$row->remarque.'</small>)' : '') !!}
+                                        </p>
+                                    @elseif($row->option_id == 1)
+                                        <p>
+                                            {{ $row->prix > 0 ? $row->prix.' CHF' : 'Prix sur demande'}}
+                                            {!! ($row->remarque != '' ? '<br/><small>('.$row->remarque.'</small>)' : '') !!}
+                                        </p>
+
+                                    @elseif($row->option_id == 3)
+                                        <p>
+                                            {{ $row->prix > 0 ? $row->prix.' CHF' : 'Prix sur demande'}}
+                                            {!! ($row->remarque != '' ? '<br/><small>('.$row->remarque.'</small>)' : '') !!}
+                                        </p>
+                                    @else
+                                        <p>-</p>
+                                    @endif
+
                                 @endif
 
                                 @if(in_array('remarque', $tables_options[$table->id]))

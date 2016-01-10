@@ -20,7 +20,7 @@
                     <div class="panel-heading">
                         <h4>&Eacute;diter {{ $prestataire->name_simple }}</h4>
                     </div>
-                    <div class="panel-body event-info">
+                    <div class="panel-body">
                         <div class="col-md-6">
 
                             <div class="form-group">
@@ -249,7 +249,7 @@
                                         <div class="row margeUp">
                                             <div class="col-sm-12">
                                                 <label class="control-label"><strong>Remarque</strong></label>
-                                                <textarea name="remarque" class="form-control"></textarea>
+                                                <textarea name="remarque" class="form-control redactor"></textarea>
                                             </div>
                                         </div>
                                     @endif
@@ -273,6 +273,22 @@
         @endforeach
     @endif
     <!-- End Tables -->
+
+    <!-- start row -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-midnightblue">
+                <form action="{{ url('admin/remarque') }}" method="POST" class="validate-form form-horizontal" data-validate="parsley">
+                    <input type="hidden" name="prestataire_id" value="{{ $prestataire->id }}">
+                    {!! csrf_field() !!}
+                    <div class="panel-body">
+                        <h3>Remarques</h3>
+                        <textarea name="remarque" class="form-control redactor"></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 @endif
 

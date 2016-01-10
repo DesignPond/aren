@@ -42,10 +42,10 @@ table.sample td.title  {
 		.mediaTable { font-size:0.8em;}
 		
 div.tableau {
-	width: 90%;
 	display: block;
-	height: 120px;
-	margin-left: 25px;
+	margin-left: 0;
+	min-height: 140px;
+	width: 100%;
 }
 
 div.tableauAdmin {
@@ -56,7 +56,7 @@ div.tableauAdmin {
 
 div.tableau div{
 	width: auto;
-	height: 100px;
+	min-height: 100px;
 	line-height: 28px;
 	border-width: 1px;
 	text-align: left;
@@ -76,6 +76,10 @@ div.tableau div h3{
 	border: 1px solid #e1e1e1;
 }
 
+div.tableau div p small{
+	line-height: 13px;
+}
+
 div.tableau div h3.icon{
 	background: #484d65 url(../images/icons/emplacement.png) 10px 7px no-repeat;
 	height: 28px;
@@ -87,7 +91,7 @@ div.tableau div p{
 	border-color: #e1e1e1;
 	background-color: #f9f9f9;
 	display: block;
-	line-height: 22px;
+	line-height: 25px;
 	margin: 0;
 	padding: 2px 5px;
 	border: 1px solid #e1e1e1;
