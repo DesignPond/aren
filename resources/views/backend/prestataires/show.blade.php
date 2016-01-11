@@ -278,14 +278,26 @@
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-midnightblue">
-                <form action="{{ url('admin/remarque') }}" method="POST" class="validate-form form-horizontal" data-validate="parsley">
-                    <input type="hidden" name="prestataire_id" value="{{ $prestataire->id }}">
-                    {!! csrf_field() !!}
+
+                    @if($prestataire->remarques)
+                        <form action="{{ url('admin/remarque/'.$prestataire->remarques->id) }}" method="POST" class="validate-form form-horizontal" data-validate="parsley">
+                        <input type="hidden" name="_method" value="PUT">
+                        <input type="hidden" name="id" value="{{ $prestataire->remarques->id }}">
+                    @else
+                        <form action="{{ url('admin/remarque') }}" method="POST" class="validate-form form-horizontal" data-validate="parsley">
+                    @endif
+
                     <div class="panel-body">
+                        {!! csrf_field() !!}
+                        <input type="hidden" name="prestataire_id" value="{{ $prestataire->id }}">
                         <h3>Remarques</h3>
-                        <textarea name="remarque" class="form-control redactor"></textarea>
+                        <textarea name="texte" class="form-control redactor">{{ $prestataire->remarques->texte or '' }}</textarea>
+                        <br/>
+                        <button class="btn btn-info btn-sm pull-right" type="submit">OK</button>
                     </div>
+
                 </form>
+
             </div>
         </div>
     </div>

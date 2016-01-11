@@ -67,7 +67,7 @@ class Prestataire extends Model
 
     public function remarques()
     {
-        return $this->hasMany('App\Aren\Prestation\Entities\Remarque');
+        return $this->hasOne('App\Aren\Prestation\Entities\Remarque','prestataire_id');
     }
 
     public function prestations()

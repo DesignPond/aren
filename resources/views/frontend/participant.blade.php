@@ -27,18 +27,22 @@
         </div>
         <div class="sevencol last">
 
-            <div class="map-wrapper">
-                <div id="map_canvas_main" style="height: 400px;"></div>
-            </div>
+            @if($participant->map)
 
-            <script>
-                var canvas     = document.getElementById('map_canvas_main');
-                var latlng     = new google.maps.LatLng(<?php echo $participant->map->latitude; ?> ,<?php echo $participant->map->longitude; ?>);
-                var mapOptions = {zoom : 14, center: latlng};
-                var map        = new google.maps.Map(canvas, mapOptions);
-            </script>
+                <div class="map-wrapper">
+                    <div id="map_canvas_main" style="height: 400px;"></div>
+                </div>
 
-            @include('frontend.partials.carte')
+                <script>
+                    var canvas     = document.getElementById('map_canvas_main');
+                    var latlng     = new google.maps.LatLng(<?php echo $participant->map->latitude; ?> ,<?php echo $participant->map->longitude; ?>);
+                    var mapOptions = {zoom : 14, center: latlng};
+                    var map        = new google.maps.Map(canvas, mapOptions);
+                </script>
+
+                @include('frontend.partials.carte')
+
+            @endif
 
         </div>
         <hr/><p><a href="{{ url('prestataires') }}"> &lt;&lt; Retour à la liste</a></p><hr/>
@@ -147,14 +151,13 @@
 
         <!-- remarques -->
         <div>
-            <?php $types = $participant->types->lists('id')->all(); ?>
-            @if(in_array(4,$types) && !$participant->remarques->isEmpty())
+            @if($participant->remarques)
                 <article class="activites prestation">
                     <div class="icon"><img src="{{ asset('frontend/images/icons/home.png') }}" alt="Hébergements" /></div>
                     <h4>Aux alentours</h4>
-                    @foreach($participant->remarques as $remarques)
-                        <div class="remarques">{!! $remarques->texte !!}</div>
-                    @endforeach
+                    <div class="remarques">
+                        {!! $participant->remarques->texte !!}
+                    </div>
                 </article>
             @endif
         </div>
