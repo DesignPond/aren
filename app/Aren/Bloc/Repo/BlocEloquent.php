@@ -15,7 +15,7 @@ class BlocEloquent implements BlocInterface
 
     public function getAll(){
 
-        return $this->bloc->all();
+        return $this->bloc->orderBy('id','asc')->get();
     }
 
     public function find($id){

@@ -84,7 +84,7 @@ class PrestataireController extends Controller
         $tables       = $this->table->getAll();
 
         $tables_options = [
-            1 => ['places','prix'],
+            1 => ['places','prix','option_id'],
             2 => ['places','prix'],
             3 => ['option_id'],
             4 => ['option_id','prix'],

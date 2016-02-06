@@ -113,7 +113,13 @@
                                             {!! ($row->remarque != '' ? '<small>('.$row->remarque.')</small>' : '') !!}
                                         </p>
                                     @elseif( !is_numeric($row->places) && !empty($row->places))
-                                        <p> {{ $row->prix.' CHF' }} </p>
+
+                                        @if($row->prix > 0)
+                                            <p> {{ $row->prix.' CHF' }} </p>
+                                        @else
+                                            <p> {{ 'Prix sur demande' }} </p>
+                                        @endif
+
                                     @elseif($row->places > 0)
                                         <p>
                                             {{ $row->prix > 0 ? $row->prix.' CHF' : 'Prix sur demande'}}

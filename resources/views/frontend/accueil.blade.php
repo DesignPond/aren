@@ -56,6 +56,8 @@
 
         @include('frontend.partials.carte')
 
+        <p class="infoLien infoParticipant"><a href="{{ url('participant/'.$participant->id) }}"><span></span>En savoir plus</a></p>
+
     </div>
     <hr/>
 

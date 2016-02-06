@@ -229,6 +229,9 @@ p.spacer{
 
 .infoLien a:hover{ color: #d26d01; }
 
+.infoParticipant {
+    margin-top: 30px;
+}
 
 p.retour a{
     background: #484d65 url(../images/icons/arrowBack.png) 5px 4px no-repeat;
