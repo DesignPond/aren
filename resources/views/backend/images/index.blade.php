@@ -36,7 +36,7 @@
                                         <td><strong>{{ $image->titre }}</strong></td>
                                         <td>
                                             @if($image->image)
-                                                <img height="30" src="{{ asset('frontend/images/'.$image->image) }}" alt="image" />
+                                                <img height="30" src="{{ asset('files/'.$image->image) }}" alt="image" />
                                             @endif
                                         </td>
                                         <td>{!! $image->style !!}</td>
