@@ -83,7 +83,7 @@ class UploadController extends Controller
 
                     if(substr($mime, 0, 5) == 'image')
                     {
-                        $data[] = ['image' => url('/').'/files/'.$file, 'thumb' => url('/').'/files/'.$file, 'title' => $file];
+                        $data[] = ['image' => asset('files/'.$file), 'thumb' => asset('files/'.$file), 'title' => $file];
                     }
                 }
             }
@@ -104,7 +104,7 @@ class UploadController extends Controller
 
                 if(substr($mime, 0, 5) != 'image')
                 {
-                    $data[] = ['name' => $file, 'link' => url('/').'/files/'.$file, 'title' => $file];
+                    $data[] = ['name' => $file, 'link' => asset('files/'.$file) , 'title' => $file];
                 }
             }
         }
