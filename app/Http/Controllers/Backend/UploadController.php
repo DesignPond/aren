@@ -79,7 +79,12 @@ class UploadController extends Controller
             {
                 if($file != '.DS_Store')
                 {
-                    $data[] = ['image' => url('/').'/files/'.$file, 'thumb' => url('/').'/files/'.$file, 'title' => $file];
+                    $mime = \File::mimeType(public_path('files/'.$file));
+
+                    if(substr($mime, 0, 5) == 'image')
+                    {
+                        $data[] = ['image' => url('/').'/files/'.$file, 'thumb' => url('/').'/files/'.$file, 'title' => $file];
+                    }
                 }
             }
         }
@@ -95,7 +100,12 @@ class UploadController extends Controller
         {
             foreach($files as $file)
             {
-                $data[] = ['name' => $file, 'link' => url('/').'/files/'.$file, 'title' => $file];
+                $mime = \File::mimeType(public_path('files/'.$file));
+
+                if(substr($mime, 0, 5) != 'image')
+                {
+                    $data[] = ['name' => $file, 'link' => url('/').'/files/'.$file, 'title' => $file];
+                }
             }
         }
 

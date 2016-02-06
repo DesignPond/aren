@@ -34,7 +34,7 @@
 							var thumbtitle = '';
 							if (typeof val.title !== 'undefined') thumbtitle = val.title;
 
-							var img = $('<img src="' + val.thumb + '" rel="' + val.image + '" title="' + thumbtitle + '" style="width: 100px; height: 75px; cursor: pointer;" />');
+							var img = $('<img src="' + val.thumb + '" rel="' + val.image + '" title="' + thumbtitle + '" style="max-width: 100px; max-height: 75px; cursor: pointer;" />');
 							$('#redactor-image-manager-box').append(img);
 							$(img).click($.proxy(this.imagemanager.insert, this));
 
