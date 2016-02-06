@@ -13,7 +13,7 @@
                 <i class="fa fa-file"></i> <span>Pages</span></a>
         </li>
         <li class="<?php echo (Request::is('image') || Request::is('image/*') ? 'active' : '' ); ?>"><a href="{{ url('admin/image') }}">
-                <i class="fa fa-picture-o"></i> <span>Images</span></a>
+                <i class="fa fa-picture-o"></i> <span>Illustrations</span></a>
         </li>
 
         <li class="<?php echo (Request::is('bloc') || Request::is('bloc/*') ? 'active' : '' ); ?>"><a href="{{ url('admin/bloc') }}">
