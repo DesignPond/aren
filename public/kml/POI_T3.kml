@@ -9,7 +9,7 @@
 <Style id='parking'>
 	<IconStyle>
 		<Icon>
-			<href>http://www.aren.ch/_parking.png</href>
+			<href>http://www.aren.ch/frontend/icons/_parking.png</href>
 		</Icon>
 	</IconStyle>
 </Style>
@@ -17,7 +17,7 @@
 <Style id='buvette'>
 	<IconStyle>
 		<Icon>
-			<href>http://www.aren.ch/_buvette.png</href>
+			<href>http://www.aren.ch/frontend/icons/_buvette.png</href>
 		</Icon>
 	</IconStyle>
 </Style>

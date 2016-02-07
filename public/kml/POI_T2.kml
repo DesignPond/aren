@@ -5,7 +5,7 @@
 <Style id='picnic'>
 	<IconStyle>
 		<Icon>
-			<href>http://www.aren.ch/_picnic.png</href>
+			<href>http://www.aren.ch/frontend/icons/_picnic.png</href>
 		</Icon>
 	</IconStyle>
 </Style>
@@ -13,7 +13,7 @@
 <Style id='visite'>
 	<IconStyle>
 		<Icon>
-			<href>http://www.aren.ch/_visite.png</href>
+			<href>http://www.aren.ch/frontend/icons/_visite.png</href>
 		</Icon>
 	</IconStyle>
 </Style>
@@ -21,7 +21,7 @@
 <Style id='autre'>
 	<IconStyle>
 		<Icon>
-			<href>http://www.aren.ch/_autre.png</href>
+			<href>http://www.aren.ch/frontend/icons/_autre.png</href>
 		</Icon>
 	</IconStyle>
 </Style>
@@ -29,7 +29,7 @@
 <Style id='buvette'>
 	<IconStyle>
 		<Icon>
-			<href>http://www.aren.ch/_buvette.png</href>
+			<href>http://www.aren.ch/frontend/icons/_buvette.png</href>
 		</Icon>
 	</IconStyle>
 </Style>
