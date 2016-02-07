@@ -151,7 +151,7 @@ class TronconWorker implements TronconWorkerInterface{
                     <name>Data+BalloonStyle</name>
                     <Style id="pin">
                        <IconStyle>
-                          <Icon><href>http://www.aren.ch/frontend/images/icons/pin.png</href></Icon>
+                          <Icon><href>http://www.aren.ch/frontend/images/marker.png</href></Icon>
                        </IconStyle>
 				    </Style>
 				    <Style id="baloon">
