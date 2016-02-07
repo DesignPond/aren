@@ -5,33 +5,37 @@
 
     <h1>Carte</h1>
 
-    <table cellpadding="0" width="100%" cellspacing="0" border="0" style="border:none;">
+    <div id="carteLegend">
         @if(!$cartes->isEmpty())
             <?php $rows = $cartes->whereLoose('type','troncon')->chunk(4); ?>
             @foreach($rows as $row)
-                <tr>
+                <div class="row">
+                    <?php $end = count($row); $i = 1; ?>
                     @foreach($row as $col)
-                        <td width="25%">
+                        <div class="threecol {{ $end == $i ? 'last' : '' }}">
                             <p class="legende legendeIcon"><i style="background: {{ $col->color_hex }};"></i>{{ $col->name }}</p>
-                        </td>
+                        </div>
+                        <?php $i++; ?>
                     @endforeach
-                </tr>
+                </div>
             @endforeach
         @endif
 
         @if(!$icons->isEmpty())
             <?php $icons = $icons->chunk(4); ?>
             @foreach($icons as $row)
-                <tr>
+                <div class="row">
+                    <?php $end = count($row); $i = 1; ?>
                     @foreach($row as $icon)
-                        <td width="25%">
+                        <div class="threecol {{ $end == $i ? 'last' : '' }}">
                             <p class="legende legendeIcon"><img alt="icon" src="{{ asset('frontend/icons/'.$icon->image) }}">{{ $icon->titre }}</p>
-                        </td>
+                        </div>
+                        <?php $i++; ?>
                     @endforeach
-                </tr>
+                </div>
             @endforeach
         @endif
-    </table>
+    </div>
 
     <br/>
 
