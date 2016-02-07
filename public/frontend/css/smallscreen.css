@@ -116,7 +116,7 @@
 		border-radius: 0;
 		border-top:1px solid #93a274; 
 		border-bottom:1px solid #546a21;
-		line-height: : 44px;
+		line-height : 44px;
 		}
 		
 		nav ul#menu{
@@ -175,7 +175,7 @@
 		border-radius: 0;
 		border-top:1px solid #93a274; 
 		border-bottom:1px solid #546a21;
-		line-height: : 44px;
+		line-height : 44px;
 		}
 		
 		nav ul#menu{
@@ -240,4 +240,40 @@
 		}
 	
 }
-    
+
+@media screen and (max-width: 480px){
+
+	h1.mainLogo {
+		float: none;
+		max-width: 100%;
+	}
+
+    nav{
+        border-bottom: 1px solid #546a21;
+        border-radius: 0;
+        border-top: 1px solid #93a274;
+        height: auto;
+        line-height: 44px;
+        top:8px;
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    nav ul li {
+        display: inline-block;
+        float: none;
+        margin: 0;
+        width: 45%;
+    }
+
+    #illustrations{
+        display: none;
+    }
+
+    .myForm input, .myForm textarea {
+        width: 100%;
+    }
+
+}

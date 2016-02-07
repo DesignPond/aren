@@ -1,15 +1,12 @@
 .myForm label {	
-    font-size: 14px;
-    color: #849a41;
-    padding-right: 10px;
-    padding:10px 0 0 0;
-    text-transform: uppercase;
-    width: 250px;
-    display: inline-table;
-    float: left;
-    vertical-align: top;
-    background: none;
-    
+        font-size: 14px;
+        color: #849a41;
+        padding-right: 10px;
+        padding:10px 0 0 0;
+        text-transform: uppercase;
+        display: block;
+        vertical-align: top;
+        background: none;
     }
     
     em{	
@@ -63,15 +60,15 @@ display: block;
     height: 15px;
     display: inline;
     border: 1px solid #bdc6ce ;
--webkit-border-radius: 3px;
--moz-border-radius: 3px; 
-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    width: 50%;
 }
 
 
 
-.myForm input[type=checkbox] { 		
-	width: 30px;
+.myForm input[type=checkbox] {
 	vertical-align:top;
 	line-height: 15px;
 	margin-top: 5px;
@@ -80,11 +77,11 @@ border-radius: 3px;
 
 
 .myForm  textarea {
- height: 350px;
- width: 50%;
- -webkit-border-radius: 0;
--moz-border-radius: 0; 
-border-radius: 0;
+     height: 350px;
+     -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    width: 75%;
 }
 
 
@@ -105,8 +102,7 @@ textarea:focus {
   border-color:#849a41;
 }
 
-form.myForm  input{ 	 
-width: 300px;
+form.myForm  input{
 background: #fff;
 }
 
