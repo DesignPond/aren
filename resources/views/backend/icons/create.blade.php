@@ -36,6 +36,13 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="message" class="col-sm-3 control-label"><span class="text-danger">Attention</span></label>
+                        <div class="col-sm-3">
+                            <p>Il faut nommer le style de l'icone comme défini dans le fichier kml ex: <strong>#visite</strong> nom de l'icone <strong>visite</strong> </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label for="file" class="col-sm-3 control-label">Image</label>
                         <div class="col-sm-7">
                             <div class="list-group">

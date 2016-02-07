@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class CreatePrestataire extends Request
+class UpdatePrestataire extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,10 +29,8 @@ class CreatePrestataire extends Request
     public function rules()
     {
         return [
-            'prenom'        => 'required',
-            'nom'           => 'required',
-            'ville'         => 'required',
-            'noParticipant' => 'required'
+            'map.latitude'    => 'required_if:actif,1',
+            'map.longitude'   => 'required_if:actif,1'
         ];
     }
 }

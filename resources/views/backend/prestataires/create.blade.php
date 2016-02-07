@@ -21,14 +21,7 @@
                 </div>
                 <div class="panel-body event-info">
 
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">Actif</label>
-                        <div class="col-sm-4">
-                            <label class="radio-inline"><input type="radio" value="1" name="actif" checked=""> Oui</label>
-                            <label class="radio-inline"><input type="radio" value="0" name="actif"> Non</label>
-                        </div>
-                    </div>
-
+                    <h4>Informations principales</h4>
                     <div class="form-group">
                         <label for="message" class="col-sm-3 control-label">N° Participant</label>
                         <div class="col-sm-2">

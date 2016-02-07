@@ -25,7 +25,7 @@ $( function() {
     $('.redactor').redactor({
         minHeight  : 250,
         maxHeight: 450,
-        focus: true,
+        focus: false,
         lang: 'fr',
         plugins: ['imagemanager','filemanager','table','video'],
         fileUpload : 'uploadFileRedactor?_token=' + $('meta[name="_token"]').attr('content'),

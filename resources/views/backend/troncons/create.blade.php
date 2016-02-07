@@ -53,6 +53,13 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label for="message" class="col-sm-3 control-label"><span class="text-danger">Attention</span></label>
+                        <div class="col-sm-3">
+                            <p>Pour ajouter une nouvelle icone précise à un point de vue, celle-ci doit être ajouté dans "icones sur la carte" pour apparaître sur la carte.</p>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="panel-footer mini-footer ">
                     <div class="col-sm-3"></div>

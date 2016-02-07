@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Requests\CreatePrestataire;
+use App\Http\Requests\UpdatePrestataire;
 use App\Http\Controllers\Controller;
 use App\Aren\Prestataire\Repo\PrestataireInterface;
 use App\Aren\Prestation\Repo\TitreInterface;
@@ -100,7 +101,7 @@ class PrestataireController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id, CreatePrestataire $request)
+    public function update($id, UpdatePrestataire $request)
     {
         $prestataire = $this->prestataire->update($request->all());
 

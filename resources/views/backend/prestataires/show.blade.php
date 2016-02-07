@@ -31,7 +31,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="col-sm-3 control-label">Actif</label>
+                                <label class="col-sm-3 control-label"><span class="label label-{{ $prestataire->actif ? 'success' : 'warning' }}">Actif</span></label>
                                 <div class="col-sm-5">
                                     <label class="radio-inline">
                                         <input type="radio" value="1" {{ $prestataire->actif ? 'checked' : '' }} name="actif"> Oui
@@ -137,13 +137,13 @@
                                 <div class="col-sm-4">
                                     <div class="input-group">
                                         <span class="input-group-addon">Lat.</span>
-                                        <input type="text" class="form-control" value="{{ ($prestataire->map ? $prestataire->map->latitude : '') }}" name="map[latitude]">
+                                        <input required type="text" class="form-control" value="{{ ($prestataire->map ? $prestataire->map->latitude : '') }}" name="map[latitude]">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="input-group">
                                         <span class="input-group-addon">Lon.</span>
-                                        <input type="text" class="form-control" value="{{ ($prestataire->map ? $prestataire->map->longitude : '') }}" name="map[longitude]">
+                                        <input required type="text" class="form-control" value="{{ ($prestataire->map ? $prestataire->map->longitude : '') }}" name="map[longitude]">
                                     </div>
                                 </div>
                             </div>
