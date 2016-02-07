@@ -276,4 +276,16 @@
         width: 100%;
     }
 
+	div.tableau div {
+		margin-bottom: 10px;
+		float: none;
+		width: 100%;
+	}
+
+	div.tableau div h3.icon {
+		background: #484d65 url("../images/icons/emplacement.png") no-repeat scroll 10px 7px;
+		width: 100%;
+		padding:2px 0;
+	}
+
 }

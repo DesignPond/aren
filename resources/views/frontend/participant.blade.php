@@ -52,7 +52,7 @@
             @foreach($tables as $table)
                 <h4 class="pour {{ $table->icon }} marge">{{ $table->titre }}</h4>
                 <div class="tableau">
-                    <div>
+                    <div class="heading">
                         <h3 class="icon"></h3>
 
                         @if(in_array('option_id', $tables_options[$table->id]))
