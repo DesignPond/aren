@@ -36,6 +36,9 @@
         <li class="<?php echo (Request::is('admin/config') ? 'active' : ''); ?>">
             <a href="{{ url('admin/config') }}"><i class="fa fa-cog"></i><span>Configurations</span></a>
         </li>
+        <li>
+            <a href="{{ url('auth/register') }}"><i class="fa fa-user"></i><span>Ajouter utilisateur admin</span></a>
+        </li>
     </ul>
     <!-- END SIDEBAR MENU -->
 </nav>
