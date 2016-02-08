@@ -83,8 +83,7 @@ Route::get('test', function()
     ];
 
     \Mail::send('emails.contact', $data, function ($message) use ($data) {
-
-        $message->from('', '');
+        $message->from($data['email'], $data['nom']);
         $message->to('info@aren.ch')->subject('Message depuis le site www.aren.ch');
     });
 
