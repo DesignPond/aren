@@ -74,9 +74,18 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 Route::get('test', function()
 {
-    $worker       = App::make('App\Aren\Troncon\Worker\TronconWorkerInterface');
-    $prestataire  = App::make('App\Aren\Prestataire\Repo\PrestataireInterface');
-    $prestataires = $prestataire->getAll(true,true);
-    $kml = $worker->write($prestataires, 'test_prestataires');
+    $data = [
+        'email'     => 'cindy.leschaud@gmail.com',
+        'nom'       => 'Cindy Leschaud',
+        'telephone' => '078 690 00 23',
+        'remarque'  => 'Test',
+        'societe'   => 'DesignPond'
+    ];
+
+    \Mail::send('emails.contact', $data, function ($message) use ($data) {
+
+        $message->from($data['email'], $data['nom']);
+        $message->to('info@aren.ch')->subject('Message depuis le site www.aren.ch');
+    });
 
 });
