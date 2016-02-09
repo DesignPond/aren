@@ -90,13 +90,44 @@ class HomeController extends Controller
 
         $data = array('email' => $request->email, 'nom' => $request->nom, 'remarque' => $request->remarque , 'telephone' => $request->telephone, 'societe' => $request->societe);
 
-        Mail::send('emails.contact', $data, function ($message) use ($data) {
+  /*      Mail::send('emails.contact', $data, function ($message) use ($data) {
 
             $message->from($data['email'], $data['nom']);
             $message->to('info@aren.ch')->subject('Message depuis le site www.aren.ch');
-        });
+        });*/
 
-        return redirect()->back()->with(array('status' => 'success', 'message' => '<strong>Merci pour votre message</strong><br/>Nous vous contacterons dès que possible.'));
+        $html = '<!DOCTYPE html>
+                    <html lang="fr-FR"><head><meta charset="utf-8"></head>
+                    <body><h2>Message depuis le site www.aren.ch</h2>';
+
+        if(isset($societe))
+        {
+           $html .= '<h4>'.$data['societe'].'</h4>';
+        }
+
+        $html .= '<p>'.$data['nom'].'</p>
+                  <p>E-mail: '.$data['email'].'</p>
+                  <p>T&eacute;l. : '.$data['telephone'].'</p>
+                  <div>'.$data['remarque'].'</div>
+                  <p><a style="color: #444; font-size: 13px;" href="http://www.aren.ch">www.aren.ch</a></p>
+                  </body>
+                  </html>';
+
+        $sujet        = 'Message depuis le site www.aren.ch';
+        $message      = $html;
+        $destinataire = 'info@aren.ch';
+
+        $headers      = "Reply-To: info@aren.ch\n";
+        $headers     .= "Content-Type: text/plain; charset=\"utf-8\"";
+
+        if(mail($destinataire,$sujet,$message,$headers))
+        {
+            return redirect()->back()->with(array('status' => 'success', 'message' => '<strong>Merci pour votre message</strong><br/>Nous vous contacterons dès que possible.'));
+        }
+        else
+        {
+            echo "Une erreur c'est produite lors de l'envois de l'email.";
+        }
 
     }
 }
