@@ -88,6 +88,13 @@ class HomeController extends Controller
      */
     public function sendMessage(SendMessage $request){
 
+        $hello = $request->input('hello',null);
+
+        if($hello)
+        {
+            return redirect()->back();
+        }
+
         $data = array('email' => $request->email, 'nom' => $request->nom, 'remarque' => $request->remarque , 'telephone' => $request->telephone, 'societe' => $request->societe);
 
   /*      Mail::send('emails.contact', $data, function ($message) use ($data) {
