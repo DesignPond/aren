@@ -125,6 +125,7 @@ class HomeController extends Controller
         $destinataire = 'info@aren.ch';
 
         $headers      = "Reply-To: info@aren.ch\n";
+        $headers     .= "From: info@aren.ch\n";
         $headers     .= "Content-Type: text/plain; charset=\"utf-8\"";
 
         if(mail($destinataire,$sujet,$message,$headers))
