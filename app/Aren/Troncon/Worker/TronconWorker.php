@@ -129,7 +129,7 @@ class TronconWorker implements TronconWorkerInterface{
 
                 // Add description if any
                 $nom = (isset($attributes[3]) && !empty($attributes[3]) ? $attributes[3] : '');
-                $url = (isset($attributes[4]) && !empty($attributes[4]) ? $attributes[4] : '');
+                $url = (isset($attributes[4]) && !empty($attributes[4]) ? '<br/>'.$attributes[4] : '');
 
                 if(!empty($nom) || !empty($url))
                 {
