@@ -98,52 +98,11 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 Route::get('test', function()
 {
-    $data = [
-        'email'     => 'cindy.leschaud@gmail.com',
-        'nom'       => 'Cindy Leschaud',
-        'telephone' => '078 690 00 23',
-        'remarque'  => '<p><strong>Test</strong></p>',
-        'societe'   => 'DesignPond'
-    ];
+/*
+    $TronconWorker = \App::make('App\Aren\Troncon\Worker\TronconWorkerInterface');
 
-    $html = '<!DOCTYPE html>
-                    <html lang="fr-FR"><head><meta charset="utf-8"></head>
-                    <body><h2>Message depuis le site www.aren.ch</h2>';
+    $kml = public_path('kml/poi1.kml');
 
-    if(isset($societe))
-    {
-        $html .= '<h4>'.$data['societe'].'</h4>';
-    }
-
-    $html .= '<p>'.$data['nom'].'</p>
-                  <p>E-mail: '.$data['email'].'</p>
-                  <p>T&eacute;l. : '.$data['telephone'].'</p>
-                  <div>'.$data['remarque'].'</div>
-                  <p><a style="color: #444; font-size: 13px;" href="http://www.aren.ch">www.aren.ch</a></p>
-                  </body>
-                  </html>';
-
-    $sujet        = 'Message depuis le site www.aren.ch';
-    $message      = $html;
-    $destinataire = 'info@aren.ch';
-
-    $headers      = "Reply-To: info@aren.ch\n";
-    $headers     .= "Content-Type: text/plain; charset=\"utf-8\"";
-
-    if(mail($destinataire,$sujet,$message,$headers))
-    {
-        echo 'ok';
-    }
-    else
-    {
-        echo "Une erreur c'est produite lors de l'envois de l'email.";
-    }
-
-    /*
-      \Mail::send('emails.contact', $data, function ($message) use ($data) {
-           //$message->from($data['email'], $data['nom']);
-           $message->to('info@aren.ch')->subject('Message depuis le site www.aren.ch');
-       });
-   */
+    $TronconWorker->prepare($kml, 'poi');*/
 
 });

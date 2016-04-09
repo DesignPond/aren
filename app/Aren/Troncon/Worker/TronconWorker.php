@@ -82,6 +82,12 @@ class TronconWorker implements TronconWorkerInterface{
             $icons = $this->icon->getAll();
             $icons_title = $icons->lists('style','titre')->all();
 
+            // Baloon style BalloonStyle
+            $baloon = $xmlData->Document->addChild('Style');
+            $baloon->addAttribute("id", 'baloon');
+            $BalloonStyle = $baloon->addChild('BalloonStyle');
+            $text = $BalloonStyle->addChild('text','$[description]');
+
             foreach($icons as $index => $icon)
             {
                 $style = $xmlData->Document->addChild('Style');
@@ -93,12 +99,45 @@ class TronconWorker implements TronconWorkerInterface{
 
             foreach($placemarks->Placemark as $placemark)
             {
-                $description = (string) $placemark->ExtendedData->SchemaData->SimpleData;
-                $description = (isset($icons_title[$description]) ? $icons_title[$description] : '');
-                $placemark->addChild('styleUrl','#'.$description);
+                $attributes = [];
+
+                $tag = $placemark->styleUrl;
+                if($tag){
+                    $dom = dom_import_simplexml($tag);
+                    $dom->parentNode->removeChild($dom);
+                }
+
+                /**
+                 * id [1] => 1
+                 * style [2] => autre
+                 * Nom [3] => Toboggan Vue des Alpes
+                 * Url [4] => http://www.toboggans.ch/
+                */
+
+                $description = $placemark->ExtendedData->SchemaData->SimpleData;
+
+                foreach((array) $description as $attr)
+                {
+                    $attributes[] = $attr;
+                }
+
+                unset($attributes[0]);
+
+                // Add style type
+                $style = (isset($attributes[2]) && !empty($attributes[2]) ? $attributes[2] : '');
+                $placemark->addChild('styleUrl','#'.$style);
+
+                // Add description if any
+                $nom = (isset($attributes[3]) && !empty($attributes[3]) ? $attributes[3] : '');
+                $url = (isset($attributes[4]) && !empty($attributes[4]) ? $attributes[4] : '');
+
+                if(!empty($nom) || !empty($url))
+                {
+                    $placemark->addChild('description', $nom.' '.$url);
+                }
             }
 
-            \File::put($kml, $xmlData->asXML());
+             \File::put($kml, $xmlData->asXML());
         }
     }
 
