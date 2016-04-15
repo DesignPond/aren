@@ -206,7 +206,7 @@ class TronconWorker implements TronconWorkerInterface{
             $output .= '<Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description>Num&#233;ro '.$point->noParticipant.' <br/>'.$point->barn_title.' <br/> '.$point->link.'</description>
+                            <description><a href="'.url('participant/'.$point->id).'">'.$point->barn_title.'</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>'.$point->barn_title.'</value></Data>
                                 <Data name="Num&#233;ro"><value>'.$point->noParticipant.'</value></Data>

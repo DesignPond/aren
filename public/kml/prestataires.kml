@@ -14,7 +14,7 @@
 				    <name>Prestataires</name><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description>Num&#233;ro 10 <br/>Manège du Vanel <br/> </description>
+                            <description><a href="http://aren.local/participant/3">Manège du Vanel</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Manège du Vanel</value></Data>
                                 <Data name="Num&#233;ro"><value>10</value></Data>
@@ -25,7 +25,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description>Num&#233;ro 3 <br/>Gîte du Château <br/> <a href="http://www.giteduchateau.ch/">http://www.giteduchateau.ch/</a></description>
+                            <description><a href="http://aren.local/participant/5">Gîte du Château</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Gîte du Château</value></Data>
                                 <Data name="Num&#233;ro"><value>3</value></Data>
@@ -36,7 +36,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description>Num&#233;ro 1 <br/>Famille Oberli P.Alain <br/> </description>
+                            <description><a href="http://aren.local/participant/42">Famille Oberli P.Alain</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Famille Oberli P.Alain</value></Data>
                                 <Data name="Num&#233;ro"><value>1</value></Data>
@@ -47,7 +47,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description>Num&#233;ro 2 <br/>Club équestre des Marais-Rouges <br/> </description>
+                            <description><a href="http://aren.local/participant/43">Club équestre des Marais-Rouges</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Club équestre des Marais-Rouges</value></Data>
                                 <Data name="Num&#233;ro"><value>2</value></Data>
@@ -58,7 +58,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description>Num&#233;ro 4 <br/>Ferme Sterchi <br/> <a href="www.surface.ch/sterchi">www.surface.ch/sterchi</a></description>
+                            <description><a href="http://aren.local/participant/45">Ferme Sterchi</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Ferme Sterchi</value></Data>
                                 <Data name="Num&#233;ro"><value>4</value></Data>
@@ -69,7 +69,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description>Num&#233;ro 6 <br/>Monsieur Daniel Kuntzer <br/> </description>
+                            <description><a href="http://aren.local/participant/47">Monsieur Daniel Kuntzer</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Monsieur Daniel Kuntzer</value></Data>
                                 <Data name="Num&#233;ro"><value>6</value></Data>
@@ -80,7 +80,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description>Num&#233;ro 9 <br/>Madame Marie-Laure Pétremand <br/> </description>
+                            <description><a href="http://aren.local/participant/50">Madame Marie-Laure Pétremand</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Madame Marie-Laure Pétremand</value></Data>
                                 <Data name="Num&#233;ro"><value>9</value></Data>
@@ -91,7 +91,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description>Num&#233;ro 13 <br/>La Ferme du Grand Roumaillard <br/> <a href="www.legrandroumaillard.ch">www.legrandroumaillard.ch</a></description>
+                            <description><a href="http://aren.local/participant/54">La Ferme du Grand Roumaillard</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>La Ferme du Grand Roumaillard</value></Data>
                                 <Data name="Num&#233;ro"><value>13</value></Data>
@@ -102,7 +102,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description>Num&#233;ro 14 <br/>Elevage de Rothel <br/> <a href="www.elevage-de-rothel.ch">www.elevage-de-rothel.ch</a></description>
+                            <description><a href="http://aren.local/participant/55">Elevage de Rothel</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Elevage de Rothel</value></Data>
                                 <Data name="Num&#233;ro"><value>14</value></Data>
@@ -113,7 +113,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description>Num&#233;ro 18 <br/>Manège Wüthrich <br/> </description>
+                            <description><a href="http://aren.local/participant/59">Manège Wüthrich</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Manège Wüthrich</value></Data>
                                 <Data name="Num&#233;ro"><value>18</value></Data>
@@ -124,7 +124,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description>Num&#233;ro 19 <br/>Logis Les Pierres Bleues <br/> <a href="www.equirandopierresbleues.ch">www.equirandopierresbleues.ch</a></description>
+                            <description><a href="http://aren.local/participant/60">Logis Les Pierres Bleues</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Logis Les Pierres Bleues</value></Data>
                                 <Data name="Num&#233;ro"><value>19</value></Data>
@@ -135,7 +135,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description>Num&#233;ro 22 <br/>Alpage/Buvette du Mont-Barres <br/> </description>
+                            <description><a href="http://aren.local/participant/63">Alpage/Buvette du Mont-Barres</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Alpage/Buvette du Mont-Barres</value></Data>
                                 <Data name="Num&#233;ro"><value>22</value></Data>
@@ -146,7 +146,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description>Num&#233;ro 23 <br/>Les Entre-deux-Monts <br/> </description>
+                            <description><a href="http://aren.local/participant/64">Les Entre-deux-Monts</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Les Entre-deux-Monts</value></Data>
                                 <Data name="Num&#233;ro"><value>23</value></Data>
@@ -157,7 +157,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description>Num&#233;ro 24 <br/>Madame et Monsieur Yvonne et Fritz Keller <br/> </description>
+                            <description><a href="http://aren.local/participant/67">Madame et Monsieur Yvonne et Fritz Keller</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Madame et Monsieur Yvonne et Fritz Keller</value></Data>
                                 <Data name="Num&#233;ro"><value>24</value></Data>
@@ -168,12 +168,23 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description>Num&#233;ro 25 <br/>Les Econduits <br/> <a href="www.leseconduits.ch">www.leseconduits.ch</a></description>
+                            <description><a href="http://aren.local/participant/75">Les Econduits</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Les Econduits</value></Data>
                                 <Data name="Num&#233;ro"><value>25</value></Data>
                             </ExtendedData>
                             <Point>
                                 <coordinates>6.54623,46.9285,0</coordinates>
+                            </Point>
+                        </Placemark><Placemark>
+                            <name></name>
+                            <styleUrl>#pin</styleUrl>
+                            <description><a href="http://aren.local/participant/77">DesignPond</a></description>
+                            <ExtendedData>
+                                <Data name="Nom"><value>DesignPond</value></Data>
+                                <Data name="Num&#233;ro"><value>123</value></Data>
+                            </ExtendedData>
+                            <Point>
+                                <coordinates>7.092647,47.064054,0</coordinates>
                             </Point>
                         </Placemark></Document></kml>
