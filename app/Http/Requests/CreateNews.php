@@ -34,5 +34,19 @@ class CreateNews extends Request
             'dateNews'   => 'required|date'
         ];
     }
+
+    /**
+     * Set custom messages for validator errors.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'titre.required' => 'Le titre est requis',
+            'texte.required'   => 'Le texte est requis',
+            'dateNews.required'   => 'La date est requise',
+        ];
+    }
 }
 
