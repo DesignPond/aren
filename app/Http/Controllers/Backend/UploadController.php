@@ -41,7 +41,7 @@ class UploadController extends Controller
         if($files)
         {
             $array = array(
-                'filelink' => url('/').'/files/'.$files['name'],
+                'filelink' => asset('/files/'.$files['name']),
                 'filename' => $files['name']
             );
 
@@ -58,7 +58,7 @@ class UploadController extends Controller
         if($files)
         {
             $array = array(
-                'filelink' => 'files/'.$files['name'],
+                'filelink' => asset('files/'.$files['name']),
                 'filename' => $files['name']
             );
 
