@@ -40,7 +40,10 @@ $( function() {
         maxHeight: 200,
         focus    : true,
         lang     : 'fr',
-        buttons  : ['formatting', 'bold', 'italic', 'unorderedlist','alignment']
+        plugins: ['imagemanager'],
+        imageUpload: 'uploadRedactor?_token=' + $('meta[name="_token"]').attr('content'),
+        imageManagerJson: 'imageJson',
+        buttons  : ['formatting', 'bold', 'italic', 'unorderedlist','alignment','image']
     });
 
     $.fn.datepicker.dates['fr'] = {
