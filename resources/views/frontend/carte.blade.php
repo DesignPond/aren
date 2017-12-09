@@ -52,5 +52,9 @@
 
     @include('frontend.partials.carte', ['height' => 500])
 
+    <div class="content-page" style="margin-top: 30px;">
+        {!! $page->content !!}
+    </div>
+
 </section>
 @stop

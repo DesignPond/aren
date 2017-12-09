@@ -73,14 +73,14 @@
                                 <label class="radio-inline"><input type="radio" value="0" {{ !$page->filligrane ? 'checked' : '' }} name="filligrane"> Non</label>
                             </div>
                         </div>
-
+                    @endif
+                    @if($page->template == 'page' || $page->template == 'accueil' || $page->template == 'carte')
                         <div class="form-group">
                             <label for="content" class="col-sm-3 control-label">Contenu</label>
                             <div class="col-sm-7">
                                 {!! Form::textarea('content', $page->content , array('class' => 'form-control  redactor', 'cols' => '50' , 'rows' => '4' )) !!}
                             </div>
                         </div>
-
                     @endif
 
                 </div>
