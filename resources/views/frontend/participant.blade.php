@@ -45,7 +45,7 @@
             @endif
 
         </div>
-        <hr/><p><a href="{{ url('prestataires') }}"> &lt;&lt; Retour à la liste</a></p><hr/>
+        <hr/><p><a href="{{ url('page/prestataires') }}"> &lt;&lt; Retour à la liste</a></p><hr/>
 
         <!-- Tables -->
         @if(!empty($tables))

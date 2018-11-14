@@ -21,7 +21,9 @@
     <link rel="stylesheet" type="text/css" href="<?php echo asset('frontend/css/smallscreen.css');?>">
     <link rel="stylesheet" href="<?php echo asset('css/general.css');?>">
     <link rel="stylesheet" type="text/css" media="only screen and (min-device-width: 768px) and (max-device-width: 1024px)" href="<?php echo asset('frontend/css/ipad.css');?>">
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+ <script src="https://maps.google.com/maps/api/js?sensor=false"></script> 
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdMKgzvMZIB2ZLyctBXlYpw5pVv_JGBiA&callback=initMap" async defer></script>
+
 </head>
 
 <body>
@@ -77,6 +79,8 @@
         <!-- End of Footer -->
     </div>
 </div>
+
+ 
 <!-- jQuery -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
@@ -90,6 +94,7 @@
 <script type="text/javascript" src="<?php echo asset('frontend/js/main.js');?>"></script>
 <script type="text/javascript" src="<?php echo asset('frontend/js/jquery.mediaTable.js');?>"></script>
 
+	
 <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-28180770-1']);

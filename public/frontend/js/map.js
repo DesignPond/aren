@@ -1,4 +1,4 @@
-function initialize() {
+function initializesa() {
 
     var canvas    = document.getElementById('map-canvas');
 
@@ -62,4 +62,4 @@ function initialize() {
     }
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);
+//google.maps.event.addDomListener(window, 'load', initialize);

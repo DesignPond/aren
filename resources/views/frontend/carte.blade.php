@@ -43,14 +43,48 @@
         <div id="map_canvas_main" style="height: 500px;"></div>
     </div>
 
-    <script>
-        var canvas     = document.getElementById('map_canvas_main');
-        var latlng     = new google.maps.LatLng(47.012724, 6.731005);
-        var mapOptions = {zoom : 10, center: latlng};
-        var map        = new google.maps.Map(canvas, mapOptions);
-    </script>
+    
+    <?php 
+	    
+	    $maps = $cartes->map(function ($carte, $key) {
+		    return $carte->kml;
+		});
+    ?>
+    
+	<script>
+	
+		function initMap() {
+			
+			var cartes =  {!! $maps->toJson() !!};
+			var map;
+			
+			map = new google.maps.Map(document.getElementById('map_canvas_main'), {
+			   center: {lat: 47.012724, lng: 6.731005},
+			   zoom: 10
+			});
+			
+			cartes.forEach(function(carte) {
+			    console.log(carte);
+				
+			    var layer = new google.maps.KmlLayer({
+	                url: 'http://aren.ch/kml/'+ carte +'?rand='+(new Date()).valueOf()
+	            });
+	
+	            layer.setMap(map);
+	            layer.set('preserveViewport', true);
+			});
 
-    @include('frontend.partials.carte', ['height' => 500])
+			
+			var ctaLayer4 = new google.maps.KmlLayer({
+			    url: 'http://aren.ch/kml/prestataires.kml?<?php echo rand(1000, 200000); ?>'
+			});
+			
+			ctaLayer4.setMap(map);
+			ctaLayer4.set('preserveViewport', true);
+			
+		}
+	</script>
+
 
     <div class="content-page" style="margin-top: 30px;">
         {!! $page->content !!}

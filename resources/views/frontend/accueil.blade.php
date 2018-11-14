@@ -47,14 +47,26 @@
             <div id="map_canvas_main" style="height: 230px;"></div>
         </div>
 
-        <script>
-            var canvas     = document.getElementById('map_canvas_main');
-            var latlng     = new google.maps.LatLng(<?php echo $participant->map->latitude; ?> ,<?php echo $participant->map->longitude; ?>);
-            var mapOptions = {zoom : 14, center: latlng};
-            var map        = new google.maps.Map(canvas, mapOptions);
-        </script>
+        
+	    <script>
+		
+			function initMap() {
+				var map;
+				
+				map = new google.maps.Map(document.getElementById('map_canvas_main'), {
+				   center: {lat: <?php echo $participant->map->latitude; ?>, lng: <?php echo $participant->map->longitude; ?>},
+				   zoom: 14
+				});
+				
+				var ctaLayer4 = new google.maps.KmlLayer({
+			        url: 'http://aren.ch/kml/prestataires.kml?<?php echo rand(1000, 200000); ?>'
+			    });
+			
+			    ctaLayer4.setMap(map);
+			    ctaLayer4.set('preserveViewport', true);
+			}
+		</script>
 
-        @include('frontend.partials.carte')
 
         <p class="infoLien infoParticipant"><a href="{{ url('participant/'.$participant->id) }}"><span></span>En savoir plus</a></p>
 
