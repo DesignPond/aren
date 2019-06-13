@@ -12,16 +12,18 @@
 </div>
 
 <script>
-    var canvas     = document.getElementById('map_canvas_<?php echo $carte->id; ?>');
-    var latlng     = new google.maps.LatLng(47.012724, 6.731005);
-    var mapOptions = {zoom : 10, center: latlng};
-    var map        = new google.maps.Map(canvas, mapOptions);
 
-    var ctaLayer = new google.maps.KmlLayer({
+	map = new google.maps.Map(document.getElementById('map_canvas_<?php echo $carte->id; ?>'), {
+	   center: {lat: 47.012724, lng: 6.731005},
+	   zoom: 10,
+	
+	});
+  
+    var layer = new google.maps.KmlLayer({
         url: 'http://aren.ch/kml/<?php echo $carte->kml; ?>?rand='+(new Date()).valueOf()
     });
 
-    ctaLayer.setMap(map);
-    ctaLayer.set('preserveViewport', true);
+    layer.setMap(map);
+    layer.set('preserveViewport', true);
 
 </script>

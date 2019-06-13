@@ -13,7 +13,8 @@
         "guzzlehttp/guzzle": "~5.3|~6.0",
         "baum/baum": "~1.1",
         "torann/registry": "0.2.*@dev",
-        "Nathanmac/Parser": "3.*"
+        "Nathanmac/Parser": "3.*",
+        "msurguy/honeypot": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

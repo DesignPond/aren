@@ -27,7 +27,9 @@ class SendMessage extends Request
             'nom'        => 'required',
             'email'      => 'required|email',
             'remarque'   => 'required',
-            'telephone'  => 'required'
+            'telephone'  => 'required',
+            'my_name'    => 'honeypot',
+			'my_time'    => 'required|honeytime:5'
         ];
     }
 

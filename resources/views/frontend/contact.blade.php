@@ -10,6 +10,8 @@
         <!-- form start -->
         <form data-validate-parsley action="{{ url('sendMessage') }}" method="POST" class="myForm" id="formContact">
             {!! csrf_field() !!}
+            
+            {!! Honeypot::generate('my_name', 'my_time') !!}
 
         <fieldset>
             <h1>Nous contacter</h1>

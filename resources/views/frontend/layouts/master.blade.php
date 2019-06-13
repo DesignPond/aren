@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="<?php echo asset('css/general.css');?>">
     <link rel="stylesheet" type="text/css" media="only screen and (min-device-width: 768px) and (max-device-width: 1024px)" href="<?php echo asset('frontend/css/ipad.css');?>">
  <script src="https://maps.google.com/maps/api/js?sensor=false"></script> 
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdMKgzvMZIB2ZLyctBXlYpw5pVv_JGBiA&callback=initMap" async defer></script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV6wXtKmC3P7mUdNDEp8gp3HjuZsfsMb4&callback=initMap" async defer></script>
 
 </head>
 

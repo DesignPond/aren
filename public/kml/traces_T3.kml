@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
 <Document id="root_doc">
 <Schema name="troncon3_270815" id="troncon3_270815">
-	<SimpleField name="SOUS-TYPE" type="string"></SimpleField>
-	<SimpleField name="LONGUEUR" type="string"></SimpleField>
-	<SimpleField name="SURFACE" type="string"></SimpleField>
-	<SimpleField name="ANGLE" type="float"></SimpleField>
-	<SimpleField name="NOM" type="string"></SimpleField>
-	<SimpleField name="ETAT_VALID" type="string"></SimpleField>
+	<SimpleField name="SOUS-TYPE" type="string"/>
+	<SimpleField name="LONGUEUR" type="string"/>
+	<SimpleField name="SURFACE" type="string"/>
+	<SimpleField name="ANGLE" type="float"/>
+	<SimpleField name="NOM" type="string"/>
+	<SimpleField name="ETAT_VALID" type="string"/>
 </Schema>
 <Folder><name>troncon3_270815</name>
   <Placemark>

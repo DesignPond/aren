@@ -160,6 +160,7 @@ return [
         Baum\Providers\BaumServiceProvider::class,
         Torann\Registry\RegistryServiceProvider::class,
         Nathanmac\Utilities\Parser\ParserServiceProvider::class,
+        'Msurguy\Honeypot\HoneypotServiceProvider',
     ],
 
     /*
@@ -215,6 +216,7 @@ return [
         'Image'     => Intervention\Image\Facades\Image::class,
         'Registry'  => Torann\Registry\Facades\Registry::class,
         'Parser'    => Nathanmac\Utilities\Parser\Facades\Parser::class,
+        'Honeypot' => 'Msurguy\Honeypot\HoneypotFacade',
 
     ],
 

@@ -14,7 +14,7 @@
 				    <name>Prestataires</name><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description><a href="http://aren.local/participant/3">Manège du Vanel</a></description>
+                            <description><a href="http://www.aren.ch/participant/3">Manège du Vanel</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Manège du Vanel</value></Data>
                                 <Data name="Num&#233;ro"><value>10</value></Data>
@@ -25,7 +25,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description><a href="http://aren.local/participant/5">Gîte du Château</a></description>
+                            <description><a href="http://www.aren.ch/participant/5">Gîte du Château</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Gîte du Château</value></Data>
                                 <Data name="Num&#233;ro"><value>3</value></Data>
@@ -36,7 +36,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description><a href="http://aren.local/participant/42">Famille Oberli P.Alain</a></description>
+                            <description><a href="http://www.aren.ch/participant/42">Famille Oberli P.Alain</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Famille Oberli P.Alain</value></Data>
                                 <Data name="Num&#233;ro"><value>1</value></Data>
@@ -47,7 +47,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description><a href="http://aren.local/participant/43">Club équestre des Marais-Rouges</a></description>
+                            <description><a href="http://www.aren.ch/participant/43">Club équestre des Marais-Rouges</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Club équestre des Marais-Rouges</value></Data>
                                 <Data name="Num&#233;ro"><value>2</value></Data>
@@ -58,18 +58,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description><a href="http://aren.local/participant/45">Ferme Sterchi</a></description>
-                            <ExtendedData>
-                                <Data name="Nom"><value>Ferme Sterchi</value></Data>
-                                <Data name="Num&#233;ro"><value>4</value></Data>
-                            </ExtendedData>
-                            <Point>
-                                <coordinates>6.84778,47.1008,0</coordinates>
-                            </Point>
-                        </Placemark><Placemark>
-                            <name></name>
-                            <styleUrl>#pin</styleUrl>
-                            <description><a href="http://aren.local/participant/47">Monsieur Daniel Kuntzer</a></description>
+                            <description><a href="http://www.aren.ch/participant/47">Monsieur Daniel Kuntzer</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Monsieur Daniel Kuntzer</value></Data>
                                 <Data name="Num&#233;ro"><value>6</value></Data>
@@ -80,7 +69,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description><a href="http://aren.local/participant/50">Madame Marie-Laure Pétremand</a></description>
+                            <description><a href="http://www.aren.ch/participant/50">Madame Marie-Laure Pétremand</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Madame Marie-Laure Pétremand</value></Data>
                                 <Data name="Num&#233;ro"><value>9</value></Data>
@@ -91,7 +80,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description><a href="http://aren.local/participant/54">La Ferme du Grand Roumaillard</a></description>
+                            <description><a href="http://www.aren.ch/participant/54">La Ferme du Grand Roumaillard</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>La Ferme du Grand Roumaillard</value></Data>
                                 <Data name="Num&#233;ro"><value>13</value></Data>
@@ -102,7 +91,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description><a href="http://aren.local/participant/55">Elevage de Rothel</a></description>
+                            <description><a href="http://www.aren.ch/participant/55">Elevage de Rothel</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Elevage de Rothel</value></Data>
                                 <Data name="Num&#233;ro"><value>14</value></Data>
@@ -113,7 +102,18 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description><a href="http://aren.local/participant/59">Manège Wüthrich</a></description>
+                            <description><a href="http://www.aren.ch/participant/57">Ecurie Corinne Matthey</a></description>
+                            <ExtendedData>
+                                <Data name="Nom"><value>Ecurie Corinne Matthey</value></Data>
+                                <Data name="Num&#233;ro"><value>16</value></Data>
+                            </ExtendedData>
+                            <Point>
+                                <coordinates>6.74265,47.0342,0</coordinates>
+                            </Point>
+                        </Placemark><Placemark>
+                            <name></name>
+                            <styleUrl>#pin</styleUrl>
+                            <description><a href="http://www.aren.ch/participant/59">Manège Wüthrich</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Manège Wüthrich</value></Data>
                                 <Data name="Num&#233;ro"><value>18</value></Data>
@@ -124,7 +124,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description><a href="http://aren.local/participant/60">Logis Les Pierres Bleues</a></description>
+                            <description><a href="http://www.aren.ch/participant/60">Logis Les Pierres Bleues</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Logis Les Pierres Bleues</value></Data>
                                 <Data name="Num&#233;ro"><value>19</value></Data>
@@ -135,7 +135,18 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description><a href="http://aren.local/participant/63">Alpage/Buvette du Mont-Barres</a></description>
+                            <description><a href="http://www.aren.ch/participant/61">Relais équestre Les Seignes</a></description>
+                            <ExtendedData>
+                                <Data name="Nom"><value>Relais équestre Les Seignes</value></Data>
+                                <Data name="Num&#233;ro"><value>20</value></Data>
+                            </ExtendedData>
+                            <Point>
+                                <coordinates>6.53582,46.9757,0</coordinates>
+                            </Point>
+                        </Placemark><Placemark>
+                            <name></name>
+                            <styleUrl>#pin</styleUrl>
+                            <description><a href="http://www.aren.ch/participant/63">Alpage/Buvette du Mont-Barres</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Alpage/Buvette du Mont-Barres</value></Data>
                                 <Data name="Num&#233;ro"><value>22</value></Data>
@@ -146,7 +157,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description><a href="http://aren.local/participant/64">Les Entre-deux-Monts</a></description>
+                            <description><a href="http://www.aren.ch/participant/64">Les Entre-deux-Monts</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Les Entre-deux-Monts</value></Data>
                                 <Data name="Num&#233;ro"><value>23</value></Data>
@@ -157,7 +168,7 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description><a href="http://aren.local/participant/67">Madame et Monsieur Yvonne et Fritz Keller</a></description>
+                            <description><a href="http://www.aren.ch/participant/67">Madame et Monsieur Yvonne et Fritz Keller</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Madame et Monsieur Yvonne et Fritz Keller</value></Data>
                                 <Data name="Num&#233;ro"><value>24</value></Data>
@@ -168,10 +179,10 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description><a href="http://aren.local/participant/75">Les Econduits</a></description>
+                            <description><a href="http://www.aren.ch/participant/75">Les Econduits</a></description>
                             <ExtendedData>
                                 <Data name="Nom"><value>Les Econduits</value></Data>
-                                <Data name="Num&#233;ro"><value>25</value></Data>
+                                <Data name="Num&#233;ro"><value>28</value></Data>
                             </ExtendedData>
                             <Point>
                                 <coordinates>6.54623,46.9285,0</coordinates>
@@ -179,12 +190,45 @@
                         </Placemark><Placemark>
                             <name></name>
                             <styleUrl>#pin</styleUrl>
-                            <description><a href="http://aren.local/participant/77">DesignPond</a></description>
+                            <description><a href="http://www.aren.ch/participant/79">Métairie de la Gentiane</a></description>
                             <ExtendedData>
-                                <Data name="Nom"><value>DesignPond</value></Data>
-                                <Data name="Num&#233;ro"><value>123</value></Data>
+                                <Data name="Nom"><value>Métairie de la Gentiane</value></Data>
+                                <Data name="Num&#233;ro"><value>27</value></Data>
                             </ExtendedData>
                             <Point>
-                                <coordinates>7.092647,47.064054,0</coordinates>
+                                <coordinates>6.915876,47.106175,0</coordinates>
+                            </Point>
+                        </Placemark><Placemark>
+                            <name></name>
+                            <styleUrl>#pin</styleUrl>
+                            <description><a href="http://www.aren.ch/participant/80">Relais du Mont-Dar</a></description>
+                            <ExtendedData>
+                                <Data name="Nom"><value>Relais du Mont-Dar</value></Data>
+                                <Data name="Num&#233;ro"><value>25</value></Data>
+                            </ExtendedData>
+                            <Point>
+                                <coordinates>6.835368,47.054377,0</coordinates>
+                            </Point>
+                        </Placemark><Placemark>
+                            <name></name>
+                            <styleUrl>#pin</styleUrl>
+                            <description><a href="http://www.aren.ch/participant/81">Le Grand Coeurie</a></description>
+                            <ExtendedData>
+                                <Data name="Nom"><value>Le Grand Coeurie</value></Data>
+                                <Data name="Num&#233;ro"><value>29</value></Data>
+                            </ExtendedData>
+                            <Point>
+                                <coordinates> 6.795858,47.004761,0</coordinates>
+                            </Point>
+                        </Placemark><Placemark>
+                            <name></name>
+                            <styleUrl>#pin</styleUrl>
+                            <description><a href="http://www.aren.ch/participant/83">La Pinte de la Petite Joux</a></description>
+                            <ExtendedData>
+                                <Data name="Nom"><value>La Pinte de la Petite Joux</value></Data>
+                                <Data name="Num&#233;ro"><value>30</value></Data>
+                            </ExtendedData>
+                            <Point>
+                                <coordinates>6.735066,47.013139,0</coordinates>
                             </Point>
                         </Placemark></Document></kml>
